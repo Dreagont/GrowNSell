@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: BaseZombie
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyTypeData
+  enemyTypeName: Zombie
+  baseMaxHealth: 100
+  baseAttackSpeed: 0.8
+  baseArmor: 2
+  baseDamage: 5
+  baseGold: 10
+  baseExperienceValue: 20
+  level: 2
+  enemyTraits: 0
+  dropItems:
+  - item: {fileID: 11400000, guid: cf84490f2d7438a4890424d59b8391fa, type: 2}
+    minQuantity: 2
+    maxQuantity: 5
+    itemDropChance: 0.4
+  - item: {fileID: 11400000, guid: 832881b28d7a034459948138ba915e31, type: 2}
+    minQuantity: 1
+    maxQuantity: 1
+    itemDropChance: 0.4
+  - item: {fileID: 11400000, guid: c92fc39f3b07c2443aaf94970b745c06, type: 2}
+    minQuantity: 1
+    maxQuantity: 1
+    itemDropChance: 0.4

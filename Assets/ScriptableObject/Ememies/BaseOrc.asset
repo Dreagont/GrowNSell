@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: BaseOrc
+  m_EditorClassIdentifier: Assembly-CSharp::OrcData
+  enemyTypeName: Orc
+  baseMaxHealth: 80
+  baseAttackSpeed: 0.8
+  baseArmor: 3
+  baseDamage: 12
+  baseGold: 15
+  baseExperienceValue: 25
+  level: 1
+  enemyTraits: 0
+  dropItems:
+  - item: {fileID: 11400000, guid: c92fc39f3b07c2443aaf94970b745c06, type: 2}
+    minQuantity: 1
+    maxQuantity: 1
+    itemDropChance: 0.4
+  - item: {fileID: 11400000, guid: be2a5343cd277d44cac187d1cf59e363, type: 2}
+    minQuantity: 2
+    maxQuantity: 5
+    itemDropChance: 0.4
+  - item: {fileID: 11400000, guid: 0da0a45d22892964f9b73cb1cca26cd5, type: 2}
+    minQuantity: 1
+    maxQuantity: 1
+    itemDropChance: 0.4
