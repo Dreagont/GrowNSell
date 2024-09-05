@@ -1,0 +1,1677 @@
+fileFormatVersion: 2
+guid: 678de8535b43db2458b6d521ba5a01d1
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_0
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 278
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7483a9acad776484eb46b04e8a940d5a
+      internalID: -706339457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_1
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 282
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6335e293876e20943b3382d38a3b92e3
+      internalID: 987570865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_2
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 282
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d94e0480ca5ffe4580c99e6bb3e998e
+      internalID: -1751747145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_3
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 281
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d56bfe226a054c4ca2b7495840350f0
+      internalID: -1391823727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_4
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 279
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ef6431c70428bd469cb533b411f4576
+      internalID: -448925046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_5
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 270
+        width: 7
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35ed2648b9bd11f48b990cec23b88103
+      internalID: 366717830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_6
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 279
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f6fde956f7034741a340e3e282ffc77
+      internalID: -1782536528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_7
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 279
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd3ae221390a578408d713f35c1af09f
+      internalID: 1741412351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_8
+      rect:
+        serializedVersion: 2
+        x: 674
+        y: 279
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b5aec7507149f34a8d68d9f41ee718c
+      internalID: -414780072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_9
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 278
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afbf375541d85964d9f5cbd639f098bb
+      internalID: -916383676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_10
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 277
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ce4d7bf38f655246848a59e91323407
+      internalID: 1539831797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_11
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 276
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a27d86ceed13e6a45939748df2b3eaca
+      internalID: -1306378966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_12
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 279
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7267a7551f48db346b2ebfebe4a6d088
+      internalID: 38500202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_13
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 276
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9beb96e2d47ad134297c0cb2c5277ab8
+      internalID: -1992919538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_14
+      rect:
+        serializedVersion: 2
+        x: 1160
+        y: 276
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2d5700c88849b747a09724983b2b5cd
+      internalID: -1775331564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_15
+      rect:
+        serializedVersion: 2
+        x: 1244
+        y: 272
+        width: 82
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af0a4de9aaa86ce46b91a727afb1d705
+      internalID: 1657583820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_16
+      rect:
+        serializedVersion: 2
+        x: 1360
+        y: 272
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a406d7e9f549424449f92b4c7d9cf697
+      internalID: -1073365922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_17
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 198
+        width: 7
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83eb9f836a7ad444b9f37ed1f97da2af
+      internalID: 290363078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_18
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 202
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0872ef10ab5e7914f8fd40e09ea4d170
+      internalID: 1417855280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_19
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 204
+        width: 7
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa46c5d0eb29bf2458bca19173dc75e1
+      internalID: 809654331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_20
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 206
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1ba983ed34c26f498e286fb8bdd2798
+      internalID: 1997496417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_21
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 208
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fc722e4452fe1e46b1625088617875e
+      internalID: -132392523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_22
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 193
+        width: 7
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d8591bbebb42654dabfef6feb6a5873
+      internalID: 1799613177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_23
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 179
+        width: 13
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3bf98a6bd8f19a4fb2a0380de5c6def
+      internalID: 85834726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_24
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 179
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 350643800e40a3f4399fd117407e0f31
+      internalID: -836917732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_25
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 179
+        width: 18
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8829ef9b079c44d468dee4e1bd0a1250
+      internalID: -1961165315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_26
+      rect:
+        serializedVersion: 2
+        x: 751
+        y: 178
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 344830aece4c1884ca07e47ccc140803
+      internalID: -1298480885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_27
+      rect:
+        serializedVersion: 2
+        x: 830
+        y: 177
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af32534aee665ff4eb692ca2ff9106c5
+      internalID: -1467785707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_28
+      rect:
+        serializedVersion: 2
+        x: 909
+        y: 176
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 203ae57781d053a44b698f1476c918f3
+      internalID: 1764354481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_29
+      rect:
+        serializedVersion: 2
+        x: 993
+        y: 179
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 578e12b7aa7be8c4b882b271c2e7a794
+      internalID: -891992536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_30
+      rect:
+        serializedVersion: 2
+        x: 1073
+        y: 179
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b5c5c2d2523f5948b146616ebfe1f71
+      internalID: 1834525659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_31
+      rect:
+        serializedVersion: 2
+        x: 1154
+        y: 179
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0dfb6cc12bfe884c9a8250c73d1ff4f
+      internalID: -2004269572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_32
+      rect:
+        serializedVersion: 2
+        x: 1234
+        y: 181
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84622741a69b6174899528af87c2a846
+      internalID: -1668905182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_33
+      rect:
+        serializedVersion: 2
+        x: 1314
+        y: 183
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3385ebd06804dd844bb3ef82d102a8d4
+      internalID: -2040429880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_34
+      rect:
+        serializedVersion: 2
+        x: 1392
+        y: 188
+        width: 8
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0df4dd8bc536c34ebb77895eb778a80
+      internalID: -1132625103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_35
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 125
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b5d3946bb8174147b7fded13a04aa79
+      internalID: 1513165202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_36
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 123
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4abd116fa52ba44bbf58d1a8736e32b
+      internalID: -1476152354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_37
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 118
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d956f8da0f52ab4ea10af377b960073
+      internalID: 110745546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_38
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 118
+        width: 35
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ab90ed7cf865744199210ef62067fdb
+      internalID: -686010670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_39
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 110
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 315507c44e6918d4384758a620f98e07
+      internalID: -1773934106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_40
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 110
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 679e1e65c67cf4d4b8e14319a0829696
+      internalID: 1201067239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_41
+      rect:
+        serializedVersion: 2
+        x: 653
+        y: 110
+        width: 20
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2706d52fcb034c04da52936842b22801
+      internalID: 1843559571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_42
+      rect:
+        serializedVersion: 2
+        x: 1387
+        y: 116
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a0169d72a47e3942b03c19c47bff818
+      internalID: 843091657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_43
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 114
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38d8fda8c768e834aa592892668d1d6e
+      internalID: -324425001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_44
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 113
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d960df81b13ba54abc11050b713560f
+      internalID: -1255411020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_45
+      rect:
+        serializedVersion: 2
+        x: 737
+        y: 109
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0e1ab2496e232a46bdd8aa9329abbca
+      internalID: -13168729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_46
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 108
+        width: 17
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13574bc02daf04143bac4fe193f6226d
+      internalID: -703690967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_47
+      rect:
+        serializedVersion: 2
+        x: 895
+        y: 108
+        width: 17
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af6a6a15537ecbc45bdf1a74bd1d542f
+      internalID: 263555789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_48
+      rect:
+        serializedVersion: 2
+        x: 979
+        y: 110
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2a2e6d78254e88479543a61a6f41d18
+      internalID: 1859299543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_49
+      rect:
+        serializedVersion: 2
+        x: 1059
+        y: 110
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d57388d2d33f4104c965f50cab2e907c
+      internalID: -810770894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_50
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 110
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16c66638483fb2b469bc0e1502414ded
+      internalID: 1124840263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_51
+      rect:
+        serializedVersion: 2
+        x: 1222
+        y: 110
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 227325fdcf90af14c9237f783486edfb
+      internalID: 1310063529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_52
+      rect:
+        serializedVersion: 2
+        x: 1304
+        y: 110
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eba0d9b00bb0ca94c82f2d823077a80b
+      internalID: 979875433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_53
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 39
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: effb4c452dfa59e4eb3d70a127e3b1b4
+      internalID: -534638048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_54
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 39
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbbea4c0566ab7747ae54aa42dc2e831
+      internalID: -546012425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_55
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 38
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d13e2c8520d45e64faea339540c8aafb
+      internalID: -1173001132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_56
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 34
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b29ca7287974ae541bced5e04e3e6a1f
+      internalID: -1659918543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_57
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 33
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40fbaaf68370f7642a804a19e09eba15
+      internalID: -28296920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_58
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 38
+        width: 35
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79507ad35cb362f43b4298c0ed0c7fc5
+      internalID: 1283186751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_59
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 30
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6e90e71f800fdb48b2ca015a6718aeb
+      internalID: 1064191049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_60
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 30
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fb0799c62697ec4fb345a06ec575e1a
+      internalID: -515548061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_61
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 30
+        width: 20
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b1727ad44b66164197b3fae4af9a1e7
+      internalID: -149535040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_62
+      rect:
+        serializedVersion: 2
+        x: 767
+        y: 29
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc73bb2b9ef71fb4f81b45f7d49afc15
+      internalID: 494429728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_63
+      rect:
+        serializedVersion: 2
+        x: 847
+        y: 28
+        width: 17
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc84f0e8f54102747aa176ad6facc1cb
+      internalID: -1744855818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_64
+      rect:
+        serializedVersion: 2
+        x: 927
+        y: 28
+        width: 18
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddd3696d05dbe654a9ee629f275f03ba
+      internalID: 1666248561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_65
+      rect:
+        serializedVersion: 2
+        x: 1007
+        y: 30
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 899c02f9429d09b47bae83181ac62173
+      internalID: 1031714238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_66
+      rect:
+        serializedVersion: 2
+        x: 1087
+        y: 30
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3e5970ae37dab34aa6bde88053a9f04
+      internalID: 1012270029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_67
+      rect:
+        serializedVersion: 2
+        x: 1165
+        y: 30
+        width: 15
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b79cadfeeecc3641b3294484634d8de
+      internalID: 880578821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_68
+      rect:
+        serializedVersion: 2
+        x: 1243
+        y: 30
+        width: 15
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df7fd94362ceacf4e930dff368cbb820
+      internalID: 2010083727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_69
+      rect:
+        serializedVersion: 2
+        x: 1322
+        y: 30
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4f4122c3f45667498c3bd6f8b76eab0
+      internalID: 294027897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Odderf New Copper Hoe_70
+      rect:
+        serializedVersion: 2
+        x: 1399
+        y: 36
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77d9bbed570d75941aa2b8f2e1d46b73
+      internalID: -935176443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Odderf New Copper Hoe_0: -706339457
+      Odderf New Copper Hoe_1: 987570865
+      Odderf New Copper Hoe_10: 1539831797
+      Odderf New Copper Hoe_11: -1306378966
+      Odderf New Copper Hoe_12: 38500202
+      Odderf New Copper Hoe_13: -1992919538
+      Odderf New Copper Hoe_14: -1775331564
+      Odderf New Copper Hoe_15: 1657583820
+      Odderf New Copper Hoe_16: -1073365922
+      Odderf New Copper Hoe_17: 290363078
+      Odderf New Copper Hoe_18: 1417855280
+      Odderf New Copper Hoe_19: 809654331
+      Odderf New Copper Hoe_2: -1751747145
+      Odderf New Copper Hoe_20: 1997496417
+      Odderf New Copper Hoe_21: -132392523
+      Odderf New Copper Hoe_22: 1799613177
+      Odderf New Copper Hoe_23: 85834726
+      Odderf New Copper Hoe_24: -836917732
+      Odderf New Copper Hoe_25: -1961165315
+      Odderf New Copper Hoe_26: -1298480885
+      Odderf New Copper Hoe_27: -1467785707
+      Odderf New Copper Hoe_28: 1764354481
+      Odderf New Copper Hoe_29: -891992536
+      Odderf New Copper Hoe_3: -1391823727
+      Odderf New Copper Hoe_30: 1834525659
+      Odderf New Copper Hoe_31: -2004269572
+      Odderf New Copper Hoe_32: -1668905182
+      Odderf New Copper Hoe_33: -2040429880
+      Odderf New Copper Hoe_34: -1132625103
+      Odderf New Copper Hoe_35: 1513165202
+      Odderf New Copper Hoe_36: -1476152354
+      Odderf New Copper Hoe_37: 110745546
+      Odderf New Copper Hoe_38: -686010670
+      Odderf New Copper Hoe_39: -1773934106
+      Odderf New Copper Hoe_4: -448925046
+      Odderf New Copper Hoe_40: 1201067239
+      Odderf New Copper Hoe_41: 1843559571
+      Odderf New Copper Hoe_42: 843091657
+      Odderf New Copper Hoe_43: -324425001
+      Odderf New Copper Hoe_44: -1255411020
+      Odderf New Copper Hoe_45: -13168729
+      Odderf New Copper Hoe_46: -703690967
+      Odderf New Copper Hoe_47: 263555789
+      Odderf New Copper Hoe_48: 1859299543
+      Odderf New Copper Hoe_49: -810770894
+      Odderf New Copper Hoe_5: 366717830
+      Odderf New Copper Hoe_50: 1124840263
+      Odderf New Copper Hoe_51: 1310063529
+      Odderf New Copper Hoe_52: 979875433
+      Odderf New Copper Hoe_53: -534638048
+      Odderf New Copper Hoe_54: -546012425
+      Odderf New Copper Hoe_55: -1173001132
+      Odderf New Copper Hoe_56: -1659918543
+      Odderf New Copper Hoe_57: -28296920
+      Odderf New Copper Hoe_58: 1283186751
+      Odderf New Copper Hoe_59: 1064191049
+      Odderf New Copper Hoe_6: -1782536528
+      Odderf New Copper Hoe_60: -515548061
+      Odderf New Copper Hoe_61: -149535040
+      Odderf New Copper Hoe_62: 494429728
+      Odderf New Copper Hoe_63: -1744855818
+      Odderf New Copper Hoe_64: 1666248561
+      Odderf New Copper Hoe_65: 1031714238
+      Odderf New Copper Hoe_66: 1012270029
+      Odderf New Copper Hoe_67: 880578821
+      Odderf New Copper Hoe_68: 2010083727
+      Odderf New Copper Hoe_69: 294027897
+      Odderf New Copper Hoe_7: 1741412351
+      Odderf New Copper Hoe_70: -935176443
+      Odderf New Copper Hoe_71: -343773102
+      Odderf New Copper Hoe_8: -414780072
+      Odderf New Copper Hoe_9: -916383676
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
