@@ -17,7 +17,9 @@ public class PlayerInventoryHolder : InventoryHolder
     public Image chestImage;
 
     public InventorySlotUi[] SlotUi;
-
+    public int SelectedSlot = 0;
+    public GameObject InventoryUiPanel;
+    public InventoryItemData holdingItem;
     protected override void Awake()
     {
         base.Awake();
@@ -38,15 +40,65 @@ public class PlayerInventoryHolder : InventoryHolder
     {
         if (chestImage != null)
         {
-            chestImage.GetComponent<Button>().onClick.AddListener(OpenChest);
+            chestImage.GetComponent<Button>().onClick.AddListener(OpenInventory);
         }
     }
 
     void Update()
     {
-        if (Keyboard.current.lKey.wasPressedThisFrame)
+        HandleSlotSelection();
+
+        if (Keyboard.current.iKey.wasPressedThisFrame)
         {
-            OpenChest();
+            OpenInventory();
+        }
+
+        if (Keyboard.current.escapeKey.wasPressedThisFrame)
+        {
+            CloseInventory();
+        }
+
+        holdingItem = GetHoldingItem();
+    }
+    private void HandleSlotSelection()
+    {
+        float scrollDelta = Mouse.current.scroll.ReadValue().y;
+        if (scrollDelta > 0)
+        {
+            IncreaseSelectedSlot();
+        }
+        else if (scrollDelta < 0)
+        {
+            DecreaseSelectedSlot();
+        }
+
+        if (Keyboard.current.digit1Key.wasPressedThisFrame) SelectedSlot = 0;
+        else if (Keyboard.current.digit2Key.wasPressedThisFrame) SelectedSlot = 1;
+        else if (Keyboard.current.digit3Key.wasPressedThisFrame) SelectedSlot = 2;
+        else if (Keyboard.current.digit4Key.wasPressedThisFrame) SelectedSlot = 3;
+        else if (Keyboard.current.digit5Key.wasPressedThisFrame) SelectedSlot = 4;
+        else if (Keyboard.current.digit6Key.wasPressedThisFrame) SelectedSlot = 5;
+        else if (Keyboard.current.digit7Key.wasPressedThisFrame) SelectedSlot = 6;
+        else if (Keyboard.current.digit8Key.wasPressedThisFrame) SelectedSlot = 7;
+        else if (Keyboard.current.digit9Key.wasPressedThisFrame) SelectedSlot = 8;
+        else if (Keyboard.current.digit0Key.wasPressedThisFrame) SelectedSlot = 9;
+    }
+
+    private void IncreaseSelectedSlot()
+    {
+        SelectedSlot = (SelectedSlot + 1);
+        if (SelectedSlot > 9)
+        {
+            SelectedSlot = 9;
+        }
+    }
+
+    private void DecreaseSelectedSlot()
+    {
+        SelectedSlot = (SelectedSlot - 1);
+        if (SelectedSlot < 0)
+        {
+            SelectedSlot = 0;
         }
     }
 
@@ -84,11 +136,22 @@ public class PlayerInventoryHolder : InventoryHolder
 
     }
 
-    public void OpenChest()
+    public void OpenInventory()
     {
-        onDynamicInventoryDisplayRequested?.Invoke(SecondaryInventorySystem);
+        if (InventoryUiPanel.gameObject.activeInHierarchy)
+        {
+            CloseInventory();
+        } else
+        {
+            onDynamicInventoryDisplayRequested?.Invoke(SecondaryInventorySystem);
+        }
     }
+    public void CloseInventory()
+    {
+        InventoryUiPanel.gameObject.SetActive(false);
+        GlobalVariables.CanUseInteractTools = true;
 
+    }
     public bool AddToInventory(InventoryItemData inventoryItemData, int amount)
     {
         if (secondaryInventorySystem.AddToInventory(inventoryItemData, amount))
@@ -97,5 +160,24 @@ public class PlayerInventoryHolder : InventoryHolder
         }
 
         return false;
+    }
+
+    public bool AddToHotBar(InventoryItemData inventoryItemData, int amount)
+    {
+        if (primaryInventorySystem.AddToInventory(inventoryItemData, amount))
+        {
+            return true;
+        } else
+        if (secondaryInventorySystem.AddToInventory(inventoryItemData, amount))
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    public InventoryItemData GetHoldingItem()
+    {
+        return primaryInventorySystem.InventorySlots[SelectedSlot].ItemData;
     }
 }

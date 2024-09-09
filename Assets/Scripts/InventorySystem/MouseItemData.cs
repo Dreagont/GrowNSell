@@ -40,10 +40,10 @@ public class MouseItemData : MonoBehaviour
             RectTransformUtility.ScreenPointToLocalPointInRectangle(parentCanvas.transform as RectTransform, mousePosition, parentCanvas.worldCamera, out canvasPosition);
             transform.position = parentCanvas.transform.TransformPoint(canvasPosition);
 
-            if (Mouse.current.leftButton.wasPressedThisFrame && !IsPointerOverUIObject())
+           /* if (Mouse.current.leftButton.wasPressedThisFrame && !IsPointerOverUIObject())
             {
                 ClearSlot();
-            }
+            }*/
         }
     }
 

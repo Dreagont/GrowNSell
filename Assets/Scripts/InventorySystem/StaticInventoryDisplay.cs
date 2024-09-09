@@ -6,7 +6,7 @@ public class StaticInventoryDisplay : InventoryDisplay
 {
     [SerializeField] private InventoryHolder inventoryHolder;
     [SerializeField] private InventorySlotUi[] slots;
-
+    private PlayerInventoryHolder playerInventoryHolder;
     public override void AssignSlot(InventorySystem inventoryToDisplay)
     {
         slotDictionary = new Dictionary<InventorySlotUi, InventorySlots>();
@@ -25,6 +25,8 @@ public class StaticInventoryDisplay : InventoryDisplay
 
     protected override void Start()
     {
+        playerInventoryHolder = FindAnyObjectByType<PlayerInventoryHolder>();
+        slots[0].IsSelected.gameObject.SetActive(true);
         base.Start();
         if (inventoryHolder != null)
         {
@@ -42,10 +44,20 @@ public class StaticInventoryDisplay : InventoryDisplay
     private void Update()
     {
         
-       
+       HighLight(playerInventoryHolder.SelectedSlot);
     }
 
-    
+    public void HighLight(int index)
+    {
+       for (int i = 0;i < slots.Length;i++)
+       {
+            if (index != i)
+            {
+                slots[i].IsSelected.gameObject.SetActive(false);
+            }
+       }
+        slots[index].IsSelected.gameObject.SetActive(true);
+    }
 }
 
 

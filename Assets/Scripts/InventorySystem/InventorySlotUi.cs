@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class InventorySlotUi : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
+public class InventorySlotUi : MonoBehaviour
+    //, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     public Image itemSprite;
     public TextMeshProUGUI itemCount;
@@ -20,8 +21,11 @@ public class InventorySlotUi : MonoBehaviour, IPointerEnterHandler, IPointerExit
 
     private Coroutine showTooltipCoroutine;
 
+    public Image IsSelected;
+
     private void Awake()
     {
+        IsSelected.gameObject.SetActive(false);
         ClearSlot();
 
         button = GetComponent<Button>();
@@ -90,7 +94,7 @@ public class InventorySlotUi : MonoBehaviour, IPointerEnterHandler, IPointerExit
     {
         ParentDisplay?.SlotClicked(this);
     }
-
+/*
     public void OnPointerEnter(PointerEventData eventData)
     {
         if (assignedInventorySlot.ItemData != null)
@@ -124,4 +128,5 @@ public class InventorySlotUi : MonoBehaviour, IPointerEnterHandler, IPointerExit
 
         }
     }
+*/
 }

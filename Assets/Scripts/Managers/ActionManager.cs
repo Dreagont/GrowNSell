@@ -22,11 +22,11 @@ public class ActionManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
-            InventoryHolder.AddToInventory(itemData1, 10);
+            InventoryHolder.AddToHotBar(itemData1, 10);
         }
         if (Input.GetKeyDown(KeyCode.O))
         {
-            InventoryHolder.AddToInventory(itemData2, 10);
+            InventoryHolder.AddToHotBar(itemData2, 1);
         }
     }
 

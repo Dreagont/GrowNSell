@@ -30,38 +30,12 @@ public class InventoryUIController : MonoBehaviour
     void Update()
     {
 
-        if (inventoryPanel.gameObject.activeInHierarchy)
-        { 
-            if (Keyboard.current.escapeKey.wasPressedThisFrame || Keyboard.current.xKey.wasPressedThisFrame)
-            {
-                CloseInventory();
-            }
-        } 
-
-       
-
-    }
-
-    public void CloseInventory()
-    {
-        inventoryPanelOuter.gameObject.SetActive(false);
-    }
-
-    private void OpenChest()
-    {
-        if (inventoryPanelOuter.gameObject.activeInHierarchy)
-        {
-            inventoryPanelOuter.gameObject.SetActive(false);
-        }
-        else
-        {
-            inventoryPanelOuter.gameObject.SetActive(true);
-        }
     }
 
     void DisplayInventory (InventorySystem inventoryToDisplay)
     {
         inventoryPanelOuter.gameObject.SetActive(true);
+        GlobalVariables.CanUseInteractTools = false;
         inventoryPanel.RefreshDynamicInventory(inventoryToDisplay);
 
     }

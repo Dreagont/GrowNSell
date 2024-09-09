@@ -3772,7 +3772,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buttons & Icons_175
+      name: Exit_icon
       rect:
         serializedVersion: 2
         x: 400
@@ -37471,7 +37471,6 @@ TextureImporter:
       Buttons & Icons_1738: 640785758
       Buttons & Icons_1739: -929234681
       Buttons & Icons_174: -547195955
-      Buttons & Icons_175: 1140850151
       Buttons & Icons_176: -1397431383
       Buttons & Icons_177: 232334855
       Buttons & Icons_178: -307383448
@@ -38386,6 +38385,7 @@ TextureImporter:
       Buttons & Icons_998: -164491346
       Buttons & Icons_999: -453692104
       BuyIcon: 1783420289
+      Exit_icon: 1140850151
       highlight_arrow: 479260332
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0

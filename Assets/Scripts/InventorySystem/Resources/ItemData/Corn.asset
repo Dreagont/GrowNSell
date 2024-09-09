@@ -19,13 +19,5 @@ MonoBehaviour:
   MaxStackSize: 999
   sellPrice: 50
   itemType1: 2
-  itemType2: 3
-  consumeStats:
-    GoldGain: 0
-    EnergyGain: 50
+  itemType2: 0
   EquipableTag: 0
-  bonusHealth: 0
-  bonusArmor: 0
-  bonusDamage: 0
-  bonusAttackSpeed: 0
-  bonusRegen: 0

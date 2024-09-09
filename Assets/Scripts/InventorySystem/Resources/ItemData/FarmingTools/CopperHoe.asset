@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7ca7bc84f6875647b44506e56f5535e, type: 3}
+  m_Name: CopperHoe
+  m_EditorClassIdentifier: 
+  ID: -1
+  displayName: CopperHoe
+  description: Use to harvest crops
+  icon: {fileID: 1577799783, guid: 149d97fc8d899244b8ed11be675859d3, type: 3}
+  MaxStackSize: 1
+  sellPrice: 10
+  itemType1: 1
+  itemType2: 0
+  EquipableTag: 1

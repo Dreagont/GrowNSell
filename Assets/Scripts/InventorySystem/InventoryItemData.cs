@@ -15,37 +15,19 @@ public class InventoryItemData : ScriptableObject
     public ItemType itemType1;
     public ItemType itemType2;
 
-    public ConsumeStats consumeStats;
-
     public EquipableTag EquipableTag;
-
-    public int bonusHealth;
-    public int bonusArmor;
-    public int bonusDamage;
-    public int bonusAttackSpeed;
-    public int bonusRegen;
 }
 public enum ItemType
 {
     None,
-    Equipable,
-    Consumable,
-    Marterial
+    Interaction,
+    Seed,
 }
 
 public enum EquipableTag
 {
     None,
-    Chest,
-    Legs,
-    Weapon,
-    Helmet,
-    Boots
-}
-
-[System.Serializable]
-public class ConsumeStats
-{
-    public int GoldGain;
-    public int EnergyGain;
+    Hoe,
+    WateringCan,
+    Shovel
 }

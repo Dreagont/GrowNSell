@@ -18,14 +18,6 @@ MonoBehaviour:
   icon: {fileID: -1429853927, guid: 9470b17ec078762449d7fbcec5647f51, type: 3}
   MaxStackSize: 9999
   sellPrice: 60
-  itemType1: 2
-  itemType2: 3
-  consumeStats:
-    GoldGain: 0
-    EnergyGain: 100
+  itemType1: 0
+  itemType2: 0
   EquipableTag: 0
-  bonusHealth: 0
-  bonusArmor: 0
-  bonusDamage: 0
-  bonusAttackSpeed: 0
-  bonusRegen: 0

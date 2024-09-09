@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public abstract class InventoryDisplay : MonoBehaviour
@@ -41,6 +42,13 @@ public abstract class InventoryDisplay : MonoBehaviour
 
     public void SlotClicked(InventorySlotUi slot)
     {
+        if (slot == null)
+        {
+            Debug.LogWarning("Asdas");
+
+            return;
+        }
+
 
         if (slot.AssignedInventorySlot.ItemData != null && mouseInventoryItem.AsssignedInventorySlot == null)
         {
@@ -50,13 +58,9 @@ public abstract class InventoryDisplay : MonoBehaviour
         }
         else if (slot.AssignedInventorySlot.ItemData == null && mouseInventoryItem.AsssignedInventorySlot != null)
         {
-            if (slot.equipableTag == mouseInventoryItem.AsssignedInventorySlot.ItemData.EquipableTag || slot.equipableTag == EquipableTag.None)
-            {
                 slot.AssignedInventorySlot.AssignItem(mouseInventoryItem.AsssignedInventorySlot);
                 slot.UpdateInventorySlot();
                 mouseInventoryItem.ClearSlot();
-            }
-
 
         }
         else if (slot.AssignedInventorySlot.ItemData != null && mouseInventoryItem.AsssignedInventorySlot != null)
@@ -92,7 +96,27 @@ public abstract class InventoryDisplay : MonoBehaviour
             }
         }
     }
+    private void ReturnItemToOriginalSlot()
+    {
+        if (mouseInventoryItem.AsssignedInventorySlot != null)
+        {
+            // Find the original slot
+            var originalSlot = slotDictionary.FirstOrDefault(x => x.Value == mouseInventoryItem.AsssignedInventorySlot).Key;
 
+            if (originalSlot != null)
+            {
+                // Return the item to its original slot
+                originalSlot.AssignedInventorySlot.AssignItem(mouseInventoryItem.AsssignedInventorySlot);
+                originalSlot.UpdateInventorySlot();
+                mouseInventoryItem.ClearSlot();
+            }
+            else
+            {
+                Debug.LogWarning("Could not find the original slot for the item. The item will be lost.");
+                mouseInventoryItem.ClearSlot();
+            }
+        }
+    }
     private void SwapSlot(InventorySlotUi slot)
     {
         InventorySlots tempSlot = new InventorySlots(slot.AssignedInventorySlot.ItemData, slot.AssignedInventorySlot.StackSize);
