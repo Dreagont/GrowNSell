@@ -14,14 +14,25 @@ public class Soil : MonoBehaviour
 
     void Update()
     {
+        UpdateVisual();
+    }
+
+    public void UpdateVisual()
+    {
         if (isWatered)
         {
             waterd.SetActive(true);
             noWatered.SetActive(false);
-        } else
+        }
+        else
         {
             waterd.SetActive(false);
             noWatered.SetActive(true);
         }
+    }
+
+    public void DeWater()
+    {
+        this.isWatered = false;
     }
 }

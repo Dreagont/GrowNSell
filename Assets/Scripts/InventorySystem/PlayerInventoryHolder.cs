@@ -149,7 +149,7 @@ public class PlayerInventoryHolder : InventoryHolder
     public void CloseInventory()
     {
         InventoryUiPanel.gameObject.SetActive(false);
-        GlobalVariables.CanUseInteractTools = true;
+        GlobalVariables.CanAction = true;
 
     }
     public bool AddToInventory(InventoryItemData inventoryItemData, int amount)

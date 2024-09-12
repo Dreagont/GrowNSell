@@ -18,6 +18,8 @@ public class TileManager : MonoBehaviour
     private Vector3Int previousHighlightedCell;
     public Transform soilsParent;  
     public Transform seedsParent;
+    public InventoryDisplay inventoryDisplay;
+    public ObjectsManager ObjectsManager;
 
     void Start()
     {
@@ -41,22 +43,31 @@ public class TileManager : MonoBehaviour
         cellPosition = interactableMap.WorldToCell(mousePos);
         InventoryItemData holdItem = playerInventoryHolder.holdingItem;
 
-        if (holdItem != null)
+        if (holdItem != null && GlobalVariables.CanAction)
         {
             if (holdItem.itemType1 == ItemType.Interaction || holdItem.itemType2 == ItemType.Interaction)
             {
-                if (Input.GetMouseButton(0) && GlobalVariables.CanUseInteractTools)
+                if (Input.GetMouseButtonDown(0))
                 {
-                    Plow();
+                    if (holdItem.EquipableTag == EquipableTag.Shovel)
+                    {
+                        Plow();
+                    }
+                    else if (holdItem.EquipableTag == EquipableTag.WateringCan)
+                    {
+                        Watering();
+                    }
                 }
                 HighlightTileUnderMouse();
             }
             else if (holdItem.itemType1 == ItemType.Seed || holdItem.itemType2 == ItemType.Seed)
             {
-                if (Input.GetMouseButton(0))
+                if (Input.GetMouseButtonDown(0))
                 {
                     PlantSeed();
                 }
+                HighlightTileUnderMouse();
+
             }
             else
             {
@@ -81,13 +92,47 @@ public class TileManager : MonoBehaviour
         }
     }
 
+    public void Watering()
+    {
+        Vector3 worldPosition = new Vector3(cellPosition.x + 0.5f, cellPosition.y + 0.5f, 0);
+        Collider2D hitCollider = Physics2D.OverlapPoint(worldPosition);
+
+        if (hitCollider != null)
+        {
+            Soil soil = hitCollider.GetComponent<Soil>();
+            if (soil != null)
+            {
+                soil.isWatered = true;
+                soil.UpdateVisual();    
+                ObjectsManager.SoilValues[worldPosition] = true; 
+            }
+        } else
+        {
+            Debug.Log("No soil to water here!");
+        }
+    }
+
     public void PlantSeed()
     {
         if (IsSoilAtPosition(cellPosition))
         {
-            Vector3 seedPosition = new Vector3(cellPosition.x + 0.5f, cellPosition.y + 0.5f, 0);
-            Instantiate(SeedPrefab, seedPosition, Quaternion.identity, seedsParent); 
-            Debug.Log("Seed planted at: " + seedPosition);
+            playerInventoryHolder.PrimaryInventorySystem.InventorySlots[playerInventoryHolder.SelectedSlot].RemoveFromStack(1);
+            inventoryDisplay.UpdateSlotStatic(playerInventoryHolder.PrimaryInventorySystem.InventorySlots[playerInventoryHolder.SelectedSlot]);
+            Vector3 seedPosition = new Vector3(cellPosition.x + 0.5f, cellPosition.y, 0);
+
+            if (!ObjectsManager.SeedValues.Contains(seedPosition))
+            {
+                GameObject seedInstance = Instantiate(SeedPrefab, seedPosition, Quaternion.identity, seedsParent);
+                Collider2D hitCollider = Physics2D.OverlapPoint(new Vector3(cellPosition.x + 0.5f, cellPosition.y + 0.5f, 0));
+                Soil soil = hitCollider.GetComponent<Soil>();
+                Seed seedScript = seedInstance.GetComponent<Seed>();
+                seedScript.thisSoil = soil;
+                ObjectsManager.SeedValues.Add(seedPosition);
+            } else
+            {
+                Debug.Log("Cannot plant seed here!");
+
+            }
         }
         else
         {
@@ -130,6 +175,7 @@ public class TileManager : MonoBehaviour
 
         Vector3 truePos = new Vector3(position.x + 0.5f, position.y + 0.5f, 0);
         Instantiate(PlantingSoil, truePos, Quaternion.identity, soilsParent);
+        ObjectsManager.SoilValues.Add(truePos, false);
     }
 
     public string GetTileName(Vector3Int position)
