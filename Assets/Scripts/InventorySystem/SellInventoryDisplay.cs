@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class SellInventoryDisplay : InventoryDisplay
 {
-    [SerializeField] private InventoryHolder inventoryHolder;
+    [SerializeField] private PlayerInventoryHolder playerInventoryHolder;
     [SerializeField] private InventorySlotUi[] slots;
 
     public override void AssignSlot(InventorySystem inventoryToDisplay)
@@ -27,9 +27,9 @@ public class SellInventoryDisplay : InventoryDisplay
     protected override void Start()
     {
         base.Start();
-        if (inventoryHolder != null)
+        if (playerInventoryHolder != null)
         {
-            //inventorySystem = inventoryHolder.SellInventorySystem;
+            inventorySystem = playerInventoryHolder.SellInventorySystem;
             InventorySystem.OnInventorySlotsChanged += UpdateSlotStatic;
             AssignSlot(inventorySystem);
         }

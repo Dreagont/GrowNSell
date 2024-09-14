@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: CopperWateringCan
   m_EditorClassIdentifier: 
   ID: 6
-  displayName: CopperWateringCan
+  displayName: Copper Watering Can
   description: Water crops to grow
   icon: {fileID: -274833639, guid: 149d97fc8d899244b8ed11be675859d3, type: 3}
   MaxStackSize: 0
   sellPrice: 10
+  buyPrice: 15
   itemType1: 1
   itemType2: 0
   EquipableTag: 2

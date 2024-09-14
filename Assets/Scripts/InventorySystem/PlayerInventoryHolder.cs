@@ -14,6 +14,11 @@ public class PlayerInventoryHolder : InventoryHolder
 
     public InventorySystem SecondaryInventorySystem => secondaryInventorySystem;
 
+    [SerializeField] private int sellInventorySize;
+    [SerializeField] protected InventorySystem sellInventorySystem;
+
+    public InventorySystem SellInventorySystem => sellInventorySystem;
+
     public Image chestImage;
 
     public InventorySlotUi[] SlotUi;
@@ -25,6 +30,7 @@ public class PlayerInventoryHolder : InventoryHolder
         base.Awake();
         SaveLoad.OnLoadGame += LoadAll;
         secondaryInventorySystem = new InventorySystem(secondayInventorySize);
+        sellInventorySystem = new InventorySystem(sellInventorySize);
         
        /* if (SaveGameManager.data == null)
         {

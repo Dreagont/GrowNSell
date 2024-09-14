@@ -5,11 +5,10 @@ public class DayManager : MonoBehaviour
 {
     private float elapsedTime = 0f;
     public int currentDay = 1;
-    public float timeMultiplier = 1f;
     public TextMeshProUGUI timeText;
     public TextMeshProUGUI timeMultiText;
     public ObjectsManager objectsManager;
-
+    private float timeMultiplier;
 
     void Update()
     {
@@ -21,6 +20,7 @@ public class DayManager : MonoBehaviour
 
     public void UpdateTime()
     {
+        timeMultiplier = GlobalVariables.timeMultiplier;
         elapsedTime += Time.deltaTime * timeMultiplier;
         GlobalVariables.TimeCounter += Time.deltaTime * timeMultiplier;
 
@@ -47,11 +47,11 @@ public class DayManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.K))
         {
-            timeMultiplier = 1f; 
+            GlobalVariables.timeMultiplier = 1f; 
         }
         else if (Input.GetKeyDown(KeyCode.L))
         {
-            timeMultiplier = 8f; 
+            GlobalVariables.timeMultiplier = 8f; 
         }
         
     }

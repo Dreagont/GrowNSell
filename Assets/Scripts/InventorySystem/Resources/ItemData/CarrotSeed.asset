@@ -10,14 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c7ca7bc84f6875647b44506e56f5535e, type: 3}
-  m_Name: Carrot
+  m_Name: CarrotSeed
   m_EditorClassIdentifier: 
   ID: 56
-  displayName: Carrot
+  displayName: Carrot Seed
   description: Carrot
-  icon: {fileID: -1429853927, guid: 9470b17ec078762449d7fbcec5647f51, type: 3}
+  icon: {fileID: -138140717, guid: 9470b17ec078762449d7fbcec5647f51, type: 3}
   MaxStackSize: 9999
-  sellPrice: 60
+  sellPrice: 600
+  buyPrice: 150
   itemType1: 2
   itemType2: 0
   EquipableTag: 0

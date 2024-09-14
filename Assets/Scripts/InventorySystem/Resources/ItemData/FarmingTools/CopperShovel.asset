@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: CopperShovel
   m_EditorClassIdentifier: 
   ID: -1
-  displayName: CopperShovel
+  displayName: Copper Shovel
   description: Use to dig farmland
   icon: {fileID: 573438432, guid: 149d97fc8d899244b8ed11be675859d3, type: 3}
   MaxStackSize: 1
-  sellPrice: 10
+  sellPrice: 1000
+  buyPrice: 15
   itemType1: 1
   itemType2: 0
   EquipableTag: 3

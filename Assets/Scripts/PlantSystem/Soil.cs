@@ -7,6 +7,7 @@ public class Soil : MonoBehaviour
     public GameObject waterd;
     public GameObject noWatered;
     public bool isWatered = false;
+    public float waterTimer = 0;
     void Start()
     {
         
@@ -34,5 +35,12 @@ public class Soil : MonoBehaviour
     public void DeWater()
     {
         this.isWatered = false;
+        waterTimer = 0;
+    }
+
+    public void Wartering()
+    {
+        this.isWatered = true;
+        waterTimer += Time.deltaTime * GlobalVariables.timeMultiplier;
     }
 }

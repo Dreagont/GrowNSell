@@ -33,11 +33,14 @@ public class Seed : MonoBehaviour
     {
         if (currentState < growStates - 1)
         {
-            if (GlobalVariables.TimeCounter  - timePlanted >= secondChangeState - 1 && thisSoil.isWatered)
-            {
-                currentState++;
-                UpdateSeedSprite();
+            if (GlobalVariables.TimeCounter  - timePlanted >= secondChangeState - 1)
+            { 
                 timePlanted = GlobalVariables.TimeCounter;
+                if (thisSoil.isWatered)
+                {
+                    currentState++;
+                    UpdateSeedSprite();
+                }
             }
         }
     }
