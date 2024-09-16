@@ -24,7 +24,6 @@ public class InventoryUIController : MonoBehaviour
     private void OnDisable()
     {
         InventoryHolder.onDynamicInventoryDisplayRequested -= DisplayInventory;
-
     }
 
     void Update()

@@ -56,7 +56,11 @@ public class TileManager : MonoBehaviour
                     else if (holdItem.EquipableTag == EquipableTag.WateringCan)
                     {
                         Watering();
+                    } else if (holdItem.EquipableTag == EquipableTag.Hoe)
+                    {
+                        Harvest();
                     }
+
                 }
                 HighlightTileUnderMouse();
             }
@@ -94,8 +98,9 @@ public class TileManager : MonoBehaviour
 
     public void Watering()
     {
+        int soilLayerMask = LayerMask.GetMask("Soil");
         Vector3 worldPosition = new Vector3(cellPosition.x + 0.5f, cellPosition.y + 0.5f, 0);
-        Collider2D hitCollider = Physics2D.OverlapPoint(worldPosition);
+        Collider2D hitCollider = Physics2D.OverlapPoint(worldPosition, soilLayerMask);
 
         if (hitCollider != null)
         {
@@ -112,27 +117,51 @@ public class TileManager : MonoBehaviour
         }
     }
 
+    public void Harvest()
+    {
+        int seedLayerMask = LayerMask.GetMask("Seed");
+        Vector3 worldPosition = new Vector3(cellPosition.x + 0.5f, cellPosition.y + 0.5f, 0);
+        Collider2D hitCollider = Physics2D.OverlapPoint(worldPosition, seedLayerMask);
+
+        if (hitCollider != null)
+        { 
+            Seed seed = hitCollider.GetComponent<Seed>();
+            if (seed != null)
+            {
+                if (seed.Harvestable)
+                {
+                    playerInventoryHolder.PrimaryInventorySystem.AddToInventory(seed.SeedData.SeedProduct, 1);
+                    ObjectsManager.SeedValues.Remove(seed.position);
+                    Destroy(seed.gameObject);
+                }
+            }
+        }
+    }
+
     public void PlantSeed()
     {
         if (IsSoilAtPosition(cellPosition))
         {
+            
             playerInventoryHolder.PrimaryInventorySystem.InventorySlots[playerInventoryHolder.SelectedSlot].RemoveFromStack(1);
             inventoryDisplay.UpdateSlotStatic(playerInventoryHolder.PrimaryInventorySystem.InventorySlots[playerInventoryHolder.SelectedSlot]);
             Vector3 seedPosition = new Vector3(cellPosition.x + 0.5f, cellPosition.y, 0);
-
-            if (!ObjectsManager.SeedValues.Contains(seedPosition))
+            
+            if (ObjectsManager.SeedValues.ContainsKey(seedPosition))
             {
-                GameObject seedInstance = Instantiate(SeedPrefab, seedPosition, Quaternion.identity, seedsParent);
-                Collider2D hitCollider = Physics2D.OverlapPoint(new Vector3(cellPosition.x + 0.5f, cellPosition.y + 0.5f, 0));
-                Soil soil = hitCollider.GetComponent<Soil>();
-                Seed seedScript = seedInstance.GetComponent<Seed>();
-                seedScript.thisSoil = soil;
-                ObjectsManager.SeedValues.Add(seedPosition);
-            } else
-            {
-                Debug.Log("Cannot plant seed here!");
-
+                Debug.Log("A seed is already planted here!");
+                return;
             }
+
+            GameObject seedInstance = Instantiate(SeedPrefab, seedPosition, Quaternion.identity, seedsParent);
+            int soilLayerMask = LayerMask.GetMask("Soil");
+            Collider2D hitCollider = Physics2D.OverlapPoint(new Vector3(cellPosition.x + 0.5f, cellPosition.y + 0.5f, 0), soilLayerMask);
+            Soil soil = hitCollider.GetComponent<Soil>();
+            Seed seedScript = seedInstance.GetComponent<Seed>();
+            seedScript.thisSoil = soil;
+            seedScript.position = seedPosition;
+            ObjectsManager.SeedValues.Add(seedPosition, 0);
+            
         }
         else
         {
@@ -143,7 +172,8 @@ public class TileManager : MonoBehaviour
     public bool IsSoilAtPosition(Vector3Int position)
     {
         Vector3 worldPosition = new Vector3(position.x + 0.5f, position.y + 0.5f, 0);
-        Collider2D hitCollider = Physics2D.OverlapPoint(worldPosition);
+        int soilLayerMask = LayerMask.GetMask("Soil");
+        Collider2D hitCollider = Physics2D.OverlapPoint(worldPosition, soilLayerMask);
 
         if (hitCollider != null)
         {

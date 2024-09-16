@@ -16,3 +16,4 @@ MonoBehaviour:
   SeedLevel: 1
   GrowTime: 5
   Season: 0
+  SeedProduct: {fileID: 11400000, guid: bad58e23df63a0b4088727a468b58c42, type: 2}

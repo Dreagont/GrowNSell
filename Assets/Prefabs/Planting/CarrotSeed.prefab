@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4422481601899791608}
   - component: {fileID: 912814192893136198}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Plant_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,9 @@ GameObject:
   m_Component:
   - component: {fileID: 361703615432321432}
   - component: {fileID: 5934752300463931241}
-  m_Layer: 0
+  - component: {fileID: 698359088755244958}
+  - component: {fileID: 8710364520096056884}
+  m_Layer: 7
   m_Name: CarrotSeed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -139,6 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SeedData: {fileID: 11400000, guid: bd1a6a013db20d146828f1c56a1178eb, type: 2}
+  currentState: 0
   States:
   - {fileID: 2774684258000734272}
   - {fileID: 2985406606970303057}
@@ -152,6 +155,82 @@ MonoBehaviour:
   - {fileID: 5920490776493025340}
   secondChangeState: 0
   timePlanted: 0
+  thisSoil: {fileID: 0}
+  Harvestable: 0
+  position: {x: 0, y: 0, z: 0}
+  temp: 0
+--- !u!61 &698359088755244958
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1737187064802512040}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!50 &8710364520096056884
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1737187064802512040}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &2132664985357386317
 GameObject:
   m_ObjectHideFlags: 0
@@ -162,7 +241,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1107276187912086086}
   - component: {fileID: 5765557944756745792}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Plant_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -246,7 +325,7 @@ GameObject:
   m_Component:
   - component: {fileID: 838589337362451557}
   - component: {fileID: 469550672131979201}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Plant_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -330,7 +409,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8781076714997780666}
   - component: {fileID: 6704477450041762930}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Plant_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -414,7 +493,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1308832438624929304}
   - component: {fileID: 7419308672410546544}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Plant_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -498,7 +577,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8757231338593130022}
   - component: {fileID: 2609454771314313099}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Plant_9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -582,7 +661,7 @@ GameObject:
   m_Component:
   - component: {fileID: 200943407461393467}
   - component: {fileID: 3225782776427607981}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Plant_10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -666,7 +745,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3629867723722641295}
   - component: {fileID: 7090531185984746227}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Plant_11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -750,7 +829,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7153217927855917661}
   - component: {fileID: 2473060181403659261}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Plant_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -834,7 +913,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4653895792568731139}
   - component: {fileID: 3692300213903592444}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Plant_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}

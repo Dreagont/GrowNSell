@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditorInternal;
 using UnityEngine;
 
 public class Seed : MonoBehaviour
@@ -8,19 +5,20 @@ public class Seed : MonoBehaviour
     public SeedData SeedData;
     private float growStates = 10;
     private float periodStates;
-    private int currentState = 0;
+    public int currentState = 0;
     public GameObject[] States;
     public int secondChangeState;
     public float timePlanted;
     public Soil thisSoil;
+    public bool Harvestable = false;
+    public Vector3 position;
+    public int temp = 0;
+
     void Start()
     {
-        timePlanted = GlobalVariables.TimeCounter;
-
-        periodStates = SeedData.GrowTime/ growStates ;
-        
+        timePlanted = (GlobalVariables.currentDay - 1) * 120f;
+        periodStates = SeedData.GrowTime / growStates;
         secondChangeState = (int)(120 * periodStates);
-
         UpdateSeedSprite();
     }
 
@@ -33,29 +31,32 @@ public class Seed : MonoBehaviour
     {
         if (currentState < growStates - 1)
         {
-            if (GlobalVariables.TimeCounter  - timePlanted >= secondChangeState - 1)
-            { 
-                timePlanted = GlobalVariables.TimeCounter;
-                if (thisSoil.isWatered)
-                {
-                    currentState++;
-                    UpdateSeedSprite();
-                }
+            float timeSinceLastUpdate = GlobalVariables.TimeCounter - timePlanted;
+
+            int statesToAdvance = (int)(timeSinceLastUpdate / secondChangeState);
+
+            if (statesToAdvance > 0)
+            {
+                temp += statesToAdvance;
+                timePlanted += statesToAdvance * secondChangeState; // Update the planted time
             }
         }
     }
 
     public void UpdateSeedSprite()
     {
+        currentState += temp;  
+        currentState = Mathf.Min(currentState, States.Length - 1);  
+
         for (int i = 0; i < States.Length; i++)
         {
-            if (i != currentState)
-            {
-                States[i].gameObject.SetActive(false);
-            }
+            States[i].SetActive(i == currentState);
         }
-        States[currentState].gameObject.SetActive(true);   
+
+        temp = 0;
+        if (currentState == growStates - 1)
+        {
+            Harvestable = true;
+        }
     }
-
-
 }

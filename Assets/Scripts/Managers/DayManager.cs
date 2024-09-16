@@ -4,14 +4,15 @@ using UnityEngine;
 public class DayManager : MonoBehaviour
 {
     private float elapsedTime = 0f;
-    public int currentDay = 1;
     public TextMeshProUGUI timeText;
     public TextMeshProUGUI timeMultiText;
     public ObjectsManager objectsManager;
     private float timeMultiplier;
+    public int currentDay;
 
     void Update()
     {
+        currentDay = GlobalVariables.currentDay;
         UpdateTime();
         HandleSpeedUpInput();
         UpdateUIText();
@@ -38,9 +39,11 @@ public class DayManager : MonoBehaviour
     void AdvanceDay()
     {
         elapsedTime = 0f;
-        currentDay++;
+        GlobalVariables.currentDay++;
+        GlobalVariables.TimeCounter = GlobalVariables.currentDay * 120f;
+        objectsManager.UpdateSeedSpriteAndState();
         objectsManager.DeWaterAll();
-        Debug.Log("Day: " + currentDay);
+        Debug.Log("Day: " + GlobalVariables.currentDay);
     }
 
     void HandleSpeedUpInput()
@@ -51,7 +54,7 @@ public class DayManager : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.L))
         {
-            GlobalVariables.timeMultiplier = 8f; 
+            GlobalVariables.timeMultiplier = 10f; 
         }
         
     }
@@ -59,6 +62,5 @@ public class DayManager : MonoBehaviour
     public void SkipDay()
     {
         AdvanceDay();
-        GlobalVariables.TimeCounter = currentDay * 120;
     }
 }

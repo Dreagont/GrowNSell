@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2711471651207436554}
   - component: {fileID: 8132710414341894523}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: NoWater
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 382687639056667034}
   - component: {fileID: 1057763476475413481}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Water
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -180,7 +180,7 @@ GameObject:
   - component: {fileID: 4007214707627358837}
   - component: {fileID: -1468586144476453113}
   - component: {fileID: 6697984314447016422}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlantingSoil
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -219,6 +219,7 @@ MonoBehaviour:
   waterd: {fileID: 5067438815594132360}
   noWatered: {fileID: 1456090706623678359}
   isWatered: 0
+  waterTimer: 0
 --- !u!50 &-1468586144476453113
 Rigidbody2D:
   serializedVersion: 4

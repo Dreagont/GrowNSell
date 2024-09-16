@@ -10,6 +10,7 @@ public class SeedData : ScriptableObject
     public int SeedLevel;
     public int GrowTime;
     public Season Season;
+    public InventoryItemData SeedProduct;
 }
 
 public enum Season

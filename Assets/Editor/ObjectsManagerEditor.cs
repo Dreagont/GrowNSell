@@ -21,7 +21,7 @@ public class ObjectsManagerEditor : Editor
 
         foreach (var seedPos in objManager.SeedValues)
         {
-            GUILayout.Label($"Position: {seedPos}");
+            GUILayout.Label($"Position: {seedPos.Key} - State: {seedPos.Value}");
         }
     }
 }

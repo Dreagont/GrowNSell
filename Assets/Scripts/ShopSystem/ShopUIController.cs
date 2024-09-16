@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class ShopUIController : MonoBehaviour
 {
@@ -13,7 +14,11 @@ public class ShopUIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Keyboard.current.escapeKey.wasPressedThisFrame)
+        {
+            ShopUI.SetActive(false);
+            GlobalVariables.CanAction = true;
+        }
     }
 
     public void ToggleShopUI()
