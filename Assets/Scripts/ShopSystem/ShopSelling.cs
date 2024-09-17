@@ -7,22 +7,23 @@ public class ShopSelling : MonoBehaviour
 {
     public TextMeshProUGUI GoldText;
     private PlayerInventoryHolder inventoryHolder;
-
+    private GameManager gameManager;
     void Start()
     {
+        gameManager = FindObjectOfType<GameManager>();
         inventoryHolder = FindObjectOfType<PlayerInventoryHolder>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        GoldText.text = GlobalVariables.FormatNumber(GlobalVariables.Gold);    
+        GoldText.text = GlobalVariables.FormatNumber(gameManager.Gold);    
     }
 
     public void SellItem()
     {
         InventorySlots sellSlot = inventoryHolder.SellInventorySystem.InventorySlots[0];
-        GlobalVariables.Gold += sellSlot.ItemData.sellPrice * sellSlot.StackSize;
+        gameManager.Gold += sellSlot.ItemData.sellPrice * sellSlot.StackSize;
         sellSlot.RemoveFromStack(sellSlot.StackSize);
         Debug.Log("addded" + sellSlot.ItemData.sellPrice * sellSlot.StackSize);
     }

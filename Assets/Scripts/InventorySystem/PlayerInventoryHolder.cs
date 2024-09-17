@@ -71,11 +71,11 @@ public class PlayerInventoryHolder : InventoryHolder
         float scrollDelta = Mouse.current.scroll.ReadValue().y;
         if (scrollDelta > 0)
         {
-            IncreaseSelectedSlot();
+            DecreaseSelectedSlot();
         }
         else if (scrollDelta < 0)
         {
-            DecreaseSelectedSlot();
+            IncreaseSelectedSlot();
         }
 
         if (Keyboard.current.digit1Key.wasPressedThisFrame) SelectedSlot = 0;

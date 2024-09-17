@@ -7,22 +7,35 @@ public class TileManager : MonoBehaviour
 {
     public Tilemap interactableMap;
     public Tilemap highlightMap;
+    public Tilemap FarmSoilMap;
+    public Tilemap FarmWaterMap;
+    public Tilemap GrassBorderMap;
+
     public Tile hiddenInteractableTile;
     public Tile interactedTile;
+    public Tile highlightTile;
+    public TileBase SoilTile;
+    public TileBase WateredSoilTile;
+    public TileBase BorderTile;
+
     public GameObject PlantingSoil;
     public GameObject SeedPrefab;
-    [SerializeField] private Tile highlightTile;
+
     public Vector3 mousePos;
     public Vector3Int cellPosition;
+
     private PlayerInventoryHolder playerInventoryHolder;
     private Vector3Int previousHighlightedCell;
-    public Transform soilsParent;  
-    public Transform seedsParent;
     public InventoryDisplay inventoryDisplay;
     public ObjectsManager ObjectsManager;
 
+    public Transform soilsParent;  
+    public Transform seedsParent;
+
+
     void Start()
     {
+        interactableMap.gameObject.SetActive(true);
         playerInventoryHolder = FindAnyObjectByType<PlayerInventoryHolder>();
         if (hiddenInteractableTile != null)
         {
@@ -199,14 +212,30 @@ public class TileManager : MonoBehaviour
         return false;
     }
 
-    public void SetInteracted(Vector3Int position)
-    {
-        interactableMap.SetTile(position, interactedTile);
+        public void SetInteracted(Vector3Int position)
+        {
+            interactableMap.SetTile(position, interactedTile);
+            FarmSoilMap.SetTile(position, SoilTile);
 
-        Vector3 truePos = new Vector3(position.x + 0.5f, position.y + 0.5f, 0);
-        Instantiate(PlantingSoil, truePos, Quaternion.identity, soilsParent);
-        ObjectsManager.SoilValues.Add(truePos, false);
-    }
+            PlaceBordersAround(position);
+
+            Vector3 truePos = new Vector3(position.x + 0.5f, position.y + 0.5f, 0);
+            Instantiate(PlantingSoil, truePos, Quaternion.identity, soilsParent);
+            ObjectsManager.SoilValues.Add(truePos, false);
+        }
+
+        private void PlaceBordersAround(Vector3Int centerPosition)
+        {
+            for (int x = -1; x <= 1; x++)
+            {
+                for (int y = -1; y <= 1; y++)
+                {
+                    Vector3Int borderPosition = new Vector3Int(centerPosition.x + x, centerPosition.y + y, centerPosition.z);
+
+                    GrassBorderMap.SetTile(borderPosition, BorderTile);
+                }
+            }
+        }
 
     public string GetTileName(Vector3Int position)
     {

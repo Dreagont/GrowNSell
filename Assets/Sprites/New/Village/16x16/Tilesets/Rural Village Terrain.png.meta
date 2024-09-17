@@ -11997,8 +11997,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9add6c5b55d14324f8b94fcd2b2d616b
-      internalID: 1049648561
+      spriteID: 70cf594feae6987449cb5c296a04fa35
+      internalID: 3121287
       vertices: []
       indices: 
       edges: []
@@ -12018,8 +12018,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fb0054bf01d0473499f47d9017ecc7cb
-      internalID: -1580425673
+      spriteID: 9a33274ebe4dd7e46ae5df7b391e6c7a
+      internalID: -515071277
       vertices: []
       indices: 
       edges: []
@@ -12039,8 +12039,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3c4ccb88be480c94f9fba985b239fe11
-      internalID: -727584756
+      spriteID: 932f52df6204829459f498d2772d445c
+      internalID: 1756189885
       vertices: []
       indices: 
       edges: []
@@ -12060,8 +12060,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 43fbbd916c346484a8ee50825cda5d2e
-      internalID: -1501806731
+      spriteID: ddd03f7229c00fe4691fb80110dec588
+      internalID: 820923748
       vertices: []
       indices: 
       edges: []
@@ -12081,8 +12081,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e88e1bab3a327aa41a4d66216d1fd9c8
-      internalID: 121003814
+      spriteID: f1c0d127cdded264093bf46f693c87a3
+      internalID: -1709678751
       vertices: []
       indices: 
       edges: []
@@ -12102,8 +12102,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f1bf2132e56077c4591878f5f3a1f622
-      internalID: 2072278515
+      spriteID: 1c53b137f0e79bc42aa0f86f45b81c42
+      internalID: 374352332
       vertices: []
       indices: 
       edges: []
@@ -12123,8 +12123,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d7888d6a736312f45b0d1c3d5e50aac2
-      internalID: 1971504418
+      spriteID: 172ef572b1169c546b01877cac846478
+      internalID: -1819043150
       vertices: []
       indices: 
       edges: []
@@ -12144,8 +12144,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4f0e74f8eeb31b24bb0d7ecdeb6851ef
-      internalID: 1328485211
+      spriteID: 4593424542e686d4f9008399b070ef7c
+      internalID: 1387642616
       vertices: []
       indices: 
       edges: []
@@ -12680,15 +12680,15 @@ TextureImporter:
       Rural Village Terrain_563: -564158428
       Rural Village Terrain_564: -1205138176
       Rural Village Terrain_565: -1147000815
-      Rural Village Terrain_566: 1049648561
-      Rural Village Terrain_567: -1580425673
-      Rural Village Terrain_568: -727584756
-      Rural Village Terrain_569: -1501806731
+      Rural Village Terrain_566: 3121287
+      Rural Village Terrain_567: -515071277
+      Rural Village Terrain_568: 1756189885
+      Rural Village Terrain_569: 820923748
       Rural Village Terrain_57: -849613435
-      Rural Village Terrain_570: 121003814
-      Rural Village Terrain_571: 2072278515
-      Rural Village Terrain_572: 1971504418
-      Rural Village Terrain_573: 1328485211
+      Rural Village Terrain_570: -1709678751
+      Rural Village Terrain_571: 374352332
+      Rural Village Terrain_572: -1819043150
+      Rural Village Terrain_573: 1387642616
       Rural Village Terrain_58: -1849761514
       Rural Village Terrain_59: 1546414042
       Rural Village Terrain_6: -72201445

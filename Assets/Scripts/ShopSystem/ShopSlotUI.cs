@@ -11,9 +11,11 @@ public class ShopSlotUI : MonoBehaviour
     public TextMeshProUGUI ItemName;
     public TextMeshProUGUI ItemPrice;
     private PlayerInventoryHolder playerInventoryHolder;
+    private GameManager gameManager;
     void Start()
     {
         playerInventoryHolder = FindAnyObjectByType<PlayerInventoryHolder>();
+        gameManager = FindObjectOfType<GameManager>();
         SetUi();
     }
 
@@ -33,9 +35,9 @@ public class ShopSlotUI : MonoBehaviour
     {
         if (playerInventoryHolder.AddToHotBar(InventoryItemData,1)) 
         {
-            if (GlobalVariables.CanAffordItem(InventoryItemData.buyPrice))
+            if (gameManager.CanAffordItem(InventoryItemData.buyPrice))
             {
-                GlobalVariables.Gold -= InventoryItemData.buyPrice; 
+                gameManager.Gold -= InventoryItemData.buyPrice; 
             }
         }
     }

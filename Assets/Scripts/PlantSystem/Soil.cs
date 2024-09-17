@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Soil : MonoBehaviour
 {
-    public GameObject waterd;
-    public GameObject noWatered;
     public bool isWatered = false;
     public float waterTimer = 0;
     void Start()
@@ -20,16 +18,7 @@ public class Soil : MonoBehaviour
 
     public void UpdateVisual()
     {
-        if (isWatered)
-        {
-            waterd.SetActive(true);
-            noWatered.SetActive(false);
-        }
-        else
-        {
-            waterd.SetActive(false);
-            noWatered.SetActive(true);
-        }
+        
     }
 
     public void DeWater()
