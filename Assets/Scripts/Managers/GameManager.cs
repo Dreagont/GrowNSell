@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class GameManager : MonoBehaviour
 
     public int Energy = 100;
     public int CurrentEnergy = 100;
+
+    public Text GoldText;
+
     void Start()
     {
         
@@ -17,7 +21,14 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Gold < 1000000000)
+        {
+            GoldText.text = Gold.ToString();
+        } else
+        {
+            GoldText.text = GlobalVariables.FormatNumber(Gold);
+
+        }
     }
     public bool CanAffordItem(int itemPrice)
     {

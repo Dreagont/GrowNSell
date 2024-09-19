@@ -20,6 +20,8 @@ public class PlayerInventoryHolder : InventoryHolder
     public InventorySystem SellInventorySystem => sellInventorySystem;
 
     public Image chestImage;
+    public GameObject FadeScrren;
+
 
     public InventorySlotUi[] SlotUi;
     public int SelectedSlot = 0;
@@ -149,6 +151,7 @@ public class PlayerInventoryHolder : InventoryHolder
             CloseInventory();
         } else
         {
+            FadeScrren.gameObject.SetActive(true);
             onDynamicInventoryDisplayRequested?.Invoke(SecondaryInventorySystem);
         }
     }
@@ -156,6 +159,7 @@ public class PlayerInventoryHolder : InventoryHolder
     {
         InventoryUiPanel.gameObject.SetActive(false);
         GlobalVariables.CanAction = true;
+        FadeScrren.gameObject.SetActive(false);
 
     }
     public bool AddToInventory(InventoryItemData inventoryItemData, int amount)

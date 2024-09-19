@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class ShopSelling : MonoBehaviour
 {
-    public Text GoldText;
     private PlayerInventoryHolder inventoryHolder;
     private GameManager gameManager;
     void Start()
@@ -18,7 +17,6 @@ public class ShopSelling : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GoldText.text = GlobalVariables.FormatNumber(gameManager.Gold);    
     }
 
     public void SellItem()

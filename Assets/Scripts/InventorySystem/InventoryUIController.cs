@@ -9,7 +9,6 @@ public class InventoryUIController : MonoBehaviour
 {
     public DynamicInventoryDisplay inventoryPanel;
     public GameObject inventoryPanelOuter;
-
     
     private void Awake()
     {
@@ -36,6 +35,5 @@ public class InventoryUIController : MonoBehaviour
         inventoryPanelOuter.gameObject.SetActive(true);
         GlobalVariables.CanAction = false;
         inventoryPanel.RefreshDynamicInventory(inventoryToDisplay);
-
     }
 }
