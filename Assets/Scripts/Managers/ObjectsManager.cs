@@ -1,11 +1,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class ObjectsManager : MonoBehaviour
 {
     public Dictionary<Vector3, bool> SoilValues = new Dictionary<Vector3, bool>();
     public Dictionary<Vector3, int> SeedValues = new Dictionary<Vector3, int>();
+    public Tilemap WaterSoilMap;
     public Soil[] Soils;
     public Seed[] Seeds;
 
@@ -25,6 +27,13 @@ public class ObjectsManager : MonoBehaviour
         foreach (var soil in Soils)
         {
             soil.DeWater();
+        }
+        foreach (var position in WaterSoilMap.cellBounds.allPositionsWithin)
+        {
+            if (WaterSoilMap.HasTile(position))
+            {
+                WaterSoilMap.SetTile(position, null);
+            }
         }
     }
 

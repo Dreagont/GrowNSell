@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7ca7bc84f6875647b44506e56f5535e, type: 3}
+  m_Name: CopperPickAxe
+  m_EditorClassIdentifier: 
+  ID: 11
+  displayName: Copper Pickxe
+  description: Copper Pickaxe
+  icon: {fileID: 446434864, guid: 1ff9d6f4ecd51ba4a84696e4111b7002, type: 3}
+  MaxStackSize: 1
+  sellPrice: 10
+  buyPrice: 100
+  itemType1: 1
+  itemType2: 0
+  EquipableTag: 5

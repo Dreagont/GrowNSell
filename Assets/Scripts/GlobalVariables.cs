@@ -33,4 +33,9 @@ public static class GlobalVariables
         int seconds = (int)(timeInSeconds % 60);
         return string.Format("{0:00}:{1:00}", minutes, seconds);
     }
+
+    public static float UpdateFillBar(float currentValue, float sumValue)
+    {
+        return currentValue / sumValue;
+    }
 }

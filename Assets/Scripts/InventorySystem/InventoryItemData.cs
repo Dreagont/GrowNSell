@@ -30,5 +30,9 @@ public enum EquipableTag
     None,
     Hoe,
     WateringCan,
-    Shovel
+    Shovel,
+    Axe,
+    Pickaxe,
+    FishingRod,
+    Hammer
 }

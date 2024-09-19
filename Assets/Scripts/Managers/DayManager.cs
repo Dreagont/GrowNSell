@@ -9,6 +9,12 @@ public class DayManager : MonoBehaviour
     public ObjectsManager objectsManager;
     private float timeMultiplier;
     public int currentDay;
+    private GameManager gameManager;
+
+    private void Start()
+    {
+        gameManager = GetComponentInParent<GameManager>();
+    }
 
     void Update()
     {
@@ -43,6 +49,7 @@ public class DayManager : MonoBehaviour
         GlobalVariables.TimeCounter = GlobalVariables.currentDay * 120f;
         objectsManager.UpdateSeedSpriteAndState();
         objectsManager.DeWaterAll();
+        gameManager.RefillEnergy();
         Debug.Log("Day: " + GlobalVariables.currentDay);
     }
 

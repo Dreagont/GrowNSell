@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,5 +22,21 @@ public class GameManager : MonoBehaviour
     public bool CanAffordItem(int itemPrice)
     {
         return Gold - itemPrice >= 0;
+    }
+
+
+    public void ConsumeEnergy(int energyCost)
+    {
+        CurrentEnergy -= energyCost;
+    }
+
+    public bool ActionAble(int energyCost)
+    {
+        return CurrentEnergy >= energyCost;
+    }
+
+    public void RefillEnergy()
+    {
+        CurrentEnergy = Energy;
     }
 }

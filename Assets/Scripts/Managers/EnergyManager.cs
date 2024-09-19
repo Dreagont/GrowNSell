@@ -11,18 +11,13 @@ public class EnergyManager : MonoBehaviour
     void Start()
     {
         gameManager = GetComponentInParent<GameManager>();
-        UpdateFillBar();
-        
+        Fillbar.fillAmount =GlobalVariables.UpdateFillBar(gameManager.CurrentEnergy, gameManager.Energy);
     }
 
     // Update is called once per frame
     void Update()
     {
-        UpdateFillBar();
+        Fillbar.fillAmount = GlobalVariables.UpdateFillBar(gameManager.CurrentEnergy, gameManager.Energy);
     }
-    public void UpdateFillBar()
-    {
-        review = (float)gameManager.CurrentEnergy / (float)gameManager.Energy;
-        Fillbar.fillAmount = review;
-    }
+
 }

@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 48
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -310,10 +310,10 @@ TextureImporter:
       name: Windows_10
       rect:
         serializedVersion: 2
-        x: 432
-        y: 64
-        width: 48
-        height: 48
+        x: 435
+        y: 68
+        width: 41
+        height: 39
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -525,7 +525,7 @@ TextureImporter:
         width: 48
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -533,6 +533,48 @@ TextureImporter:
       bones: []
       spriteID: b6ded4af46cfdb34290e529ea5c00d7b
       internalID: -900098653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Windows_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 80
+        width: 48
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38b09ce1a42aded4f8aad33924456788
+      internalID: 304088590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Windows_22
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 272
+        width: 48
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b913895a7d2db44cbfe3e03622385aa
+      internalID: 780687380
       vertices: []
       indices: 
       edges: []
@@ -562,6 +604,9 @@ TextureImporter:
       Windows_19: -964444000
       Windows_2: -1457555532
       Windows_20: -900098653
+      Windows_21: 304088590
+      Windows_22: 780687380
+      Windows_23: 1952956408
       Windows_3: -1840228628
       Windows_4: -781643734
       Windows_5: -1668804961

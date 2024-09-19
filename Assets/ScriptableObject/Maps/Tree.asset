@@ -9,10 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea18eb0b14e36c84381f73216c27144b, type: 3}
-  m_Name: Level 2
+  m_Script: {fileID: 11500000, guid: ecb01ca44485bbe4f91829d5f3826ab9, type: 3}
+  m_Name: Tree
   m_EditorClassIdentifier: 
-  character: 0
-  arenaSpeedBonus: 0
-  arenaQualityBonus: 5
-  EnergyCost: 20
+  Name: Tree
+  DropItems:
+  - {fileID: 11400000, guid: 0cedbd8decb94f4419e1ea8b0c896c03, type: 2}
+  DropQuantity: 3
+  Health: 10
+  Experience: 2

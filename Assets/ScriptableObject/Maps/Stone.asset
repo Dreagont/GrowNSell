@@ -9,10 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea18eb0b14e36c84381f73216c27144b, type: 3}
-  m_Name: Level 1
+  m_Script: {fileID: 11500000, guid: ecb01ca44485bbe4f91829d5f3826ab9, type: 3}
+  m_Name: Stone
   m_EditorClassIdentifier: 
-  character: 0
-  arenaSpeedBonus: 0
-  arenaQualityBonus: 0
-  EnergyCost: 10
+  Name: Stone
+  DropItems:
+  - {fileID: 11400000, guid: 77a3b31e98d2fcf408203bdb6c59b9e4, type: 2}
+  DropQuantity: 3
+  Health: 10
+  Experience: 2
+  ObjectType: 1
