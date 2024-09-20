@@ -16,6 +16,7 @@ MonoBehaviour:
   displayName: Stone
   description: Stone
   icon: {fileID: -28450154, guid: 7f03d2669e399644f827b33bb44a1df1, type: 3}
+  dropIcon: {fileID: -1199838761, guid: 7f03d2669e399644f827b33bb44a1df1, type: 3}
   MaxStackSize: 9999
   sellPrice: 10
   buyPrice: 15

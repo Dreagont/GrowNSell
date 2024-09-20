@@ -39,7 +39,11 @@ public class Object : MonoBehaviour
     {
         ObjectHealth -= damage;
         lastHealthChangeTime = Time.time;
-        HealthBar.gameObject.SetActive(true);
+        if (HealthBar != null)
+        {
+            HealthBar.gameObject.SetActive(true);
+
+        }
     }
 
     private void UpdateHealthBar()

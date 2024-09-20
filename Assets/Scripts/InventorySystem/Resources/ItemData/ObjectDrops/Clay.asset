@@ -16,6 +16,7 @@ MonoBehaviour:
   displayName: Clay
   description: Clay
   icon: {fileID: -1406636669, guid: 7f03d2669e399644f827b33bb44a1df1, type: 3}
+  dropIcon: {fileID: -1864038786, guid: 7f03d2669e399644f827b33bb44a1df1, type: 3}
   MaxStackSize: 9999
   sellPrice: 10
   buyPrice: 15

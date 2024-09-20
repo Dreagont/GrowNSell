@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -95,7 +95,217 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Base Copper Pickaxe_31
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 36
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9c52e31596dd064d864207b28d68200
+      internalID: -158500982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Base Copper Pickaxe_34
+      rect:
+        serializedVersion: 2
+        x: 764
+        y: 37
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1c9973bceebffe4399948854bb2c5e0
+      internalID: -1626592044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Base Copper Pickaxe_35
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 39
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d68c2e0b8e63d5745b9c8a4c37308570
+      internalID: -229487349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Base Copper Pickaxe_36
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 39
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df999fca81f7da94a8b2608600bbcccc
+      internalID: 1077662747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Base Copper Pickaxe_37
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 30
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69472149aeaad2d408fb0815699da954
+      internalID: -891701118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Base Copper Pickaxe_38
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 29
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 376645cd727af8848b778860f1a59db6
+      internalID: 1111647607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Base Copper Pickaxe_39
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 38
+        width: 34
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 566cc7ecb4fe19f449588bdfa58a116e
+      internalID: -646814556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Base Copper Pickaxe_40
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 31
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59fda243ee3e7664fbfa1a8964932e6a
+      internalID: 1137956378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Base Copper Pickaxe_41
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 31
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4402cc78af9c6d43b838c5ec1daa096
+      internalID: -1446832393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Base Copper Pickaxe_42
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 30
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32e9adca25e0fb840b2a8f655fafecb4
+      internalID: 1837851096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -106,7 +316,50 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Base Copper Pickaxe_0: 8219146
+      Base Copper Pickaxe_1: 1893499157
+      Base Copper Pickaxe_10: 1711739036
+      Base Copper Pickaxe_11: -954790142
+      Base Copper Pickaxe_12: 589702450
+      Base Copper Pickaxe_13: -957333154
+      Base Copper Pickaxe_14: 1980159608
+      Base Copper Pickaxe_15: -665217038
+      Base Copper Pickaxe_16: -1649835952
+      Base Copper Pickaxe_17: 1104436462
+      Base Copper Pickaxe_18: 2055772802
+      Base Copper Pickaxe_19: 1636870511
+      Base Copper Pickaxe_2: -1917227447
+      Base Copper Pickaxe_20: 987469069
+      Base Copper Pickaxe_21: 1431437219
+      Base Copper Pickaxe_22: 295520585
+      Base Copper Pickaxe_23: 568510128
+      Base Copper Pickaxe_24: -120262537
+      Base Copper Pickaxe_25: 1252955875
+      Base Copper Pickaxe_26: -1677460052
+      Base Copper Pickaxe_27: -1857892677
+      Base Copper Pickaxe_28: 2060509528
+      Base Copper Pickaxe_29: 1538806878
+      Base Copper Pickaxe_3: 876677475
+      Base Copper Pickaxe_30: -88928928
+      Base Copper Pickaxe_31: -158500982
+      Base Copper Pickaxe_32: 605828885
+      Base Copper Pickaxe_33: -2147077057
+      Base Copper Pickaxe_34: -1626592044
+      Base Copper Pickaxe_35: -229487349
+      Base Copper Pickaxe_36: 1077662747
+      Base Copper Pickaxe_37: -891701118
+      Base Copper Pickaxe_38: 1111647607
+      Base Copper Pickaxe_39: -646814556
+      Base Copper Pickaxe_4: 241168701
+      Base Copper Pickaxe_40: 1137956378
+      Base Copper Pickaxe_41: -1446832393
+      Base Copper Pickaxe_42: 1837851096
+      Base Copper Pickaxe_5: -113405657
+      Base Copper Pickaxe_6: 1405930491
+      Base Copper Pickaxe_7: 1272186910
+      Base Copper Pickaxe_8: -1950616079
+      Base Copper Pickaxe_9: 818665892
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

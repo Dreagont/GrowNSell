@@ -16,6 +16,7 @@ MonoBehaviour:
   displayName: Copper Shovel
   description: Use to dig farmland
   icon: {fileID: 573438432, guid: 149d97fc8d899244b8ed11be675859d3, type: 3}
+  dropIcon: {fileID: -635908104, guid: 1ff9d6f4ecd51ba4a84696e4111b7002, type: 3}
   MaxStackSize: 1
   sellPrice: 1000
   buyPrice: 15

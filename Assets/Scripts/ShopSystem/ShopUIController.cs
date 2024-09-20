@@ -51,7 +51,7 @@ public class ShopUIController : MonoBehaviour
 
     private int GetNumberOfItemsForSale()
     {
-        return shopLevel;
+        return 4 + shopLevel;
     }
 
     public void RollNewItems()

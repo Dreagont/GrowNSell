@@ -2,15 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.UIElements;
+using static UnityEditor.Progress;
 
 public class TileManager : MonoBehaviour
 {
+    [Header("Tilemaps")]
     public Tilemap interactableMap;
     public Tilemap highlightMap;
     public Tilemap FarmSoilMap;
     public Tilemap FarmWaterMap;
     public Tilemap GrassBorderMap;
 
+    [Header("Tiles")]
     public Tile hiddenInteractableTile;
     public Tile interactedTile;
     public Tile highlightTile;
@@ -18,6 +22,7 @@ public class TileManager : MonoBehaviour
     public TileBase WateredSoilTile;
     public TileBase BorderTile;
 
+    [Header("Misc")]
     public GameObject PlantingSoil;
     public GameObject SeedPrefab;
 
@@ -29,9 +34,20 @@ public class TileManager : MonoBehaviour
     public InventoryDisplay inventoryDisplay;
     public ObjectsManager ObjectsManager;
     private GameManager gameManager;
+    private GameObject currentAnimation;
 
+    [Header("Object Parents")]
+    public Transform dropItems;
     public Transform soilsParent;  
     public Transform seedsParent;
+
+    [Header("Animations")]
+    public GameObject chopAnimationPrefab;
+    public GameObject mineAnimationPrefab;
+    public GameObject waterAnimationPrefab;
+    public GameObject plowAnimationPrefab;
+    public GameObject digAnimationPrefab;
+    public GameObject dropItemPrefab;
 
 
     void Start()
@@ -105,6 +121,7 @@ public class TileManager : MonoBehaviour
         {
             highlightMap.SetTile(previousHighlightedCell, null);
         }
+        CheckForItemPickup();
     }
 
     private void Mine()
@@ -118,15 +135,10 @@ public class TileManager : MonoBehaviour
             Object objectHit = hitCollider.GetComponent<Object>();
             if (objectHit.ObjectData.ObjectType == ObjectType.Stone && gameManager.ActionAble(3))
             {
-                objectHit.ModifyHealth(2);
-                gameManager.CurrentEnergy -= 3;
+                Vector3 worldPosition1 = new Vector3(cellPosition.x + 0.0f, cellPosition.y + 0.5f, 0);
 
-                if (objectHit.ObjectHealth <= 0)
-                {
-                    Destroy(objectHit.gameObject);
-                    playerInventoryHolder.PrimaryInventorySystem.AddToInventory(objectHit.ObjectData.DropItems[0], objectHit.ObjectData.DropQuantity);
-
-                }
+                SpawnAnimation(mineAnimationPrefab, worldPosition1);
+                StartCoroutine(ExecuteAfterDelay(0.4f, objectHit));
             }
         } else
         {
@@ -144,18 +156,118 @@ public class TileManager : MonoBehaviour
             Object objectHit = hitCollider.GetComponent<Object>();
             if (objectHit.ObjectData.ObjectType == ObjectType.Wood && gameManager.ActionAble(3))
             {
-                objectHit.ModifyHealth(2);
-                gameManager.CurrentEnergy -= 3;
+                Vector3 worldPosition1 = new Vector3(cellPosition.x + 0.0f, cellPosition.y + 0.5f, 0);
 
-                if (objectHit.ObjectHealth <= 0)
-                {
-                    Destroy(objectHit.gameObject);
-                    playerInventoryHolder.PrimaryInventorySystem.AddToInventory(objectHit.ObjectData.DropItems[0], objectHit.ObjectData.DropQuantity);
-                }
+                SpawnAnimation(chopAnimationPrefab, worldPosition1);
+                StartCoroutine(ExecuteAfterDelay(0.4f, objectHit));
             }
         }
         else
         {
+        }
+    }
+    private void SpawnAnimation(GameObject animationPrefab, Vector3 position)
+    {
+        if (currentAnimation != null)
+        {
+            Destroy(currentAnimation);
+        }
+        currentAnimation = Instantiate(animationPrefab, position, Quaternion.identity);
+        Destroy(currentAnimation, 0.5f);
+    }
+    private IEnumerator ExecuteAfterDelay(float delay, Object objectHit)
+    {
+        yield return new WaitForSeconds(delay);
+
+        if (objectHit != null)  
+        {
+            DestroyObject(objectHit);
+        }
+    }
+
+    private void DestroyObject(Object objectHit)
+    {
+        if (objectHit == null) return;  
+
+        objectHit.ModifyHealth(2);
+        gameManager.CurrentEnergy -= 3;
+
+        if (objectHit.ObjectHealth <= 0)
+        {
+            DropItem(objectHit);
+            Destroy(objectHit.gameObject);
+        }
+    }
+
+
+    public void DropItem(Object objectHit)
+    {
+        GameObject instantiatedAnimation = Instantiate(dropItemPrefab, objectHit.ObjectPosition, Quaternion.identity);
+        DropItemData dropItemData = instantiatedAnimation.GetComponent<DropItemData>();
+
+        if (dropItemData != null)
+        {
+            dropItemData.InitializeDrop(objectHit.ObjectData.DropItems[0], objectHit.ObjectData.DropQuantity);
+            StartCoroutine(EnablePickupAfterDelay(instantiatedAnimation, 1f)); 
+        }
+    }
+
+    private IEnumerator EnablePickupAfterDelay(GameObject dropItem, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        dropItem.GetComponent<DropItemData>().CanBePickedUp = true; 
+    }
+
+    private void CheckForItemPickup()
+    {
+        float pickupRange = 1f;
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mousePosition.z = 0;
+
+        Collider2D[] nearbyItems = Physics2D.OverlapCircleAll(mousePosition, pickupRange);
+
+        foreach (var item in nearbyItems)
+        {
+            DropItemData dropItemData = item.GetComponent<DropItemData>();
+            if (dropItemData != null && dropItemData.CanBePickedUp)
+            {
+                StartCoroutine(MoveItemTowardsMouse(dropItemData.gameObject, mousePosition));
+                break;
+            }
+        }
+    }
+
+    private IEnumerator MoveItemTowardsMouse(GameObject dropItem, Vector3 targetPosition)
+    {
+        float speed = 1f;
+
+        while (dropItem != null && Vector3.Distance(dropItem.transform.position, targetPosition) > 0.1f)
+        {
+            dropItem.transform.position = Vector3.MoveTowards(dropItem.transform.position, targetPosition, speed * Time.deltaTime);
+            yield return null;
+        }
+
+        if (dropItem != null)
+        {
+            AddToInventory(dropItem);
+        }
+    }
+
+    private IEnumerator AddToParentAfterDelay(float delay, Vector3Int pos)
+    {
+        yield return new WaitForSeconds(delay);
+        SetInteracted(pos);
+    }
+
+
+    private void AddToInventory(GameObject dropItem)
+    {
+        DropItemData dropItemData = dropItem.GetComponent<DropItemData>();
+
+        if (dropItemData != null)
+        {
+            playerInventoryHolder.PrimaryInventorySystem.AddToInventory(dropItemData.inventoryItemData, dropItemData.DropCount);
+            Destroy(dropItem); 
         }
     }
 
@@ -163,8 +275,10 @@ public class TileManager : MonoBehaviour
     {
         if (IsInteractable(cellPosition) && gameManager.ActionAble(10))
         {
-            SetInteracted(cellPosition);
-            gameManager.ConsumeEnergy(10);
+            Vector3 worldPosition1 = new Vector3(cellPosition.x + 0.0f, cellPosition.y + 0.5f, 0);
+
+            SpawnAnimation(digAnimationPrefab, worldPosition1);
+            StartCoroutine(AddToParentAfterDelay(0.2f, cellPosition));
         }
         else
         {
@@ -183,21 +297,35 @@ public class TileManager : MonoBehaviour
             Soil soil = hitCollider.GetComponent<Soil>();
             if (soil != null && gameManager.ActionAble(10))
             {
-                soil.isWatered = true;
-                FarmWaterMap.SetTile(cellPosition,WateredSoilTile);   
-                
+                Vector3 worldPosition1 = new Vector3(cellPosition.x + 0.0f, cellPosition.y + 1f, 0);
 
-                if (ObjectsManager.SoilValues[worldPosition] == false)
-                {
-                    ObjectsManager.SoilValues[worldPosition] = true;
-                    gameManager.ConsumeEnergy(10);
-
-                }
+                SpawnAnimation(waterAnimationPrefab, worldPosition1);
+                StartCoroutine(WaterDelay(worldPosition, cellPosition, soil));
 
             }
         } else
         {
             Debug.Log("No soil to water here!");
+        }
+    }
+
+    public IEnumerator WaterDelay(Vector3 worldPosition, Vector3Int cellPosition, Soil soil)
+    {
+        yield return new WaitForSeconds(0.2f);
+        WaterPlant(worldPosition, cellPosition, soil);
+    }
+
+    public void WaterPlant(Vector3 worldPosition, Vector3Int cellPosition, Soil soil)
+    {
+        soil.isWatered = true;
+        FarmWaterMap.SetTile(cellPosition, WateredSoilTile);
+
+
+        if (ObjectsManager.SoilValues[worldPosition] == false)
+        {
+            ObjectsManager.SoilValues[worldPosition] = true;
+            gameManager.ConsumeEnergy(10);
+
         }
     }
 
@@ -309,6 +437,7 @@ public class TileManager : MonoBehaviour
 
         Vector3 truePos = new Vector3(position.x + 0.5f, position.y + 0.5f, 0);
         Instantiate(PlantingSoil, truePos, Quaternion.identity, soilsParent);
+        gameManager.ConsumeEnergy(10);
         ObjectsManager.SoilValues.Add(truePos, false);
     }
 

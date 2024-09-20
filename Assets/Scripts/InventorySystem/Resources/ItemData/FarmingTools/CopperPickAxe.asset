@@ -16,6 +16,7 @@ MonoBehaviour:
   displayName: Copper Pickxe
   description: Copper Pickaxe
   icon: {fileID: 446434864, guid: 1ff9d6f4ecd51ba4a84696e4111b7002, type: 3}
+  dropIcon: {fileID: -2102570648, guid: 1ff9d6f4ecd51ba4a84696e4111b7002, type: 3}
   MaxStackSize: 1
   sellPrice: 10
   buyPrice: 100

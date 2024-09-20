@@ -16,7 +16,8 @@ MonoBehaviour:
   displayName: Copper Watering Can
   description: Water crops to grow
   icon: {fileID: -274833639, guid: 149d97fc8d899244b8ed11be675859d3, type: 3}
-  MaxStackSize: 0
+  dropIcon: {fileID: -1734537955, guid: 1ff9d6f4ecd51ba4a84696e4111b7002, type: 3}
+  MaxStackSize: 1
   sellPrice: 10
   buyPrice: 15
   itemType1: 1

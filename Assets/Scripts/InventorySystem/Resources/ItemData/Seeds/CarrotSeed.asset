@@ -16,6 +16,7 @@ MonoBehaviour:
   displayName: Carrot Seed
   description: Carrot
   icon: {fileID: -138140717, guid: 9470b17ec078762449d7fbcec5647f51, type: 3}
+  dropIcon: {fileID: -284421406, guid: 9470b17ec078762449d7fbcec5647f51, type: 3}
   MaxStackSize: 9999
   sellPrice: 600
   buyPrice: 150

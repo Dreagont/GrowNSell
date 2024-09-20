@@ -16,6 +16,7 @@ MonoBehaviour:
   displayName: Wood
   description: Wood
   icon: {fileID: 1826137344, guid: 7f03d2669e399644f827b33bb44a1df1, type: 3}
+  dropIcon: {fileID: 1919079457, guid: 7f03d2669e399644f827b33bb44a1df1, type: 3}
   MaxStackSize: 9999
   sellPrice: 10
   buyPrice: 15

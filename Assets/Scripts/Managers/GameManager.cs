@@ -2,17 +2,20 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public int Gold = 1000;
+    public int GoalGold = 5000;
+    public int DayCheck = 5;
 
     public int Energy = 100;
     public int CurrentEnergy = 100;
 
     public Text GoldText;
-
+    public Text GoalGoldText;
     void Start()
     {
         
@@ -21,12 +24,28 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Gold < 1000000000)
+        UpdateTextUI();
+        CompleteGoal();
+    }
+
+    public void UpdateTextUI()
+    {
+        if (Gold < 100000)
         {
             GoldText.text = Gold.ToString();
-        } else
+        }
+        else
         {
             GoldText.text = GlobalVariables.FormatNumber(Gold);
+
+        }
+        if (GoalGold < 100000)
+        {
+            GoalGoldText.text = GoalGold.ToString();
+        }
+        else
+        {
+            GoalGoldText.text = GlobalVariables.FormatNumber(GoalGold);
 
         }
     }
@@ -50,4 +69,23 @@ public class GameManager : MonoBehaviour
     {
         CurrentEnergy = Energy;
     }
+
+    public void CompleteGoal()
+    {
+        if (GlobalVariables.currentDay == DayCheck )
+        {
+            if (Gold <= GoalGold)
+            {
+                GlobalVariables.currentDay = 0;
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            } else
+            {
+                
+                DayCheck *= 2;
+                GoalGold *= 4;
+            }
+        }
+
+    }
+
 }

@@ -28,6 +28,9 @@ public class ObjectSpawner : MonoBehaviour
                 {
                     int objectIndex = Random.Range(0, objects.Length);
                     GameObject spawnedObject = Instantiate(objects[objectIndex], truePos, Quaternion.identity, ObjectsParent);
+                    Object objectSpwaned = spawnedObject.GetComponent<Object>();
+
+                    objectSpwaned.ObjectPosition = truePos;
 
                     SetLayerRecursively(spawnedObject, objectLayer);
                 }

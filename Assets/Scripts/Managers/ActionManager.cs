@@ -5,9 +5,11 @@ using UnityEngine;
 public class ActionManager : MonoBehaviour
 {
     public PlayerInventoryHolder InventoryHolder;
-    public InventoryItemData itemData1;
-    public InventoryItemData itemData2;
-    public InventoryItemData itemData3;
+    public InventoryItemData Hoe;
+    public InventoryItemData Axe;
+    public InventoryItemData Pickaxe;
+    public InventoryItemData WateringCan;
+    public InventoryItemData Shovel;
 
     void Start()
     {
@@ -16,23 +18,20 @@ public class ActionManager : MonoBehaviour
 
     void Update()
     {
-        Pickup();
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            Pickup();
+
+        }
     }
 
     public void Pickup()
     {
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            InventoryHolder.AddToHotBar(itemData1, 10);
-        }
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            InventoryHolder.AddToHotBar(itemData2, 1);
-        }
-        if (Input.GetKeyDown(KeyCode.LeftBracket))
-        {
-            InventoryHolder.AddToHotBar(itemData3, 1);
-        }
+        InventoryHolder.AddToHotBar(Hoe, 1);
+        InventoryHolder.AddToHotBar(Axe, 1);
+        InventoryHolder.AddToHotBar(Pickaxe, 1);
+        InventoryHolder.AddToHotBar(WateringCan, 1);
+        InventoryHolder.AddToHotBar(Shovel, 1);
     }
 
 

@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DayManager : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class DayManager : MonoBehaviour
     private float timeMultiplier;
     public int currentDay;
     private GameManager gameManager;
-
+    public Text DayCounter;
     private void Start()
     {
         gameManager = GetComponentInParent<GameManager>();
@@ -18,7 +19,6 @@ public class DayManager : MonoBehaviour
 
     void Update()
     {
-        currentDay = GlobalVariables.currentDay;
         UpdateTime();
         HandleSpeedUpInput();
         UpdateUIText();
@@ -28,19 +28,20 @@ public class DayManager : MonoBehaviour
     public void UpdateTime()
     {
         timeMultiplier = GlobalVariables.timeMultiplier;
-        elapsedTime += Time.deltaTime * timeMultiplier;
+        //elapsedTime += Time.deltaTime * timeMultiplier;
         GlobalVariables.TimeCounter += Time.deltaTime * timeMultiplier;
 
-        if (elapsedTime >= GlobalVariables.DayDuration)
+        /*if (elapsedTime >= GlobalVariables.DayDuration)
         {
             AdvanceDay();
-        }
+        }*/
     }
 
     public void UpdateUIText()
     {
         timeText.text = GlobalVariables.FormatTime(elapsedTime);
         timeMultiText.text = timeMultiplier.ToString() + "X";
+        DayCounter.text = "Day " + GlobalVariables.currentDay.ToString();
     }
     void AdvanceDay()
     {

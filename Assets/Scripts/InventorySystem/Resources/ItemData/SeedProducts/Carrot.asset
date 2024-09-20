@@ -16,6 +16,7 @@ MonoBehaviour:
   displayName: Carrot
   description: 
   icon: {fileID: 1876435354, guid: 9470b17ec078762449d7fbcec5647f51, type: 3}
+  dropIcon: {fileID: 343708870, guid: 9470b17ec078762449d7fbcec5647f51, type: 3}
   MaxStackSize: 9999
   sellPrice: 10
   buyPrice: 15
