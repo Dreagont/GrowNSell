@@ -10,17 +10,16 @@ public class ShopUIController : MonoBehaviour
 
     public GameObject shopSlotPrefab;
     public Transform shopSlotParent;
-    public List<InventoryItemData> allAvailableItems; 
-    public List<InventoryItemData> itemsForSale; 
+    public List<InventoryItemData> allAvailableItems;
+    public List<ShopItem> itemsForSale;  
 
-    public int shopLevel = 1; 
-
+    public int shopLevel = 1;
     public GameObject FadeScrren;
 
     private void Start()
     {
         ShopUI.gameObject.SetActive(false);
-        RollNewItems(); 
+        RollNewItems();
         PopulateShop();
     }
 
@@ -40,18 +39,19 @@ public class ShopUIController : MonoBehaviour
             Destroy(child.gameObject);
         }
 
-        foreach (InventoryItemData itemData in itemsForSale)
+        foreach (ShopItem shopItem in itemsForSale)
         {
             GameObject slot = Instantiate(shopSlotPrefab, shopSlotParent);
             ShopSlotUI shopSlotUI = slot.GetComponent<ShopSlotUI>();
-            shopSlotUI.InventoryItemData = itemData;
+            shopSlotUI.InventoryItemData = shopItem.itemData;
+            shopSlotUI.sellQuanity = shopItem.quantity;  
             shopSlotUI.SetUi();
         }
     }
 
     private int GetNumberOfItemsForSale()
     {
-        return 4 + shopLevel;
+        return (4 + shopLevel) > allAvailableItems.Count ? (4 + shopLevel) : allAvailableItems.Count;
     }
 
     public void RollNewItems()
@@ -60,16 +60,15 @@ public class ShopUIController : MonoBehaviour
 
         int numberOfItems = GetNumberOfItemsForSale();
 
-        while (itemsForSale.Count < numberOfItems)
+        for (int i = 0; i < numberOfItems; i++)
         {
             InventoryItemData randomItem = allAvailableItems[Random.Range(0, allAvailableItems.Count)];
-            if (!itemsForSale.Contains(randomItem))
-            {
-                itemsForSale.Add(randomItem);
-            }
+            int randomQuantity = Random.Range(1, 21); 
+
+            itemsForSale.Add(new ShopItem(randomItem, randomQuantity));
         }
 
-        PopulateShop(); 
+        PopulateShop();
     }
 
     public void ToggleShopUI()
@@ -79,16 +78,15 @@ public class ShopUIController : MonoBehaviour
             ShopUI.SetActive(false);
             GlobalVariables.CanAction = true;
             FadeScrren.gameObject.SetActive(false);
-
         }
         else
         {
             ShopUI.SetActive(true);
             GlobalVariables.CanAction = false;
             FadeScrren.gameObject.SetActive(true);
-
         }
     }
+
     public void OnRollButtonPressed()
     {
         RollNewItems();
@@ -97,5 +95,18 @@ public class ShopUIController : MonoBehaviour
     public void OnButtonUpgradePressed()
     {
         shopLevel += 1;
+    }
+}
+
+[System.Serializable]
+public class ShopItem
+{
+    public InventoryItemData itemData;
+    public int quantity;
+
+    public ShopItem(InventoryItemData itemData, int quantity)
+    {
+        this.itemData = itemData;
+        this.quantity = quantity;
     }
 }

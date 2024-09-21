@@ -7,21 +7,19 @@ using UnityEngine.UI;
 public class DropItemData : MonoBehaviour
 {
     public InventoryItemData inventoryItemData;
-    public int DropCount;
     public SpriteRenderer DropItemIcon;
     public TextMeshProUGUI DropItemCountText;
     public bool CanBePickedUp = false;
 
 
-    public void InitializeDrop(InventoryItemData itemData, int dropCount)
+    public void InitializeDrop(InventoryItemData itemData)
     {
         this.inventoryItemData = itemData;
-        this.DropCount = dropCount;
     }
     void Start()
     {
         DropItemIcon.sprite = inventoryItemData.dropIcon;
-        DropItemCountText.text = DropCount.ToString();
+        DropItemCountText.text = inventoryItemData.DropCount.ToString();
     }
 
     void Update()

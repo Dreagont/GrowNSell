@@ -10,12 +10,16 @@ public class Object : MonoBehaviour
     public int ObjectHealth;
     public Image HealthBarFill;
     public GameObject HealthBar;
-
+    public ExperientManager ExperientManager;
+    public GameObject Canvas;
+    public GameObject XPPopup;
     private float lastHealthChangeTime;
     public float hideDelay = 1f;  
 
     void Start()
     {
+        ExperientManager = FindAnyObjectByType<ExperientManager>();
+        Canvas = GameObject.FindGameObjectWithTag("Canvas");
         ObjectHealth = ObjectData.Health;
         UpdateHealthBar();
         lastHealthChangeTime = Time.time;
@@ -50,4 +54,24 @@ public class Object : MonoBehaviour
     {
         HealthBarFill.fillAmount = GlobalVariables.UpdateFillBar(ObjectHealth, ObjectData.Health);
     }
+
+    private void OnDestroy()
+    {
+        if (ExperientManager != null)
+        {
+            ExperientManager.Experient += ObjectData.Experience;
+        }
+
+        Vector3 mousePosition = Input.mousePosition;
+
+        if (Canvas != null && XPPopup != null)
+        {
+            GameObject popup = Instantiate(XPPopup, ObjectPosition, Quaternion.identity, Canvas.transform);
+            TextPopup goldPopup = popup.GetComponent<TextPopup>();
+            goldPopup.isAdd = false;
+            goldPopup.isGold = false;
+            goldPopup.goldPopup = ObjectData.Experience;
+        }
+    }
+
 }

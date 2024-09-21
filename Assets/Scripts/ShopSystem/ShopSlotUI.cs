@@ -10,10 +10,15 @@ public class ShopSlotUI : MonoBehaviour
     public InventoryItemData InventoryItemData;
     public TextMeshProUGUI ItemName;
     public TextMeshProUGUI ItemPrice;
+    public TextMeshProUGUI sellQuantityText;
     private PlayerInventoryHolder playerInventoryHolder;
     private GameManager gameManager;
+    public int sellQuanity;
+    public GameObject goldAddText;
+    public Canvas canvas;
     void Start()
     {
+        canvas = FindAnyObjectByType<Canvas>();
         playerInventoryHolder = FindAnyObjectByType<PlayerInventoryHolder>();
         gameManager = FindObjectOfType<GameManager>();
         SetUi();
@@ -21,7 +26,10 @@ public class ShopSlotUI : MonoBehaviour
 
     void Update()
     {
-        
+        if (sellQuanity == 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void SetUi()
@@ -29,15 +37,27 @@ public class ShopSlotUI : MonoBehaviour
         ItemIcon.sprite = InventoryItemData.icon;
         ItemName.text = InventoryItemData.displayName;
         ItemPrice.text = GlobalVariables.FormatNumber(InventoryItemData.buyPrice);
+        sellQuantityText.text = sellQuanity.ToString();
     }
 
     public void BuyItem()
     {
-        if (playerInventoryHolder.AddToHotBar(InventoryItemData,1)) 
+        if (gameManager.CanAffordItem(InventoryItemData.buyPrice))
         {
-            if (gameManager.CanAffordItem(InventoryItemData.buyPrice))
+            if (playerInventoryHolder.AddToHotBar(InventoryItemData, 1))
             {
-                gameManager.Gold -= InventoryItemData.buyPrice; 
+                sellQuanity--;
+                SetUi();
+                gameManager.Gold -= InventoryItemData.buyPrice;
+                Vector3 mousePosition = Input.mousePosition;
+                GameObject popup = Instantiate(goldAddText, mousePosition, Quaternion.identity, canvas.transform);
+                TextPopup goldPopup = popup.GetComponent<TextPopup>();
+                goldPopup.isAdd = false;
+                goldPopup.isGold = true;
+                goldPopup.goldPopup = InventoryItemData.buyPrice;
+            } else
+            {
+                return;
             }
         }
     }

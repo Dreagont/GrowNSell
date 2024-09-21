@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.UIElements;
-using static UnityEditor.Progress;
 
 public class TileManager : MonoBehaviour
 {
@@ -202,12 +201,12 @@ public class TileManager : MonoBehaviour
 
     public void DropItem(Object objectHit)
     {
-        GameObject instantiatedAnimation = Instantiate(dropItemPrefab, objectHit.ObjectPosition, Quaternion.identity);
+        GameObject instantiatedAnimation = Instantiate(dropItemPrefab, objectHit.ObjectPosition, Quaternion.identity,dropItems);
         DropItemData dropItemData = instantiatedAnimation.GetComponent<DropItemData>();
 
         if (dropItemData != null)
         {
-            dropItemData.InitializeDrop(objectHit.ObjectData.DropItems[0], objectHit.ObjectData.DropQuantity);
+            dropItemData.InitializeDrop(objectHit.ObjectData.DropItems[0]);
             StartCoroutine(EnablePickupAfterDelay(instantiatedAnimation, 1f)); 
         }
     }
@@ -218,8 +217,12 @@ public class TileManager : MonoBehaviour
         dropItem.GetComponent<DropItemData>().CanBePickedUp = true; 
     }
 
+    private bool isPickingUp = false;
+
     private void CheckForItemPickup()
     {
+        if (isPickingUp) return; // Exit if a pickup is already in progress
+
         float pickupRange = 1f;
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePosition.z = 0;
@@ -231,6 +234,7 @@ public class TileManager : MonoBehaviour
             DropItemData dropItemData = item.GetComponent<DropItemData>();
             if (dropItemData != null && dropItemData.CanBePickedUp)
             {
+                isPickingUp = true;
                 StartCoroutine(MoveItemTowardsMouse(dropItemData.gameObject, mousePosition));
                 break;
             }
@@ -239,7 +243,10 @@ public class TileManager : MonoBehaviour
 
     private IEnumerator MoveItemTowardsMouse(GameObject dropItem, Vector3 targetPosition)
     {
-        float speed = 1f;
+        DropItemData dropItemData = dropItem.GetComponent<DropItemData>();
+        
+
+        float speed = 10f;
 
         while (dropItem != null && Vector3.Distance(dropItem.transform.position, targetPosition) > 0.1f)
         {
@@ -251,7 +258,10 @@ public class TileManager : MonoBehaviour
         {
             AddToInventory(dropItem);
         }
+
+        isPickingUp = false; // Reset the flag after pickup
     }
+
 
     private IEnumerator AddToParentAfterDelay(float delay, Vector3Int pos)
     {
@@ -266,8 +276,10 @@ public class TileManager : MonoBehaviour
 
         if (dropItemData != null)
         {
-            playerInventoryHolder.PrimaryInventorySystem.AddToInventory(dropItemData.inventoryItemData, dropItemData.DropCount);
-            Destroy(dropItem); 
+
+            playerInventoryHolder.PrimaryInventorySystem.AddToInventory(dropItemData.inventoryItemData, dropItemData.inventoryItemData.DropCount);
+            Destroy(dropItem);
+
         }
     }
 
