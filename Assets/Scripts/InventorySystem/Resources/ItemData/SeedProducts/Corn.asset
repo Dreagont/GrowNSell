@@ -20,6 +20,10 @@ MonoBehaviour:
   MaxStackSize: 999
   sellPrice: 50
   buyPrice: 15
-  itemType1: 2
+  DropCount: 5
+  Experient: 5
+  itemType1: 0
   itemType2: 0
   EquipableTag: 0
+  Prefab: {fileID: 0}
+  buffs: []

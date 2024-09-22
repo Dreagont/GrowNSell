@@ -11,8 +11,10 @@ public class BuffUI : MonoBehaviour
     public TextMeshProUGUI buffNameText;
     public TextMeshProUGUI buffDescriptionText;
     public Image buffSprite;
+    public BuffManager buffManager;
     void Start()
     {
+        buffManager = FindAnyObjectByType<BuffManager>();
         UpdateBuffUI();
     }
     void Update()
@@ -20,7 +22,18 @@ public class BuffUI : MonoBehaviour
         
     }
 
-    private void UpdateBuffUI()
+    public void OnBuffClicked()
+    {
+        ApplyBuff(buff.itemBuffed, buff);
+        buffManager.ToggleBuffShopUI();
+    }
+
+    public void ApplyBuff(InventoryItemData item, Buff buff)
+    {
+        item.AddBuff(buff);
+    }
+
+    public void UpdateBuffUI()
     {
         buffNameText.text = buff.buffName;
         buffDescriptionText.text = buff.description;

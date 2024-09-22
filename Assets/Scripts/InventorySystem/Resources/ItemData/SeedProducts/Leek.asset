@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7ca7bc84f6875647b44506e56f5535e, type: 3}
+  m_Name: Leek
+  m_EditorClassIdentifier: 
+  ID: 4
+  displayName: Leek
+  description: Leek
+  icon: {fileID: 247829992, guid: 9470b17ec078762449d7fbcec5647f51, type: 3}
+  dropIcon: {fileID: 682491640, guid: 9470b17ec078762449d7fbcec5647f51, type: 3}
+  MaxStackSize: 999
+  sellPrice: 80
+  buyPrice: 15
+  DropCount: 1
+  Experient: 5
+  itemType1: 0
+  itemType2: 0
+  EquipableTag: 0
+  Prefab: {fileID: 0}
+  buffs: []

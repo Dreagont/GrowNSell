@@ -159,6 +159,9 @@ MonoBehaviour:
   Harvestable: 0
   position: {x: 0, y: 0, z: 0}
   temp: 0
+  experientManager: {fileID: 0}
+  XPPopup: {fileID: 3910975182150953683, guid: 9abfd850c00254b41ad965d1ef2937be, type: 3}
+  Canvas: {fileID: 0}
 --- !u!61 &698359088755244958
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -751,7 +754,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3629867723722641295
 Transform:
   m_ObjectHideFlags: 0

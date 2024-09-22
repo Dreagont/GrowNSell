@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class InventorySlotUi : MonoBehaviour
-    //, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
+    , IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     public Image itemSprite;
     public TextMeshProUGUI itemCount;
@@ -94,7 +94,7 @@ public class InventorySlotUi : MonoBehaviour
     {
         ParentDisplay?.SlotClicked(this);
     }
-/*
+
     public void OnPointerEnter(PointerEventData eventData)
     {
         if (assignedInventorySlot.ItemData != null)
@@ -124,9 +124,8 @@ public class InventorySlotUi : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         if (assignedInventorySlot.ItemData != null)
         {
-            TooltipManager.instance.SetAndShowToolTip(assignedInventorySlot.ItemData.icon, assignedInventorySlot.ItemData.displayName, assignedInventorySlot.ItemData.description);
+            TooltipManager.instance.SetAndShowToolTip(assignedInventorySlot.ItemData.displayName, assignedInventorySlot.ItemData.description,(int) assignedInventorySlot.ItemData.GetTotalSellPrice());
 
         }
     }
-*/
 }

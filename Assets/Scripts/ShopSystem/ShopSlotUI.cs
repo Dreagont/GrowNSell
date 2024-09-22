@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class ShopSlotUI : MonoBehaviour
+public class ShopSlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     public Image ItemIcon;
     public InventoryItemData InventoryItemData;
@@ -16,6 +17,8 @@ public class ShopSlotUI : MonoBehaviour
     public int sellQuanity;
     public GameObject goldAddText;
     public Canvas canvas;
+    private Coroutine showTooltipCoroutine;
+
     void Start()
     {
         canvas = FindAnyObjectByType<Canvas>();
@@ -59,6 +62,40 @@ public class ShopSlotUI : MonoBehaviour
             {
                 return;
             }
+        }
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if (InventoryItemData != null)
+        {
+            showTooltipCoroutine = StartCoroutine(ShowTooltipDelayed());
+        }
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        if (showTooltipCoroutine != null)
+        {
+            StopCoroutine(showTooltipCoroutine);
+        }
+        TooltipManager.instance.HideTooltip();
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (eventData.button == PointerEventData.InputButton.Right)
+        {
+        }
+    }
+
+    private IEnumerator ShowTooltipDelayed()
+    {
+        yield return new WaitForSeconds(0.1f);
+        if (InventoryItemData != null)
+        {
+            TooltipManager.instance.SetAndShowToolTip(InventoryItemData.displayName, InventoryItemData.description);
+
         }
     }
 }

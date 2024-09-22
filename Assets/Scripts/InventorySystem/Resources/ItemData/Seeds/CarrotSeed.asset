@@ -14,12 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 56
   displayName: Carrot Seed
-  description: Carrot
-  icon: {fileID: -138140717, guid: 9470b17ec078762449d7fbcec5647f51, type: 3}
-  dropIcon: {fileID: -284421406, guid: 9470b17ec078762449d7fbcec5647f51, type: 3}
-  MaxStackSize: 9999
-  sellPrice: 600
-  buyPrice: 150
+  description: Yield 3 carrots in 3 days
+  icon: {fileID: -311732875, guid: 9470b17ec078762449d7fbcec5647f51, type: 3}
+  dropIcon: {fileID: 617392419, guid: 9470b17ec078762449d7fbcec5647f51, type: 3}
+  MaxStackSize: 99
+  sellPrice: 10
+  buyPrice: 15
+  DropCount: 1
+  Experient: 5
   itemType1: 2
   itemType2: 0
   EquipableTag: 0
+  Prefab: {fileID: 1737187064802512040, guid: eb00ddc317b765e46b4195468068e120, type: 3}
+  buffs: []

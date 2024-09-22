@@ -211,6 +211,18 @@ public class TileManager : MonoBehaviour
         }
     }
 
+    public void DropItem(InventoryItemData itemDrop, Vector3 position)
+    {
+        GameObject instantiatedAnimation = Instantiate(dropItemPrefab, position, Quaternion.identity, dropItems);
+        DropItemData dropItemData = instantiatedAnimation.GetComponent<DropItemData>();
+
+        if (dropItemData != null)
+        {
+            dropItemData.InitializeDrop(itemDrop);
+            StartCoroutine(EnablePickupAfterDelay(instantiatedAnimation, 1f));
+        }
+    }
+
     private IEnumerator EnablePickupAfterDelay(GameObject dropItem, float delay)
     {
         yield return new WaitForSeconds(delay);
@@ -277,7 +289,7 @@ public class TileManager : MonoBehaviour
         if (dropItemData != null)
         {
 
-            playerInventoryHolder.PrimaryInventorySystem.AddToInventory(dropItemData.inventoryItemData, dropItemData.inventoryItemData.DropCount);
+            playerInventoryHolder.PrimaryInventorySystem.AddToInventory(dropItemData.inventoryItemData, dropItemData.inventoryItemData.GetTotalDropCount());
             Destroy(dropItem);
 
         }
@@ -354,23 +366,28 @@ public class TileManager : MonoBehaviour
             {
                 if (seed.Harvestable && gameManager.ActionAble(10))
                 {
-                    int dropAmount = GetRandomDropAmount();
-                    playerInventoryHolder.PrimaryInventorySystem.AddToInventory(seed.SeedData.SeedProduct, dropAmount);
-                    ObjectsManager.SeedValues.Remove(seed.position);
-                    gameManager.ConsumeEnergy(10);
-
-                    Destroy(seed.gameObject);
+                    worldPosition.x -= 0.5f;
+                    StartCoroutine(HarvestDelay(seed));
+                    SpawnAnimation(plowAnimationPrefab, worldPosition);
                 }
             }
         }
     }
-
-    private int GetRandomDropAmount()
+    public IEnumerator HarvestDelay(Seed seed)
     {
-        int[] dropChances = { 3, 3, 3, 4, 4, 4, 5, 5, 6, 7 };
-        int randomIndex = Random.Range(0, dropChances.Length);
-        return dropChances[randomIndex];
+        yield return new WaitForSeconds(0.2f);
+        HarvestPlant(seed);
     }
+
+    public void HarvestPlant(Seed seed)
+    {
+        ObjectsManager.SeedValues.Remove(seed.position);
+        gameManager.ConsumeEnergy(10);
+
+        DropItem(seed.SeedData.SeedProduct, seed.position);
+        Destroy(seed.gameObject);
+    }
+
 
 
     public void PlantSeed()
@@ -386,9 +403,8 @@ public class TileManager : MonoBehaviour
                 Debug.Log("A seed is already planted here!");
                 return;
             }
-            playerInventoryHolder.PrimaryInventorySystem.InventorySlots[playerInventoryHolder.SelectedSlot].RemoveFromStack(1);
-            inventoryDisplay.UpdateSlotStatic(playerInventoryHolder.PrimaryInventorySystem.InventorySlots[playerInventoryHolder.SelectedSlot]);
-            GameObject seedInstance = Instantiate(SeedPrefab, seedPosition, Quaternion.identity, seedsParent);
+            
+            GameObject seedInstance = Instantiate(playerInventoryHolder.PrimaryInventorySystem.InventorySlots[playerInventoryHolder.SelectedSlot].ItemData.Prefab, seedPosition, Quaternion.identity, seedsParent);
             int soilLayerMask = LayerMask.GetMask("Soil");
             Collider2D hitCollider = Physics2D.OverlapPoint(new Vector3(cellPosition.x + 0.5f, cellPosition.y + 0.5f, 0), soilLayerMask);
             Soil soil = hitCollider.GetComponent<Soil>();
@@ -396,7 +412,9 @@ public class TileManager : MonoBehaviour
             seedScript.thisSoil = soil;
             seedScript.position = seedPosition;
             ObjectsManager.SeedValues.Add(seedPosition, 0);
-            
+            playerInventoryHolder.PrimaryInventorySystem.InventorySlots[playerInventoryHolder.SelectedSlot].RemoveFromStack(1);
+            inventoryDisplay.UpdateSlotStatic(playerInventoryHolder.PrimaryInventorySystem.InventorySlots[playerInventoryHolder.SelectedSlot]);
+
         }
         else
         {

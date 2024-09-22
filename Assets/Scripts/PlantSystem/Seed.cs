@@ -13,9 +13,15 @@ public class Seed : MonoBehaviour
     public bool Harvestable = false;
     public Vector3 position;
     public int temp = 0;
+    public ExperientManager experientManager;
+    public GameObject XPPopup;
+    public GameObject Canvas;
 
     void Start()
     {
+        experientManager = FindAnyObjectByType<ExperientManager>();
+        Canvas = GameObject.FindGameObjectWithTag("Canvas");
+
         timePlanted = (GlobalVariables.currentDay - 1) * 120f;
         periodStates = SeedData.GrowTime / growStates;
         secondChangeState = (int)(120 * periodStates);
@@ -57,6 +63,19 @@ public class Seed : MonoBehaviour
         if (currentState == growStates - 1)
         {
             Harvestable = true;
+        }
+    }
+
+    private void OnDestroy()
+    {
+        experientManager.Experient = (int)(experientManager.Experient + SeedData.SeedProduct.GetTotalExperience());
+        if (Canvas != null && XPPopup != null)
+        {
+            GameObject popup = Instantiate(XPPopup, position, Quaternion.identity, Canvas.transform);
+            TextPopup goldPopup = popup.GetComponent<TextPopup>();
+            goldPopup.isAdd = false;
+            goldPopup.isGold = false;
+            goldPopup.goldPopup = SeedData.SeedProduct.Experient;
         }
     }
 }

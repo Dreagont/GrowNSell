@@ -7,8 +7,9 @@ public class TooltipManager : MonoBehaviour
     public static TooltipManager instance;
     public TextMeshProUGUI ItemName;
     public TextMeshProUGUI ItemDescription;
-    public Image Icon;
+    public TextMeshProUGUI ItemPrice;
     public RectTransform rectTransform;
+    public GameObject PriceBox;
     public float xOffset = 20f;
     public float yOffset = 20f;
 
@@ -45,16 +46,25 @@ public class TooltipManager : MonoBehaviour
         transform.position = position;
     }
 
-    public void SetAndShowToolTip(Sprite icon, string name, string description)
+    public void SetAndShowToolTip(string name, string description, int price)
     {
-        gameObject.SetActive(true);
+        gameObject.SetActive(true); // Ensure the tooltip is active first
+        PriceBox.SetActive(true);   // Activate the PriceBox
         ItemName.text = name;
         ItemDescription.text = description;
-        Icon.sprite = icon;
-
-        // Force layout update
+        ItemPrice.text = price.ToString();
         LayoutRebuilder.ForceRebuildLayoutImmediate(rectTransform);
     }
+
+    public void SetAndShowToolTip(string name, string description)
+    {
+        gameObject.SetActive(true); // Ensure the tooltip is active
+        PriceBox.SetActive(false);  // Deactivate the PriceBox
+        ItemName.text = name;
+        ItemDescription.text = description;
+        LayoutRebuilder.ForceRebuildLayoutImmediate(rectTransform);
+    }
+
 
     public void HideTooltip()
     {

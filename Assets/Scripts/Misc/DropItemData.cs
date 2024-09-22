@@ -19,7 +19,7 @@ public class DropItemData : MonoBehaviour
     void Start()
     {
         DropItemIcon.sprite = inventoryItemData.dropIcon;
-        DropItemCountText.text = inventoryItemData.DropCount.ToString();
+        DropItemCountText.text = inventoryItemData.GetTotalDropCount().ToString();
     }
 
     void Update()

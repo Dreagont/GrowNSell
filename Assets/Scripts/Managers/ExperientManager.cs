@@ -13,9 +13,13 @@ public class ExperientManager : MonoBehaviour
     public Image Fillbar;
     private GameManager gameManager;
 
-    public GameObject BuffWindow;
+    public GameObject ExpBar;
+
+    public BuffManager BuffManager;
     void Start()
     {
+        BuffManager = FindAnyObjectByType<BuffManager>();
+        ExpBar.gameObject.SetActive(true);
         gameManager = GetComponentInParent<GameManager>();
         Fillbar.fillAmount = GlobalVariables.UpdateFillBar(Experient, ExperientToNextLevel);
     }
@@ -35,6 +39,6 @@ public class ExperientManager : MonoBehaviour
         Level++;
         Experient = 0;
         ExperientToNextLevel = (int) (ExperientToNextLevel * ExperientMultiplier);
-        BuffWindow.SetActive(true);
+        BuffManager.ToggleBuffShopUI();
     }
 }

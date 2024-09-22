@@ -18,6 +18,7 @@ public class InventoryItemData : ScriptableObject
     public ItemType itemType2;
 
     public EquipableTag EquipableTag;
+    public GameObject Prefab;
 
     public List<Buff> buffs = new List<Buff>();
 

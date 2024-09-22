@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -16,6 +17,9 @@ public class GameManager : MonoBehaviour
 
     public Text GoldText;
     public Text GoalGoldText;
+    public Text GoalGoldText1;
+
+    public TextMeshProUGUI GoalDayText;
     void Start()
     {
         
@@ -42,12 +46,15 @@ public class GameManager : MonoBehaviour
         if (GoalGold < 100000)
         {
             GoalGoldText.text = GoalGold.ToString();
+            GoalGoldText1.text = GoalGold.ToString();
         }
         else
         {
             GoalGoldText.text = GlobalVariables.FormatNumber(GoalGold);
+            GoalGoldText1.text = GlobalVariables.FormatNumber(GoalGold);
 
         }
+        GoalDayText.text ="in Day " + DayCheck.ToString();
     }
     public bool CanAffordItem(int itemPrice)
     {
