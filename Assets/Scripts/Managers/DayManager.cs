@@ -54,6 +54,7 @@ public class DayManager : MonoBehaviour
         objectsManager.UpdateSeedSpriteAndState();
         objectsManager.DeWaterAll();
         gameManager.RefillEnergy();
+        gameManager.ShopRollCost = 10;
         Debug.Log("Day: " + GlobalVariables.currentDay);
     }
 

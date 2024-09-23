@@ -14,12 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 1
   displayName: Copper Axe
-  description: Copper Axe
+  description: Use for chopping trees.
   icon: {fileID: 72079649, guid: 1ff9d6f4ecd51ba4a84696e4111b7002, type: 3}
   dropIcon: {fileID: -162177958, guid: 1ff9d6f4ecd51ba4a84696e4111b7002, type: 3}
   MaxStackSize: 1
-  sellPrice: 10
+  sellPrice: 1
   buyPrice: 100
+  DropCount: 1
+  Experient: 5
   itemType1: 1
   itemType2: 0
   EquipableTag: 4
+  Prefab: {fileID: 0}
+  buffs: []

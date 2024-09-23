@@ -1,24 +1,48 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-using UnityEngine.UI;
 
 public class ObjectSpawner : MonoBehaviour
 {
     public Tilemap Ground;
     public GameObject[] objects;
     public Transform ObjectsParent;
-    void Start()
-    {
-        //SpawnObject();
-    }
 
+    private void Start()
+    {
+        SpawnObject();
+    }
     public void SpawnObject()
     {
         int objectLayer = LayerMask.NameToLayer("Object");
 
         foreach (var position in Ground.cellBounds.allPositionsWithin)
+        {
+            if (Ground.HasTile(position))
+            {
+                if (Ground.GetTile(position).name == "RandomGrass")
+                {
+                    Vector3 truePos = Ground.CellToWorld(position) + new Vector3(0.5f, 0.5f, 0);
+
+                    if (Random.Range(1, 4) < 3)
+                    {
+                        int objectIndex = Random.Range(0, objects.Length);
+                        GameObject spawnedObject = Instantiate(objects[objectIndex], truePos, Quaternion.identity, ObjectsParent);
+                        Object objectSpwaned = spawnedObject.GetComponent<Object>();
+
+                        objectSpwaned.ObjectPosition = truePos;
+
+                        SetLayerRecursively(spawnedObject, objectLayer);
+                    }
+                } 
+                
+            }
+        }
+    }
+    public void SpawnObject(BoundsInt newBounds)
+    {
+        int objectLayer = LayerMask.NameToLayer("Object");
+
+        foreach (var position in newBounds.allPositionsWithin)
         {
             if (Ground.HasTile(position))
             {

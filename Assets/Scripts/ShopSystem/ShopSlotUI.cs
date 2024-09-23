@@ -112,6 +112,7 @@ public class ShopSlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
                 goldPopup.goldPopup = quantityToBuy * InventoryItemData.buyPrice;
             }
         }
+        TooltipManager.instance.HideTooltip();
     }
 
 

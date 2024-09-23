@@ -11,7 +11,6 @@ public class TileManager : MonoBehaviour
     public Tilemap highlightMap;
     public Tilemap FarmSoilMap;
     public Tilemap FarmWaterMap;
-    public Tilemap GrassBorderMap;
 
     [Header("Tiles")]
     public Tile hiddenInteractableTile;
@@ -19,7 +18,6 @@ public class TileManager : MonoBehaviour
     public Tile highlightTile;
     public TileBase SoilTile;
     public TileBase WateredSoilTile;
-    public TileBase BorderTile;
 
     [Header("Misc")]
     public GameObject PlantingSoil;
@@ -297,7 +295,7 @@ public class TileManager : MonoBehaviour
 
     public void Plow()
     {
-        if (IsInteractable(cellPosition) && gameManager.ActionAble(10))
+        if (IsInteractable(cellPosition) && gameManager.ActionAble(8))
         {
             Vector3 worldPosition1 = new Vector3(cellPosition.x + 0.0f, cellPosition.y + 0.5f, 0);
 
@@ -340,7 +338,7 @@ public class TileManager : MonoBehaviour
         if (hitCollider != null)
         {
             Soil soil = hitCollider.GetComponent<Soil>();
-            if (soil != null && gameManager.ActionAble(10))
+            if (soil != null && gameManager.ActionAble(4))
             {
                 Vector3 worldPosition1 = new Vector3(cellPosition.x + 0.0f, cellPosition.y + 1f, 0);
 
@@ -369,7 +367,7 @@ public class TileManager : MonoBehaviour
         if (ObjectsManager.SoilValues[worldPosition] == false)
         {
             ObjectsManager.SoilValues[worldPosition] = true;
-            gameManager.ConsumeEnergy(10);
+            gameManager.ConsumeEnergy(4);
 
         }
     }
@@ -385,7 +383,7 @@ public class TileManager : MonoBehaviour
             Seed seed = hitCollider.GetComponent<Seed>();
             if (seed != null)
             {
-                if (seed.Harvestable && gameManager.ActionAble(10))
+                if (seed.Harvestable && gameManager.ActionAble(1))
                 {
                     worldPosition.x -= 0.5f;
                     StartCoroutine(HarvestDelay(seed));
@@ -403,7 +401,7 @@ public class TileManager : MonoBehaviour
     public void HarvestPlant(Seed seed)
     {
         ObjectsManager.SeedValues.Remove(seed.position);
-        gameManager.ConsumeEnergy(10);
+        gameManager.ConsumeEnergy(1);
 
         DropItem(seed.SeedData.SeedProduct, seed.position);
         Destroy(seed.gameObject);
@@ -488,22 +486,10 @@ public class TileManager : MonoBehaviour
 
         Vector3 truePos = new Vector3(position.x + 0.5f, position.y + 0.5f, 0);
         Instantiate(PlantingSoil, truePos, Quaternion.identity, soilsParent);
-        gameManager.ConsumeEnergy(10);
+        gameManager.ConsumeEnergy(8);
         ObjectsManager.SoilValues.Add(truePos, false);
     }
 
-    private void PlaceBordersAround(Vector3Int centerPosition)
-    {
-        for (int x = -1; x <= 1; x++)
-        {
-            for (int y = -1; y <= 1; y++)
-            {
-                Vector3Int borderPosition = new Vector3Int(centerPosition.x + x, centerPosition.y + y, centerPosition.z);
-
-                GrassBorderMap.SetTile(borderPosition, BorderTile);
-            }
-        }
-    }
 
     public string GetTileName(Vector3Int position)
     {

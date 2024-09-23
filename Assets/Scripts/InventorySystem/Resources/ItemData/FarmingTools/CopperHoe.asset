@@ -18,8 +18,12 @@ MonoBehaviour:
   icon: {fileID: 1577799783, guid: 149d97fc8d899244b8ed11be675859d3, type: 3}
   dropIcon: {fileID: -794433077, guid: 1ff9d6f4ecd51ba4a84696e4111b7002, type: 3}
   MaxStackSize: 1
-  sellPrice: 10
+  sellPrice: 1
   buyPrice: 15
+  DropCount: 1
+  Experient: 5
   itemType1: 1
   itemType2: 0
   EquipableTag: 1
+  Prefab: {fileID: 0}
+  buffs: []

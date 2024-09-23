@@ -15,11 +15,17 @@ public class GameManager : MonoBehaviour
     public int Energy = 100;
     public int CurrentEnergy = 100;
 
+    public int ShopRollCost = 10;
+    public int ShopUpgradeCost = 1000;
     public Text GoldText;
     public Text GoalGoldText;
     public Text GoalGoldText1;
 
     public TextMeshProUGUI GoalDayText;
+
+    public GameObject WinGameWindow;
+    public GameObject LoseGameWindow;
+    public GameObject GamePenaty;
     void Start()
     {
         
@@ -79,20 +85,39 @@ public class GameManager : MonoBehaviour
 
     public void CompleteGoal()
     {
-        if (GlobalVariables.currentDay == DayCheck )
+        if (GlobalVariables.currentDay == DayCheck + 1)
         {
+            GamePenaty.SetActive(true);
             if (Gold <= GoalGold)
             {
-                GlobalVariables.currentDay = 0;
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                LoseGame();
+                
             } else
             {
-                
-                DayCheck *= 2;
-                GoalGold *= 4;
+                WinGame();
+               
             }
         }
 
     }
 
+    private void LoseGame()
+    {
+        LoseGameWindow.SetActive(true);
+        GlobalVariables.CanAction = false;
+    }
+
+    private void WinGame()
+    {
+        WinGameWindow.SetActive(true);
+        DayCheck += 10;
+        GoalGold *= 4;
+    }
+
+    public void RestartGame()
+    {
+        GamePenaty.SetActive(false);
+        GlobalVariables.currentDay = 0;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 }

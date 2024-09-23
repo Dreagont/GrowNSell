@@ -1,23 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class ShopUIController : MonoBehaviour
 {
     public GameObject ShopUI;
-    public GameObject FadeScreen;
-
     public GameObject shopSlotPrefab;
+    public GameObject FadeScreen;
     public Transform shopSlotParent;
+
     public List<InventoryItemData> allAvailableItems;
-    public List<ShopItem> itemsForSale;  
+    public List<ShopItem> itemsForSale;
+
+    public TextMeshProUGUI rollPriceText;
+    public TextMeshProUGUI UpgradePriceText;
+    public GameManager gameManager;
 
     public int shopLevel = 1;
-    public GameObject FadeScrren;
-
     private void Start()
     {
+        gameManager = FindAnyObjectByType<GameManager>();
         ShopUI.gameObject.SetActive(false);
         RollNewItems();
         PopulateShop();
@@ -30,6 +34,8 @@ public class ShopUIController : MonoBehaviour
             ShopUI.SetActive(false);
             GlobalVariables.CanAction = true;
         }
+        rollPriceText.text = "Roll:"+ gameManager.ShopRollCost.ToString();
+        UpgradePriceText.text = gameManager.ShopUpgradeCost.ToString();
     }
 
     private void PopulateShop()
@@ -51,24 +57,29 @@ public class ShopUIController : MonoBehaviour
 
     private int GetNumberOfItemsForSale()
     {
-        return (4 + shopLevel) > allAvailableItems.Count ? (4 + shopLevel) : allAvailableItems.Count;
+        return (1 + shopLevel) < allAvailableItems.Count ? (1 + shopLevel) : allAvailableItems.Count;
     }
 
     public void RollNewItems()
     {
-        itemsForSale.Clear();
-
-        int numberOfItems = GetNumberOfItemsForSale();
-
-        for (int i = 0; i < numberOfItems; i++)
+        if (gameManager.CanAffordItem(gameManager.ShopRollCost))
         {
-            InventoryItemData randomItem = allAvailableItems[Random.Range(0, allAvailableItems.Count)];
-            int randomQuantity = Random.Range(1, 21); 
+            gameManager.Gold -= gameManager.ShopRollCost;
+            gameManager.ShopRollCost *= 2;
+            itemsForSale.Clear();
 
-            itemsForSale.Add(new ShopItem(randomItem, randomQuantity));
+            int numberOfItems = GetNumberOfItemsForSale();
+
+            for (int i = 0; i < numberOfItems; i++)
+            {
+                InventoryItemData randomItem = allAvailableItems[Random.Range(0, allAvailableItems.Count)];
+                int randomQuantity = Random.Range(1, 21);
+
+                itemsForSale.Add(new ShopItem(randomItem, randomQuantity));
+            }
+
+            PopulateShop();
         }
-
-        PopulateShop();
     }
 
     public void ToggleShopUI()
@@ -77,13 +88,13 @@ public class ShopUIController : MonoBehaviour
         {
             ShopUI.SetActive(false);
             GlobalVariables.CanAction = true;
-            FadeScrren.gameObject.SetActive(false);
+            FadeScreen.gameObject.SetActive(false);
         }
         else
         {
             ShopUI.SetActive(true);
             GlobalVariables.CanAction = false;
-            FadeScrren.gameObject.SetActive(true);
+            FadeScreen.gameObject.SetActive(true);
         }
     }
 
@@ -94,7 +105,14 @@ public class ShopUIController : MonoBehaviour
 
     public void OnButtonUpgradePressed()
     {
-        shopLevel += 1;
+        if (gameManager.CanAffordItem(gameManager.ShopUpgradeCost))
+        {
+            gameManager.Gold -= gameManager.ShopUpgradeCost;
+            gameManager.ShopUpgradeCost *= 2;
+            gameManager.ShopRollCost = 10;
+            shopLevel += 1;
+
+        }
     }
 }
 
