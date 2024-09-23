@@ -104,7 +104,7 @@ public class TileManager : MonoBehaviour
             }
             else if (holdItem.itemType1 == ItemType.Seed || holdItem.itemType2 == ItemType.Seed)
             {
-                if (Input.GetMouseButtonDown(0))
+                if (Input.GetMouseButton(0))
                 {
                     PlantSeed();
                 }
@@ -289,7 +289,7 @@ public class TileManager : MonoBehaviour
         if (dropItemData != null)
         {
 
-            playerInventoryHolder.PrimaryInventorySystem.AddToInventory(dropItemData.inventoryItemData, dropItemData.inventoryItemData.GetTotalDropCount());
+            playerInventoryHolder.AddToHotBar(dropItemData.inventoryItemData, dropItemData.inventoryItemData.GetTotalDropCount());
             Destroy(dropItem);
 
         }
@@ -306,7 +306,28 @@ public class TileManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("NO");
+            Vector3 seedPosition = new Vector3(cellPosition.x + 0.5f, cellPosition.y, 0);
+            if (ObjectsManager.SeedValues.ContainsKey(seedPosition))
+            {
+                Vector3 worldPosition1 = new Vector3(cellPosition.x + 0.0f, cellPosition.y + 0.5f, 0);
+                SpawnAnimation(digAnimationPrefab, worldPosition1);
+
+                int seedLayerMask = LayerMask.GetMask("Seed");
+                Vector3 worldPosition = new Vector3(cellPosition.x + 0.5f, cellPosition.y + 0.5f, 0);
+                Collider2D hitCollider = Physics2D.OverlapPoint(worldPosition, seedLayerMask);
+
+                if (hitCollider != null)
+                {
+                    Seed seed = hitCollider.GetComponent<Seed>();
+                    if (seed != null)
+                    {
+                        seed.isDestroyed = true;
+                        ObjectsManager.SeedValues.Remove(seedPosition);
+                        Destroy(seed.gameObject);
+                    }
+                }
+
+            }
         }
     }
 

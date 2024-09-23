@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         UpdateTextUI();
-        //CompleteGoal();
+        CompleteGoal();
     }
 
     public void UpdateTextUI()

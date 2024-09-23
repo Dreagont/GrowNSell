@@ -2,16 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.UI;
 
 public class ObjectSpawner : MonoBehaviour
 {
     public Tilemap Ground;
     public GameObject[] objects;
     public Transform ObjectsParent;
-
     void Start()
     {
-        SpawnObject();
+        //SpawnObject();
     }
 
     public void SpawnObject()

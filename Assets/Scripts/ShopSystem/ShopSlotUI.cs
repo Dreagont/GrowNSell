@@ -86,8 +86,34 @@ public class ShopSlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     {
         if (eventData.button == PointerEventData.InputButton.Right)
         {
+            BuyAllItems();
         }
     }
+
+    public void BuyAllItems()
+    {
+        int maxAffordableQuantity = Mathf.FloorToInt(gameManager.Gold / InventoryItemData.buyPrice); 
+        int quantityToBuy = Mathf.Min(maxAffordableQuantity, sellQuanity); 
+
+        if (quantityToBuy > 0)
+        {
+            if (playerInventoryHolder.AddToHotBar(InventoryItemData, quantityToBuy))
+            {
+                sellQuanity -= quantityToBuy; 
+                gameManager.Gold -= quantityToBuy * InventoryItemData.buyPrice;
+
+                SetUi();
+
+                Vector3 mousePosition = Input.mousePosition;
+                GameObject popup = Instantiate(goldAddText, mousePosition, Quaternion.identity, canvas.transform);
+                TextPopup goldPopup = popup.GetComponent<TextPopup>();
+                goldPopup.isAdd = false;
+                goldPopup.isGold = true;
+                goldPopup.goldPopup = quantityToBuy * InventoryItemData.buyPrice;
+            }
+        }
+    }
+
 
     private IEnumerator ShowTooltipDelayed()
     {

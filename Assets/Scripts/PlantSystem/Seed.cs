@@ -16,7 +16,7 @@ public class Seed : MonoBehaviour
     public ExperientManager experientManager;
     public GameObject XPPopup;
     public GameObject Canvas;
-
+    public bool isDestroyed = false;
     void Start()
     {
         experientManager = FindAnyObjectByType<ExperientManager>();
@@ -68,9 +68,9 @@ public class Seed : MonoBehaviour
 
     private void OnDestroy()
     {
-        experientManager.Experient = (int)(experientManager.Experient + SeedData.SeedProduct.GetTotalExperience());
-        if (Canvas != null && XPPopup != null)
+        if (Canvas != null && XPPopup != null && isDestroyed == false)
         {
+            experientManager.Experient = (int)(experientManager.Experient + SeedData.SeedProduct.GetTotalExperience());
             GameObject popup = Instantiate(XPPopup, position, Quaternion.identity, Canvas.transform);
             TextPopup goldPopup = popup.GetComponent<TextPopup>();
             goldPopup.isAdd = false;

@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,9 +13,13 @@ public class DayManager : MonoBehaviour
     public int currentDay;
     private GameManager gameManager;
     public Text DayCounter;
+    public Image SkipDayFade;
+
     private void Start()
     {
+        SkipDayFade.gameObject.SetActive(true);
         gameManager = GetComponentInParent<GameManager>();
+        SkipDayFade.color = new Color(SkipDayFade.color.r, SkipDayFade.color.g, SkipDayFade.color.b, 0); 
     }
 
     void Update()
@@ -22,19 +27,16 @@ public class DayManager : MonoBehaviour
         UpdateTime();
         HandleSpeedUpInput();
         UpdateUIText();
-
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            SkipDay();
+        }
     }
 
     public void UpdateTime()
     {
         timeMultiplier = GlobalVariables.timeMultiplier;
-        //elapsedTime += Time.deltaTime * timeMultiplier;
         GlobalVariables.TimeCounter += Time.deltaTime * timeMultiplier;
-
-        /*if (elapsedTime >= GlobalVariables.DayDuration)
-        {
-            AdvanceDay();
-        }*/
     }
 
     public void UpdateUIText()
@@ -43,6 +45,7 @@ public class DayManager : MonoBehaviour
         timeMultiText.text = timeMultiplier.ToString() + "X";
         DayCounter.text = "Day " + GlobalVariables.currentDay.ToString();
     }
+
     void AdvanceDay()
     {
         elapsedTime = 0f;
@@ -58,17 +61,44 @@ public class DayManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.K))
         {
-            GlobalVariables.timeMultiplier = 1f; 
+            GlobalVariables.timeMultiplier = 1f;
         }
         else if (Input.GetKeyDown(KeyCode.L))
         {
-            GlobalVariables.timeMultiplier = 10f; 
+            GlobalVariables.timeMultiplier = 10f;
         }
-        
     }
 
     public void SkipDay()
     {
-        AdvanceDay();
+        StartCoroutine(FadeAndAdvanceDay());
+    }
+
+    private IEnumerator FadeAndAdvanceDay()
+    {
+        for (float t = 0; t < 0.5f; t += Time.deltaTime)
+        {
+            float normalizedTime = t / 0.5f;
+            SetFadeAlpha(Mathf.Lerp(0, 1, normalizedTime));
+            yield return null;
+        }
+        SetFadeAlpha(1); 
+
+        AdvanceDay(); 
+
+        for (float t = 0; t < 0.5f; t += Time.deltaTime)
+        {
+            float normalizedTime = t / 0.5f;
+            SetFadeAlpha(Mathf.Lerp(1, 0, normalizedTime));
+            yield return null;
+        }
+        SetFadeAlpha(0); 
+    }
+
+    private void SetFadeAlpha(float alpha)
+    {
+        Color color = SkipDayFade.color;
+        color.a = alpha;
+        SkipDayFade.color = color;
     }
 }
