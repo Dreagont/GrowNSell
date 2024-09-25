@@ -32,6 +32,8 @@ public class ShopSlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
         if (sellQuanity == 0)
         {
             Destroy(gameObject);
+        TooltipManager.instance.HideTooltip();
+
         }
     }
 
@@ -88,6 +90,8 @@ public class ShopSlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
         {
             BuyAllItems();
         }
+
+       
     }
 
     public void BuyAllItems()

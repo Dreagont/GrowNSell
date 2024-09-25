@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemBuffed: {fileID: 11400000, guid: b644a4b1d062cde468621aae4a4370f5, type: 2}
   buffName: Leek Knowledge
-  description: Increase 100% leek experient gain.
+  description: Increase 50% leek experient gain.
   sellPriceMultiplier: 0
   dropCountMultiplier: 0
-  expMultiplier: 1
+  expMultiplier: 0.5
   buffIcon: {fileID: -1912283234, guid: 9470b17ec078762449d7fbcec5647f51, type: 3}

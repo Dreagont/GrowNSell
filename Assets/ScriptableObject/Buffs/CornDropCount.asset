@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemBuffed: {fileID: 11400000, guid: be2a5343cd277d44cac187d1cf59e363, type: 2}
   buffName: Corn Fever
-  description: Increase 100% corn yield.
+  description: Increase 50% corn yield.
   sellPriceMultiplier: 0
-  dropCountMultiplier: 1
+  dropCountMultiplier: 0.5
   expMultiplier: 0
   buffIcon: {fileID: 1500165417, guid: 9470b17ec078762449d7fbcec5647f51, type: 3}

@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     public int Energy = 100;
     public int CurrentEnergy = 100;
 
+    public ExperientManager ExperientManager;
+
     public int ShopRollCost = 10;
     public int ShopUpgradeCost = 1000;
     public Text GoldText;
@@ -26,9 +28,14 @@ public class GameManager : MonoBehaviour
     public GameObject WinGameWindow;
     public GameObject LoseGameWindow;
     public GameObject GamePenaty;
+
+    public int EnergyBuff = 0;
+    public float ExperientBuff = 0;
+    public float GoldBuff = 0;
+    public int ToolDamageBuff = 0;
+
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -60,7 +67,7 @@ public class GameManager : MonoBehaviour
             GoalGoldText1.text = GlobalVariables.FormatNumber(GoalGold);
 
         }
-        GoalDayText.text ="in Day " + DayCheck.ToString();
+        GoalDayText.text ="in Day " + (DayCheck + 2).ToString();
     }
     public bool CanAffordItem(int itemPrice)
     {
@@ -85,7 +92,7 @@ public class GameManager : MonoBehaviour
 
     public void CompleteGoal()
     {
-        if (GlobalVariables.currentDay == DayCheck + 1)
+        if (GlobalVariables.currentDay == DayCheck + 2)
         {
             GamePenaty.SetActive(true);
             if (Gold <= GoalGold)
@@ -118,6 +125,7 @@ public class GameManager : MonoBehaviour
     {
         GamePenaty.SetActive(false);
         GlobalVariables.currentDay = 0;
+        GlobalVariables.CanAction = true;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

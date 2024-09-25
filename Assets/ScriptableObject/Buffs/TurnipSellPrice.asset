@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemBuffed: {fileID: 11400000, guid: 07757a87061afbd4f965fce67ea48682, type: 2}
   buffName: Turnip Addiction
-  description: Increase 100% turnip sell price.
-  sellPriceMultiplier: 1
+  description: Increase 50% turnip sell price.
+  sellPriceMultiplier: 0.5
   dropCountMultiplier: 0
   expMultiplier: 0
   buffIcon: {fileID: 1579674932, guid: 9470b17ec078762449d7fbcec5647f51, type: 3}

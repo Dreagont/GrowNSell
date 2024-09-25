@@ -6,6 +6,14 @@ using UnityEngine.UIElements;
 
 public class TileManager : MonoBehaviour
 {
+    [Header("Tools Energy")]
+    public int AxeEnergy = 3;
+    public int PickaxeEnergy = 3;
+    public int HoePlowEnergy = 8;
+    public int HoeHarvestEnergy = 1;
+    public int WaterEnergy = 4;
+
+
     [Header("Tilemaps")]
     public Tilemap interactableMap;
     public Tilemap highlightMap;
@@ -21,7 +29,6 @@ public class TileManager : MonoBehaviour
 
     [Header("Misc")]
     public GameObject PlantingSoil;
-    public GameObject SeedPrefab;
 
     public Vector3 mousePos;
     public Vector3Int cellPosition;
@@ -79,13 +86,14 @@ public class TileManager : MonoBehaviour
                 {
                     if (holdItem.EquipableTag == EquipableTag.Shovel)
                     {
-                        Plow();
                     }
                     else if (holdItem.EquipableTag == EquipableTag.WateringCan)
                     {
-                        Watering();
+                        //Watering();
                     } else if (holdItem.EquipableTag == EquipableTag.Hoe)
                     {
+                        Plow();
+
                         Harvest();
                     }
                     else if (holdItem.EquipableTag == EquipableTag.Axe)
@@ -98,7 +106,23 @@ public class TileManager : MonoBehaviour
                     }
 
                 }
-                HighlightTileUnderMouse();
+
+                if (Input.GetMouseButtonDown(1))
+                {
+                    if (holdItem.EquipableTag == EquipableTag.Hoe)
+                    {
+                       DestroyCrop();
+                    }
+                }
+
+                if (Input.GetMouseButton(0))
+                {
+                    if (holdItem.EquipableTag == EquipableTag.WateringCan)
+                    {
+                        Watering();
+                    }
+                }
+                    HighlightTileUnderMouse();
             }
             else if (holdItem.itemType1 == ItemType.Seed || holdItem.itemType2 == ItemType.Seed)
             {
@@ -130,12 +154,12 @@ public class TileManager : MonoBehaviour
         if (hitCollider != null)
         {
             Object objectHit = hitCollider.GetComponent<Object>();
-            if (objectHit.ObjectData.ObjectType == ObjectType.Stone && gameManager.ActionAble(3))
+            if (objectHit.ObjectData.ObjectType == ObjectType.Stone && gameManager.ActionAble(PickaxeEnergy))
             {
                 Vector3 worldPosition1 = new Vector3(cellPosition.x + 0.0f, cellPosition.y + 0.5f, 0);
 
                 SpawnAnimation(mineAnimationPrefab, worldPosition1);
-                StartCoroutine(ExecuteAfterDelay(0.4f, objectHit));
+                StartCoroutine(ExecuteAfterDelay(0.4f, objectHit, PickaxeEnergy));
             }
         } else
         {
@@ -151,12 +175,12 @@ public class TileManager : MonoBehaviour
         if (hitCollider != null)
         {
             Object objectHit = hitCollider.GetComponent<Object>();
-            if (objectHit.ObjectData.ObjectType == ObjectType.Wood && gameManager.ActionAble(3))
+            if (objectHit.ObjectData.ObjectType == ObjectType.Wood && gameManager.ActionAble(AxeEnergy))
             {
                 Vector3 worldPosition1 = new Vector3(cellPosition.x + 0.0f, cellPosition.y + 0.5f, 0);
 
                 SpawnAnimation(chopAnimationPrefab, worldPosition1);
-                StartCoroutine(ExecuteAfterDelay(0.4f, objectHit));
+                StartCoroutine(ExecuteAfterDelay(0.4f, objectHit, AxeEnergy));
             }
         }
         else
@@ -172,22 +196,22 @@ public class TileManager : MonoBehaviour
         currentAnimation = Instantiate(animationPrefab, position, Quaternion.identity);
         Destroy(currentAnimation, 0.5f);
     }
-    private IEnumerator ExecuteAfterDelay(float delay, Object objectHit)
+    private IEnumerator ExecuteAfterDelay(float delay, Object objectHit, int energy)
     {
         yield return new WaitForSeconds(delay);
 
         if (objectHit != null)  
         {
-            DestroyObject(objectHit);
+            DestroyObject(objectHit, energy);
         }
     }
 
-    private void DestroyObject(Object objectHit)
+    private void DestroyObject(Object objectHit, int energy)
     {
         if (objectHit == null) return;  
 
         objectHit.ModifyHealth(2);
-        gameManager.CurrentEnergy -= 3;
+        gameManager.ConsumeEnergy(energy);
 
         if (objectHit.ObjectHealth <= 0)
         {
@@ -299,36 +323,45 @@ public class TileManager : MonoBehaviour
         {
             Vector3 worldPosition1 = new Vector3(cellPosition.x + 0.0f, cellPosition.y + 0.5f, 0);
 
-            SpawnAnimation(digAnimationPrefab, worldPosition1);
+            SpawnAnimation(plowAnimationPrefab, worldPosition1);
             StartCoroutine(AddToParentAfterDelay(0.2f, cellPosition));
         }
         else
         {
-            Vector3 seedPosition = new Vector3(cellPosition.x + 0.5f, cellPosition.y, 0);
-            if (ObjectsManager.SeedValues.ContainsKey(seedPosition))
-            {
-                Vector3 worldPosition1 = new Vector3(cellPosition.x + 0.0f, cellPosition.y + 0.5f, 0);
-                SpawnAnimation(digAnimationPrefab, worldPosition1);
-
-                int seedLayerMask = LayerMask.GetMask("Seed");
-                Vector3 worldPosition = new Vector3(cellPosition.x + 0.5f, cellPosition.y + 0.5f, 0);
-                Collider2D hitCollider = Physics2D.OverlapPoint(worldPosition, seedLayerMask);
-
-                if (hitCollider != null)
-                {
-                    Seed seed = hitCollider.GetComponent<Seed>();
-                    if (seed != null)
-                    {
-                        seed.isDestroyed = true;
-                        ObjectsManager.SeedValues.Remove(seedPosition);
-                        Destroy(seed.gameObject);
-                    }
-                }
-
-            }
+            
         }
     }
 
+    public void DestroyCrop()
+    {
+        Vector3 seedPosition = new Vector3(cellPosition.x + 0.5f, cellPosition.y, 0);
+        if (ObjectsManager.SeedValues.ContainsKey(seedPosition))
+        {
+            Vector3 worldPosition1 = new Vector3(cellPosition.x + 0.0f, cellPosition.y + 0.5f, 0);
+            SpawnAnimation(plowAnimationPrefab, worldPosition1);
+
+            int seedLayerMask = LayerMask.GetMask("Seed");
+            Vector3 worldPosition = new Vector3(cellPosition.x + 0.5f, cellPosition.y + 0.5f, 0);
+            Collider2D hitCollider = Physics2D.OverlapPoint(worldPosition, seedLayerMask);
+
+            if (hitCollider != null)
+            {
+                Seed seed = hitCollider.GetComponent<Seed>();
+                if (seed != null)
+                {
+                    seed.isDestroyed = true;
+                    ObjectsManager.SeedValues.Remove(seedPosition);
+                    StartCoroutine(DelayDestroy(seed.gameObject)); 
+                }
+            }
+
+        }
+    }
+    public IEnumerator DelayDestroy(GameObject gameObject)
+    {
+        yield return new WaitForSeconds(0.3f);
+        Destroy(gameObject);
+    }
     public void Watering()
     {
         int soilLayerMask = LayerMask.GetMask("Soil");
@@ -367,7 +400,7 @@ public class TileManager : MonoBehaviour
         if (ObjectsManager.SoilValues[worldPosition] == false)
         {
             ObjectsManager.SoilValues[worldPosition] = true;
-            gameManager.ConsumeEnergy(4);
+            gameManager.ConsumeEnergy(WaterEnergy);
 
         }
     }
@@ -401,7 +434,7 @@ public class TileManager : MonoBehaviour
     public void HarvestPlant(Seed seed)
     {
         ObjectsManager.SeedValues.Remove(seed.position);
-        gameManager.ConsumeEnergy(1);
+        gameManager.ConsumeEnergy(HoeHarvestEnergy);
 
         DropItem(seed.SeedData.SeedProduct, seed.position);
         Destroy(seed.gameObject);
@@ -486,7 +519,7 @@ public class TileManager : MonoBehaviour
 
         Vector3 truePos = new Vector3(position.x + 0.5f, position.y + 0.5f, 0);
         Instantiate(PlantingSoil, truePos, Quaternion.identity, soilsParent);
-        gameManager.ConsumeEnergy(8);
+        gameManager.ConsumeEnergy(HoePlowEnergy);
         ObjectsManager.SoilValues.Add(truePos, false);
     }
 

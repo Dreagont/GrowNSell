@@ -26,6 +26,7 @@ public class PlayerInventoryHolder : InventoryHolder
     public int SelectedSlot = 0;
     public GameObject InventoryUiPanel;
     public InventoryItemData holdingItem;
+    private ShopUIController shopUIController;
     protected override void Awake()
     {
         base.Awake();
@@ -45,6 +46,7 @@ public class PlayerInventoryHolder : InventoryHolder
     }
     private void Start()
     {
+        shopUIController = FindAnyObjectByType<ShopUIController>();
         if (chestImage != null)
         {
             chestImage.GetComponent<Button>().onClick.AddListener(OpenInventory);
@@ -66,6 +68,11 @@ public class PlayerInventoryHolder : InventoryHolder
         }
 
         holdingItem = GetHoldingItem();
+    }
+
+    public void HotBarSelect(int index)
+    {
+        SelectedSlot = index;
     }
     private void HandleSlotSelection()
     {
@@ -145,9 +152,11 @@ public class PlayerInventoryHolder : InventoryHolder
 
     public void OpenInventory()
     {
+
         if (InventoryUiPanel.gameObject.activeInHierarchy)
         {
             CloseInventory();
+
         } else
         {
             FadeScrren.gameObject.SetActive(true);
@@ -159,6 +168,8 @@ public class PlayerInventoryHolder : InventoryHolder
         InventoryUiPanel.gameObject.SetActive(false);
         GlobalVariables.CanAction = true;
         FadeScrren.gameObject.SetActive(false);
+        shopUIController.ShopUI.SetActive(false);
+        GlobalVariables.CanAction = true;
 
     }
     public bool AddToInventory(InventoryItemData inventoryItemData, int amount)

@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemBuffed: {fileID: 11400000, guid: 07757a87061afbd4f965fce67ea48682, type: 2}
   buffName: Turnip Knowledge
-  description: Increase 100% turnip experient gain.
+  description: Increase 50% turnip experient gain.
   sellPriceMultiplier: 0
   dropCountMultiplier: 0
-  expMultiplier: 1
+  expMultiplier: 0.5
   buffIcon: {fileID: 1262349235, guid: 9470b17ec078762449d7fbcec5647f51, type: 3}

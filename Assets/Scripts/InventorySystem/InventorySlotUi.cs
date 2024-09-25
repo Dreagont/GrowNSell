@@ -12,7 +12,6 @@ public class InventorySlotUi : MonoBehaviour
     public Image holder;
     public EquipableTag equipableTag = EquipableTag.None;
     [SerializeField] private InventorySlots assignedInventorySlot;
-
     public InventorySlots AssignedInventorySlot => assignedInventorySlot;
 
     private Button button;
@@ -23,6 +22,8 @@ public class InventorySlotUi : MonoBehaviour
 
     public Image IsSelected;
 
+    public ShopSelling ShopSelling;
+
     private void Awake()
     {
         IsSelected.gameObject.SetActive(false);
@@ -30,8 +31,8 @@ public class InventorySlotUi : MonoBehaviour
 
         button = GetComponent<Button>();
         button?.onClick.AddListener(OnUISlotClick);
-
         ParentDisplay = transform.parent.GetComponent<InventoryDisplay>();
+        ShopSelling = FindAnyObjectByType<ShopSelling>();
     }
 
     public void Init(InventorySlots slot)
@@ -92,7 +93,20 @@ public class InventorySlotUi : MonoBehaviour
 
     public void OnUISlotClick()
     {
-        ParentDisplay?.SlotClicked(this);
+        if (GlobalVariables.canSwapSlot)
+        {
+            ParentDisplay?.SlotClicked(this);
+        }
+    }
+
+    public void SellInventoryItem()
+    {
+        if (ShopSelling !=  null)
+        {
+            Debug.Log("sell out");
+
+            ShopSelling.SellItem(this.assignedInventorySlot);
+        }
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -101,6 +115,8 @@ public class InventorySlotUi : MonoBehaviour
         {
             showTooltipCoroutine = StartCoroutine(ShowTooltipDelayed());
         }
+
+        
     }
 
     public void OnPointerExit(PointerEventData eventData)
@@ -116,7 +132,8 @@ public class InventorySlotUi : MonoBehaviour
     {
         if (eventData.button == PointerEventData.InputButton.Right)
         {
-        }
+            ParentDisplay?.SplitStack(this);
+        } 
     }
 
     private IEnumerator ShowTooltipDelayed()

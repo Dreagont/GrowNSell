@@ -14,9 +14,11 @@ public class DayManager : MonoBehaviour
     private GameManager gameManager;
     public Text DayCounter;
     public Image SkipDayFade;
-
+    private ShopUIController shopUIController;
+    public bool canPassDay;
     private void Start()
     {
+        shopUIController = FindAnyObjectByType<ShopUIController>();
         SkipDayFade.gameObject.SetActive(true);
         gameManager = GetComponentInParent<GameManager>();
         SkipDayFade.color = new Color(SkipDayFade.color.r, SkipDayFade.color.g, SkipDayFade.color.b, 0); 
@@ -52,9 +54,11 @@ public class DayManager : MonoBehaviour
         GlobalVariables.currentDay++;
         GlobalVariables.TimeCounter = GlobalVariables.currentDay * 120f;
         objectsManager.UpdateSeedSpriteAndState();
+        objectsManager.WaterCheck();
         objectsManager.DeWaterAll();
         gameManager.RefillEnergy();
         gameManager.ShopRollCost = 10;
+        shopUIController.RollNewItemsFree();
         Debug.Log("Day: " + GlobalVariables.currentDay);
     }
 
@@ -72,11 +76,21 @@ public class DayManager : MonoBehaviour
 
     public void SkipDay()
     {
-        StartCoroutine(FadeAndAdvanceDay());
-    }
+        if (canPassDay)
+        {
+            StartCoroutine(FadeAndAdvanceDay());
 
+        }
+    }
+    private IEnumerator FadeAndAdvanceDayDelay()
+    {
+        yield return new WaitForSeconds(1);
+        canPassDay = true;
+
+    }
     private IEnumerator FadeAndAdvanceDay()
     {
+        canPassDay = false;
         for (float t = 0; t < 0.5f; t += Time.deltaTime)
         {
             float normalizedTime = t / 0.5f;
@@ -94,6 +108,7 @@ public class DayManager : MonoBehaviour
             yield return null;
         }
         SetFadeAlpha(0); 
+        StartCoroutine(FadeAndAdvanceDayDelay());   
     }
 
     private void SetFadeAlpha(float alpha)

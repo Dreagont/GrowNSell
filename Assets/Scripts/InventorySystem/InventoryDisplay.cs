@@ -38,6 +38,7 @@ public abstract class InventoryDisplay : MonoBehaviour
 
     protected virtual void Start()
     {
+        mouseInventoryItem = FindAnyObjectByType<MouseItemData>();
     }
 
     public void SlotClicked(InventorySlotUi slot)
@@ -96,16 +97,52 @@ public abstract class InventoryDisplay : MonoBehaviour
             }
         }
     }
+
+    public void SplitStack(InventorySlotUi slot)
+    {
+        /*if (mouseInventoryItem.AsssignedInventorySlot.ItemData == slot.AssignedInventorySlot.ItemData)
+        {
+            
+            if ( slot.AssignedInventorySlot.SplitfStack(out InventorySlots item))
+            {
+                mouseInventoryItem.UpdateStack();
+                slot.UpdateInventorySlot();
+
+                Debug.Log("The same");
+            }
+            
+        } else */
+        if (mouseInventoryItem.AsssignedInventorySlot == null)
+        {
+            Debug.Log("slot null");
+            if (slot.AssignedInventorySlot.SplitfStack(out InventorySlots item))
+            {
+                mouseInventoryItem.UpdateMouseSlot(item);
+                slot.UpdateInventorySlot();
+            }
+
+        } else
+        {
+            if (slot.AssignedInventorySlot.SplitfStack(out InventorySlots item))
+            {
+                var temp = mouseInventoryItem.AsssignedInventorySlot;
+                mouseInventoryItem.UpdateMouseSlot(temp);
+                mouseInventoryItem.AsssignedInventorySlot.AddToStack(1);
+                mouseInventoryItem.ItemCount.text = mouseInventoryItem.AsssignedInventorySlot.StackSize.ToString();
+                slot.UpdateInventorySlot();
+            }
+
+        }
+
+    }
     private void ReturnItemToOriginalSlot()
     {
         if (mouseInventoryItem.AsssignedInventorySlot != null)
         {
-            // Find the original slot
             var originalSlot = slotDictionary.FirstOrDefault(x => x.Value == mouseInventoryItem.AsssignedInventorySlot).Key;
 
             if (originalSlot != null)
             {
-                // Return the item to its original slot
                 originalSlot.AssignedInventorySlot.AssignItem(mouseInventoryItem.AsssignedInventorySlot);
                 originalSlot.UpdateInventorySlot();
                 mouseInventoryItem.ClearSlot();

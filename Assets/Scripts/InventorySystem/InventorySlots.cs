@@ -77,6 +77,34 @@ public class InventorySlots : ISerializationCallbackReceiver
         return RoomLeftInStack(amountToAdd);
     }
 
+    public bool SplitHalfStack(out InventorySlots splitStack)
+    {
+        if (stackSize <= 1)
+        {
+            splitStack = null;
+            return false;
+        }
+        int half = Mathf.RoundToInt(stackSize / 2);
+        RemoveFromStack(half);
+
+        splitStack = new InventorySlots(ItemData, half);
+        return true;
+    }
+
+    public bool SplitfStack(out InventorySlots splitStack)
+    {
+        if (stackSize <= 1)
+        {
+            splitStack = null;
+            return false;
+        }
+        
+        RemoveFromStack(1);
+
+        splitStack = new InventorySlots(ItemData, 1);
+        return true;
+    }
+
     public void OnBeforeSerialize()
     {
     }

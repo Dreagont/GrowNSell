@@ -18,7 +18,7 @@ MonoBehaviour:
   icon: {fileID: -989098507, guid: 9470b17ec078762449d7fbcec5647f51, type: 3}
   dropIcon: {fileID: -834446183, guid: 9470b17ec078762449d7fbcec5647f51, type: 3}
   MaxStackSize: 999
-  sellPrice: 20
+  sellPrice: 15
   buyPrice: 15
   DropCount: 8
   Experient: 5

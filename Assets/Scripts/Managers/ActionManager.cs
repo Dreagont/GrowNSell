@@ -13,14 +13,14 @@ public class ActionManager : MonoBehaviour
 
     void Start()
     {
-        
+        Pickup();
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
-            Pickup();
+            
 
         }
     }
@@ -31,7 +31,7 @@ public class ActionManager : MonoBehaviour
         InventoryHolder.AddToHotBar(Axe, 1);
         InventoryHolder.AddToHotBar(Pickaxe, 1);
         InventoryHolder.AddToHotBar(WateringCan, 1);
-        InventoryHolder.AddToHotBar(Shovel, 1);
+        //InventoryHolder.AddToHotBar(Shovel, 1);
     }
 
 

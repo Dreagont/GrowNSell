@@ -12,10 +12,12 @@ public class BuffUI : MonoBehaviour
     public TextMeshProUGUI buffDescriptionText;
     public Image buffSprite;
     public BuffManager buffManager;
+    public bool canClick = false;
     void Start()
     {
         buffManager = FindAnyObjectByType<BuffManager>();
         UpdateBuffUI();
+        StartCoroutine(ClickCooldown());
     }
     void Update()
     {
@@ -24,8 +26,12 @@ public class BuffUI : MonoBehaviour
 
     public void OnBuffClicked()
     {
-        ApplyBuff(buff.itemBuffed, buff);
-        buffManager.ToggleBuffShopUI();
+        if (canClick)
+        {
+            ApplyBuff(buff.itemBuffed, buff);
+            buffManager.ToggleBuffShopUI();
+        }
+        
     }
 
     public void ApplyBuff(InventoryItemData item, Buff buff)
@@ -38,5 +44,11 @@ public class BuffUI : MonoBehaviour
         buffNameText.text = buff.buffName;
         buffDescriptionText.text = buff.description;
         buffSprite.sprite = buff.buffIcon;
+    }
+    private IEnumerator ClickCooldown()
+    {
+        canClick = false; 
+        yield return new WaitForSeconds(1.5f); 
+        canClick = true;
     }
 }

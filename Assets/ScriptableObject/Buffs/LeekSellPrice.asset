@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemBuffed: {fileID: 11400000, guid: b644a4b1d062cde468621aae4a4370f5, type: 2}
   buffName: Leek Addiction
-  description: Increase 100% leek sell price.
-  sellPriceMultiplier: 1
+  description: Increase 50% leek sell price.
+  sellPriceMultiplier: 0.5
   dropCountMultiplier: 0
   expMultiplier: 0
   buffIcon: {fileID: 2033432046, guid: 9470b17ec078762449d7fbcec5647f51, type: 3}

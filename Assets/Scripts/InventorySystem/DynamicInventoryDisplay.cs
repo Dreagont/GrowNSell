@@ -1,11 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class DynamicInventoryDisplay : InventoryDisplay
 {
     [SerializeField] protected InventorySlotUi slotPrefab;
+
+    private void OnEnable()
+    {
+        GlobalVariables.canSwapSlot = true;
+    }
 
     public override void AssignSlot(InventorySystem inventoryToDisplay)
     {
@@ -81,5 +87,6 @@ public class DynamicInventoryDisplay : InventoryDisplay
         {
             inventorySystem.OnInventorySlotsChanged -= UpdateSlot;
         }
+        GlobalVariables.canSwapSlot = false;
     }
 }

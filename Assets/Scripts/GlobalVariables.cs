@@ -9,7 +9,9 @@ public static class GlobalVariables
     public static float DayDuration = 120f;
     public static float TimeCounter = 0;
     public static float timeMultiplier = 1f;
-    public static int currentDay = 0;
+    public static int currentDay = 1;
+
+    public static bool canSwapSlot = false;
 
     public static string FormatNumber(float number)
     {

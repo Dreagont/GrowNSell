@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemBuffed: {fileID: 11400000, guid: be2a5343cd277d44cac187d1cf59e363, type: 2}
   buffName: Corn Knowledge
-  description: Increase 100% corn experient gain.
+  description: Increase 50% corn experient gain.
   sellPriceMultiplier: 0
   dropCountMultiplier: 0
-  expMultiplier: 1
+  expMultiplier: 0.5
   buffIcon: {fileID: -1725698280, guid: 9470b17ec078762449d7fbcec5647f51, type: 3}

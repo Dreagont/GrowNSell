@@ -37,6 +37,20 @@ public class ObjectsManager : MonoBehaviour
         }
     }
 
+    public void WaterCheck()
+    {
+        foreach (var seed in Seeds)
+        {
+            if (!seed.thisSoil.isWatered)
+            {
+                seed.dayNotWater++;
+            } else
+            {
+                seed.dayNotWater = 0;
+            }
+        }
+    }
+
     public void UpdateSeedSpriteAndState()
     {
         foreach (var seed in Seeds)

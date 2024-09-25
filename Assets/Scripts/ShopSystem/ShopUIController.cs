@@ -8,27 +8,34 @@ public class ShopUIController : MonoBehaviour
 {
     public GameObject ShopUI;
     public GameObject shopSlotPrefab;
+    public GameObject priceSlot;
     public GameObject FadeScreen;
+
     public Transform shopSlotParent;
+    public Transform PriceTableParent;
 
     public List<InventoryItemData> allAvailableItems;
     public List<ShopItem> itemsForSale;
+    public List<InventoryItemData> PriceTable;
 
     public TextMeshProUGUI rollPriceText;
     public TextMeshProUGUI UpgradePriceText;
     public GameManager gameManager;
 
     public int shopLevel = 1;
+    public int maxQuantityOfItems = 5;
     private void Start()
     {
         gameManager = FindAnyObjectByType<GameManager>();
         ShopUI.gameObject.SetActive(false);
-        RollNewItems();
+        RollNewItemsFree();
         PopulateShop();
+        PopulatePriceTable();
     }
 
     private void Update()
     {
+   
         if (Keyboard.current.escapeKey.wasPressedThisFrame)
         {
             ShopUI.SetActive(false);
@@ -55,6 +62,17 @@ public class ShopUIController : MonoBehaviour
         }
     }
 
+    private void PopulatePriceTable()
+    {
+        foreach (var item in PriceTable)
+        {
+            GameObject slot = Instantiate(priceSlot, PriceTableParent);
+            PriceTableSlotUI tableSlotUI = slot.GetComponent<PriceTableSlotUI>();
+            tableSlotUI.ItemsPricing = item;
+            tableSlotUI.UpdatePriceSlotUI();
+        }
+    }
+
     private int GetNumberOfItemsForSale()
     {
         return (1 + shopLevel) < allAvailableItems.Count ? (1 + shopLevel) : allAvailableItems.Count;
@@ -73,13 +91,32 @@ public class ShopUIController : MonoBehaviour
             for (int i = 0; i < numberOfItems; i++)
             {
                 InventoryItemData randomItem = allAvailableItems[Random.Range(0, allAvailableItems.Count)];
-                int randomQuantity = Random.Range(1, 21);
+                int randomQuantity = Random.Range(1, maxQuantityOfItems);
 
                 itemsForSale.Add(new ShopItem(randomItem, randomQuantity));
             }
 
             PopulateShop();
         }
+    }
+
+    public void RollNewItemsFree()
+    {
+        
+        itemsForSale.Clear();
+
+        int numberOfItems = GetNumberOfItemsForSale();
+
+        for (int i = 0; i < numberOfItems; i++)
+        {
+            InventoryItemData randomItem = allAvailableItems[Random.Range(0, allAvailableItems.Count)];
+            int randomQuantity = Random.Range(1, maxQuantityOfItems);
+
+            itemsForSale.Add(new ShopItem(randomItem, randomQuantity));
+        }
+
+        PopulateShop();
+        
     }
 
     public void ToggleShopUI()

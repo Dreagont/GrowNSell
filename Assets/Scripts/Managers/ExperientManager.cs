@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+[System.Serializable]
 public class ExperientManager : MonoBehaviour
 {
     public int Level = 1;

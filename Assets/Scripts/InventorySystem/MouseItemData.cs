@@ -25,10 +25,20 @@ public class MouseItemData : MonoBehaviour
 
     public void UpdateMouseSlot(InventorySlots invSlot)
     {
-        AsssignedInventorySlot = invSlot;
-        ItemSprite.sprite = invSlot.ItemData.icon;
-        ItemCount.text = invSlot.StackSize > 1 ? invSlot.StackSize.ToString() : "";
-        ItemSprite.color = Color.white;
+        if (invSlot != null)
+        {
+            AsssignedInventorySlot = invSlot;
+            ItemSprite.sprite = invSlot.ItemData.icon;
+            ItemCount.text = invSlot.StackSize > 1 ? invSlot.StackSize.ToString() : "";
+            ItemSprite.color = Color.white;
+        }
+        
+    }
+
+    public void UpdateStack()
+    {
+        AsssignedInventorySlot.AddToStack(1);
+        ItemCount.text = AsssignedInventorySlot.StackSize.ToString();
     }
 
     private void Update()
@@ -65,5 +75,10 @@ public class MouseItemData : MonoBehaviour
         List<RaycastResult> results = new List<RaycastResult>();
         EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
         return results.Count > 0;
+    }
+
+    public void increaseHoldingStack()
+    {
+        AsssignedInventorySlot.AddToStack(1);
     }
 }

@@ -17,8 +17,11 @@ public class Seed : MonoBehaviour
     public GameObject XPPopup;
     public GameObject Canvas;
     public bool isDestroyed = false;
+    public GameObject[] HarvestOuline;
+    public int dayNotWater = 0;
     void Start()
     {
+        setOuline();
         experientManager = FindAnyObjectByType<ExperientManager>();
         Canvas = GameObject.FindGameObjectWithTag("Canvas");
 
@@ -31,7 +34,47 @@ public class Seed : MonoBehaviour
     void Update()
     {
         ChangeSprite();
+        if (Harvestable)
+        {
+            foreach (var item in HarvestOuline)
+            {
+                item.SetActive(true);
+            }
+        }
+        DestroyAfterNotWater();
     }
+
+    public void DestroyAfterNotWater()
+    {
+        if (dayNotWater >3)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    public void setOuline()
+    {
+        Vector3 newPosition1 = HarvestOuline[0].transform.localPosition;
+        newPosition1.x = 0.065f;
+        newPosition1.y = 0;
+        HarvestOuline[0].transform.localPosition = newPosition1;
+
+        Vector3 newPosition2 = HarvestOuline[1].transform.localPosition;
+        newPosition2.x = -0.065f;
+        newPosition2.y = 0;
+        HarvestOuline[1].transform.localPosition = newPosition2;
+
+        Vector3 newPosition3 = HarvestOuline[2].transform.localPosition;
+        newPosition3.y = 0.065f;
+        newPosition3.x = 0;
+        HarvestOuline[2].transform.localPosition = newPosition3;
+
+        Vector3 newPosition4 = HarvestOuline[3].transform.localPosition;
+        newPosition4.y = -0.065f;
+        newPosition4.x = 0;
+        HarvestOuline[3].transform.localPosition = newPosition4;
+    }
+
 
     public void ChangeSprite()
     {
@@ -44,7 +87,7 @@ public class Seed : MonoBehaviour
             if (statesToAdvance > 0)
             {
                 temp += statesToAdvance;
-                timePlanted += statesToAdvance * secondChangeState; // Update the planted time
+                timePlanted += statesToAdvance * secondChangeState; 
             }
         }
     }
@@ -75,7 +118,7 @@ public class Seed : MonoBehaviour
             TextPopup goldPopup = popup.GetComponent<TextPopup>();
             goldPopup.isAdd = false;
             goldPopup.isGold = false;
-            goldPopup.goldPopup = SeedData.SeedProduct.Experient;
+            goldPopup.goldPopup = (int)SeedData.SeedProduct.GetTotalExperience();
         }
     }
 }

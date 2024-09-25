@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemBuffed: {fileID: 11400000, guid: bad58e23df63a0b4088727a468b58c42, type: 2}
   buffName: Carrot Fever
-  description: Increase 100% carrot yield.
+  description: Increase 50% carrot yield.
   sellPriceMultiplier: 0
-  dropCountMultiplier: 1
+  dropCountMultiplier: 0.5
   expMultiplier: 0
   buffIcon: {fileID: -1429853927, guid: 9470b17ec078762449d7fbcec5647f51, type: 3}

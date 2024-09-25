@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49deb005556a343448932f02728a96e6, type: 3}
   m_Name: SunFlowerSellPrice 1
   m_EditorClassIdentifier: 
-  itemBuffed: {fileID: 11400000, guid: 07757a87061afbd4f965fce67ea48682, type: 2}
-  buffName: Turnip Addiction
-  description: Increase 100% turnip sell price.
+  itemBuffed: {fileID: 11400000, guid: 5e72bef2b701ddc4cb069984aff3d75d, type: 2}
+  buffName: Sunflower Addiction
+  description: Increase 100% Sunflower sell price.
   sellPriceMultiplier: 1
   dropCountMultiplier: 0
   expMultiplier: 0
