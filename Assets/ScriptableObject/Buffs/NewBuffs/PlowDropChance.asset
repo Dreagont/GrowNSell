@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3c6b25c63eb76e4989d0a444a5d930b, type: 3}
+  m_Name: PlowDropChance
+  m_EditorClassIdentifier: 
+  BuffIcon: {fileID: 517734265, guid: 20bfaafcb1d25c04f800abedc529a692, type: 3}
+  buffName: Luck Digger
+  description: Increase 5% plow drop Seeds.
+  MaxEnergyBuff: 0
+  EnergyReductionBuff: 0
+  ExperientBuff: 0
+  GoldBuff: 0
+  ToolDamageBuff: 0
+  PlowDropChance: 0.05
+  DoubleDropChance: 0

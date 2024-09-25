@@ -181,8 +181,6 @@ MonoBehaviour:
   HealthBarFill: {fileID: 6769574099511827583}
   HealthBar: {fileID: 8995633513515624876}
   ExperientManager: {fileID: 0}
-  Canvas: {fileID: 0}
-  XPPopup: {fileID: 3910975182150953683, guid: 9abfd850c00254b41ad965d1ef2937be, type: 3}
   hideDelay: 1
 --- !u!61 &4631611119782185048
 BoxCollider2D:
@@ -350,7 +348,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4175779202987600264
 RectTransform:
   m_ObjectHideFlags: 0

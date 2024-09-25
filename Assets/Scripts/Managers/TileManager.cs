@@ -7,11 +7,11 @@ using UnityEngine.UIElements;
 public class TileManager : MonoBehaviour
 {
     [Header("Tools Energy")]
-    public int AxeEnergy = 3;
-    public int PickaxeEnergy = 3;
-    public int HoePlowEnergy = 8;
-    public int HoeHarvestEnergy = 1;
-    public int WaterEnergy = 4;
+    public int AxeEnergy = 6;
+    public int PickaxeEnergy = 6;
+    public int HoePlowEnergy = 16;
+    public int HoeHarvestEnergy = 2;
+    public int WaterEnergy = 8;
 
 
     [Header("Tilemaps")]
@@ -29,6 +29,7 @@ public class TileManager : MonoBehaviour
 
     [Header("Misc")]
     public GameObject PlantingSoil;
+    public InventoryItemData SoilDrop;
 
     public Vector3 mousePos;
     public Vector3Int cellPosition;
@@ -53,9 +54,11 @@ public class TileManager : MonoBehaviour
     public GameObject digAnimationPrefab;
     public GameObject dropItemPrefab;
 
+    private ExperientManager experientManager;
 
     void Start()
     {
+        experientManager = FindAnyObjectByType<ExperientManager>();
         interactableMap.gameObject.SetActive(true);
         playerInventoryHolder = FindAnyObjectByType<PlayerInventoryHolder>();
         gameManager = FindObjectOfType<GameManager>();
@@ -154,12 +157,14 @@ public class TileManager : MonoBehaviour
         if (hitCollider != null)
         {
             Object objectHit = hitCollider.GetComponent<Object>();
-            if (objectHit.ObjectData.ObjectType == ObjectType.Stone && gameManager.ActionAble(PickaxeEnergy))
+            int energyMulti = objectHit.ObjectHealth / (2 + gameManager.ToolDamageBuff);
+
+            if (objectHit.ObjectData.ObjectType == ObjectType.Stone && gameManager.ActionAble(PickaxeEnergy * energyMulti))
             {
                 Vector3 worldPosition1 = new Vector3(cellPosition.x + 0.0f, cellPosition.y + 0.5f, 0);
 
                 SpawnAnimation(mineAnimationPrefab, worldPosition1);
-                StartCoroutine(ExecuteAfterDelay(0.4f, objectHit, PickaxeEnergy));
+                StartCoroutine(ExecuteAfterDelay(0.4f, objectHit, PickaxeEnergy * energyMulti, energyMulti));
             }
         } else
         {
@@ -175,12 +180,14 @@ public class TileManager : MonoBehaviour
         if (hitCollider != null)
         {
             Object objectHit = hitCollider.GetComponent<Object>();
-            if (objectHit.ObjectData.ObjectType == ObjectType.Wood && gameManager.ActionAble(AxeEnergy))
+            int energyMulti = objectHit.ObjectHealth / (2 + gameManager.ToolDamageBuff);
+
+            if (objectHit.ObjectData.ObjectType == ObjectType.Wood && gameManager.ActionAble(AxeEnergy * energyMulti))
             {
                 Vector3 worldPosition1 = new Vector3(cellPosition.x + 0.0f, cellPosition.y + 0.5f, 0);
 
                 SpawnAnimation(chopAnimationPrefab, worldPosition1);
-                StartCoroutine(ExecuteAfterDelay(0.4f, objectHit, AxeEnergy));
+                StartCoroutine(ExecuteAfterDelay(0.4f, objectHit, AxeEnergy * energyMulti, energyMulti));
             }
         }
         else
@@ -196,22 +203,22 @@ public class TileManager : MonoBehaviour
         currentAnimation = Instantiate(animationPrefab, position, Quaternion.identity);
         Destroy(currentAnimation, 0.5f);
     }
-    private IEnumerator ExecuteAfterDelay(float delay, Object objectHit, int energy)
+    private IEnumerator ExecuteAfterDelay(float delay, Object objectHit, int energy, int energyMulti)
     {
         yield return new WaitForSeconds(delay);
 
         if (objectHit != null)  
         {
-            DestroyObject(objectHit, energy);
+            DestroyObject(objectHit, energy, energyMulti);
         }
     }
 
-    private void DestroyObject(Object objectHit, int energy)
+    private void DestroyObject(Object objectHit, int energy, int energyMulti)
     {
-        if (objectHit == null) return;  
+        if (objectHit == null) return;
 
-        objectHit.ModifyHealth(2);
-        gameManager.ConsumeEnergy(energy);
+        objectHit.ModifyHealthFull();
+        gameManager.ConsumeEnergyTools(energy, energyMulti);
 
         if (objectHit.ObjectHealth <= 0)
         {
@@ -235,14 +242,37 @@ public class TileManager : MonoBehaviour
 
     public void DropItem(InventoryItemData itemDrop, Vector3 position)
     {
-        GameObject instantiatedAnimation = Instantiate(dropItemPrefab, position, Quaternion.identity, dropItems);
-        DropItemData dropItemData = instantiatedAnimation.GetComponent<DropItemData>();
-
-        if (dropItemData != null)
+        if (itemDrop != null)
         {
-            dropItemData.InitializeDrop(itemDrop);
-            StartCoroutine(EnablePickupAfterDelay(instantiatedAnimation, 1f));
+            GameObject instantiatedAnimation = Instantiate(dropItemPrefab, position, Quaternion.identity, dropItems);
+            DropItemData dropItemData = instantiatedAnimation.GetComponent<DropItemData>();
+
+            if (dropItemData != null)
+            {
+                /*if (gameManager.isDoubleDrop(gameManager.DoubleDropChance))
+                {
+                    Debug.LogWarning("Lucky");
+                    itemDrop.DropCount *= 2;
+                    dropItemData.InitializeDrop(itemDrop);
+                    itemDrop.DropCount /= 2;
+                } else
+                {
+                    dropItemData.InitializeDrop(itemDrop);
+                }*/
+               if (itemDrop.itemType1 == ItemType.Crop)
+               {
+                    dropItemData.InitializeDrop(itemDrop, gameManager.isDoubleDrop(gameManager.DoubleDropChance));
+
+               } else
+               {
+                    dropItemData.InitializeDrop(itemDrop);
+               }
+
+                StartCoroutine(EnablePickupAfterDelay(instantiatedAnimation, 1f));
+            }
         }
+
+        
     }
 
     private IEnumerator EnablePickupAfterDelay(GameObject dropItem, float delay)
@@ -311,7 +341,7 @@ public class TileManager : MonoBehaviour
         if (dropItemData != null)
         {
 
-            playerInventoryHolder.AddToHotBar(dropItemData.inventoryItemData, dropItemData.inventoryItemData.GetTotalDropCount());
+            playerInventoryHolder.AddToHotBar(dropItemData.inventoryItemData, dropItemData.dropCount);
             Destroy(dropItem);
 
         }
@@ -400,7 +430,7 @@ public class TileManager : MonoBehaviour
         if (ObjectsManager.SoilValues[worldPosition] == false)
         {
             ObjectsManager.SoilValues[worldPosition] = true;
-            gameManager.ConsumeEnergy(WaterEnergy);
+            gameManager.ConsumeEnergyTools(WaterEnergy, 1);
 
         }
     }
@@ -434,7 +464,7 @@ public class TileManager : MonoBehaviour
     public void HarvestPlant(Seed seed)
     {
         ObjectsManager.SeedValues.Remove(seed.position);
-        gameManager.ConsumeEnergy(HoeHarvestEnergy);
+        gameManager.ConsumeEnergyTools(HoeHarvestEnergy, 1);
 
         DropItem(seed.SeedData.SeedProduct, seed.position);
         Destroy(seed.gameObject);
@@ -519,7 +549,10 @@ public class TileManager : MonoBehaviour
 
         Vector3 truePos = new Vector3(position.x + 0.5f, position.y + 0.5f, 0);
         Instantiate(PlantingSoil, truePos, Quaternion.identity, soilsParent);
-        gameManager.ConsumeEnergy(HoePlowEnergy);
+        gameManager.ConsumeEnergyTools(HoePlowEnergy, 1);
+        DropItem(gameManager.DropsManager.DropPlowItem(gameManager.PlowDropChance),truePos);
+        DropItem(SoilDrop, truePos);
+        experientManager.SpawnExp(1,truePos);
         ObjectsManager.SoilValues.Add(truePos, false);
     }
 

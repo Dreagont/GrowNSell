@@ -2121,6 +2121,7 @@ Transform:
   - {fileID: 940430485}
   - {fileID: 1156102237}
   - {fileID: 1136270197}
+  - {fileID: 1065785117}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &316825263
@@ -2152,8 +2153,8 @@ MonoBehaviour:
   Gold: 500
   GoalGold: 2500
   DayCheck: 5
-  Energy: 200
-  CurrentEnergy: 200
+  Energy: 400
+  CurrentEnergy: 400
   ExperientManager: {fileID: 316825265}
   ShopRollCost: 5
   ShopUpgradeCost: 1000
@@ -2161,13 +2162,19 @@ MonoBehaviour:
   GoalGoldText: {fileID: 1883820665}
   GoalGoldText1: {fileID: 1466008515}
   GoalDayText: {fileID: 2126514596}
+  WinMessage: {fileID: 1538236037}
   WinGameWindow: {fileID: 1232523241}
   LoseGameWindow: {fileID: 2058208213}
   GamePenaty: {fileID: 434035174}
-  EnergyBuff: 0
+  MaxEnergyBuff: 0
+  EnergyReductionBuff: 0
   ExperientBuff: 0
   GoldBuff: 0
   ToolDamageBuff: 0
+  PlowDropChance: 0
+  DoubleDropChance: 0
+  DropsManager: {fileID: 1065785118}
+  newBuffs: []
 --- !u!114 &316825265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2187,7 +2194,9 @@ MonoBehaviour:
   Fillbar: {fileID: 57258335}
   currentLevelText: {fileID: 702511141}
   ExpBar: {fileID: 38354767}
-  BuffManager: {fileID: 0}
+  BuffManager: {fileID: 1136270199}
+  XPPopup: {fileID: 3910975182150953683, guid: 9abfd850c00254b41ad965d1ef2937be, type: 3}
+  Canvas: {fileID: 1060775876}
 --- !u!1001 &319068350
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6861,11 +6870,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 685b41c93ccec16409c265f0246519ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AxeEnergy: 3
-  PickaxeEnergy: 3
-  HoePlowEnergy: 3
-  HoeHarvestEnergy: 3
-  WaterEnergy: 3
+  AxeEnergy: 8
+  PickaxeEnergy: 8
+  HoePlowEnergy: 20
+  HoeHarvestEnergy: 4
+  WaterEnergy: 10
   interactableMap: {fileID: 437474985}
   highlightMap: {fileID: 222738719}
   FarmSoilMap: {fileID: 1861643475}
@@ -6876,6 +6885,7 @@ MonoBehaviour:
   SoilTile: {fileID: 11400000, guid: 68ccb8c1ef10a3440a7734bb7a814458, type: 2}
   WateredSoilTile: {fileID: 11400000, guid: 0892211f1bdbc50439c93af475ec4c72, type: 2}
   PlantingSoil: {fileID: 8619670682715175133, guid: e18978db490608c40a2a1c7ae5f32c6b, type: 3}
+  SoilDrop: {fileID: 11400000, guid: ab030544d61892d478aaab99051b4c85, type: 2}
   mousePos: {x: 0, y: 0, z: 0}
   cellPosition: {x: 0, y: 0, z: 0}
   inventoryDisplay: {fileID: 1176504758}
@@ -7885,7 +7895,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 923279044, guid: 20bfaafcb1d25c04f800abedc529a692, type: 3}
+  m_Sprite: {fileID: -764482698, guid: 20bfaafcb1d25c04f800abedc529a692, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8276,6 +8286,56 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1065785116
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1065785117}
+  - component: {fileID: 1065785118}
+  m_Layer: 0
+  m_Name: DropsManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1065785117
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1065785116}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 316825262}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1065785118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1065785116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62a7497e8c3fd324dbaa287d2e3cde77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlowItemDrops:
+  - {fileID: 11400000, guid: cf84490f2d7438a4890424d59b8391fa, type: 2}
+  - {fileID: 11400000, guid: edfd2e6d566985b42903f57b7e6515b5, type: 2}
+  - {fileID: 11400000, guid: 1b7ea8d08d2b1244e95e2b5a99f8f067, type: 2}
+  - {fileID: 11400000, guid: de21f2e053b485f4e87be43f7af4fc39, type: 2}
+  - {fileID: 11400000, guid: 32791ab71c8742948a4cc8492738cc30, type: 2}
 --- !u!1 &1079683516
 GameObject:
   m_ObjectHideFlags: 0
@@ -8719,6 +8779,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1136270197}
   - component: {fileID: 1136270198}
+  - component: {fileID: 1136270199}
   m_Layer: 0
   m_Name: BuffManager
   m_TagString: Untagged
@@ -8748,7 +8809,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1136270196}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cdf620aeda774c542b692703f16cd35e, type: 3}
   m_Name: 
@@ -8783,6 +8844,33 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 07edf96c56544264cbe136e23b9b2217, type: 2}
   buffsForSale: []
   numberOfBuffsToDisplay: 3
+--- !u!114 &1136270199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1136270196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8751d8ce0ecbc3047bd4d428f80800e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BuffShopUI: {fileID: 86579268}
+  FadeScreen: {fileID: 2075890759}
+  buffSlotPrefab: {fileID: 0}
+  buffSlotParent: {fileID: 1234158708}
+  allAvailableBuffs:
+  - {fileID: 7247003952696418178, guid: 9fa33c6c3c5e216448d1491b613e45a7, type: 3}
+  - {fileID: 7247003952696418178, guid: 21e1c148143bfde4b873b47d560e247a, type: 3}
+  - {fileID: 7247003952696418178, guid: c07efe1d2ad393948b21be26f198c20b, type: 3}
+  - {fileID: 7247003952696418178, guid: 507fab5637bb901479bca53ef7826a47, type: 3}
+  - {fileID: 7247003952696418178, guid: bf428f8739eb25e428dc07e5984ccb4d, type: 3}
+  - {fileID: 7247003952696418178, guid: d406301e908007a4e843559f2a0bffe4, type: 3}
+  - {fileID: 7247003952696418178, guid: 60b955427c5664642bfe0d0876c30097, type: 3}
+  buffsForSale: []
+  numberOfBuffsToDisplay: 3
+  GameManager: {fileID: 316825264}
 --- !u!1 &1145509012
 GameObject:
   m_ObjectHideFlags: 0
@@ -10917,7 +11005,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 923279044, guid: 20bfaafcb1d25c04f800abedc529a692, type: 3}
+  m_Sprite: {fileID: -764482698, guid: 20bfaafcb1d25c04f800abedc529a692, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -53468,7 +53556,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 923279044, guid: 20bfaafcb1d25c04f800abedc529a692, type: 3}
+  m_Sprite: {fileID: -764482698, guid: 20bfaafcb1d25c04f800abedc529a692, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -53559,7 +53647,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 923279044, guid: 20bfaafcb1d25c04f800abedc529a692, type: 3}
+  m_Sprite: {fileID: -764482698, guid: 20bfaafcb1d25c04f800abedc529a692, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

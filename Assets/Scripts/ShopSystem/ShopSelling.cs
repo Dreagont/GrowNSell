@@ -26,7 +26,14 @@ public class ShopSelling : MonoBehaviour
 
                 if (sellSlot != null && sellSlot.ItemData != null)
                 {
-                    int goldToAdd = (int)(sellSlot.StackSize * sellSlot.ItemData.GetTotalSellPrice());
+                    int goldToAdd = 0;
+                    if (sellSlot.ItemData.itemType1 == ItemType.Crop || sellSlot.ItemData.itemType2 == ItemType.Crop)
+                    {
+                        goldToAdd = (int)(sellSlot.StackSize * gameManager.GetGoldAmount(sellSlot.ItemData.sellPrice));
+                    } else
+                    {
+                        goldToAdd = (int)(sellSlot.StackSize * (sellSlot.ItemData.sellPrice));
+                    }
                     gameManager.Gold += goldToAdd;
                     sellSlot.RemoveFromStack(sellSlot.StackSize);
                     Debug.Log("Added " + goldToAdd);

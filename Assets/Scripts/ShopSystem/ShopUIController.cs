@@ -69,7 +69,7 @@ public class ShopUIController : MonoBehaviour
             GameObject slot = Instantiate(priceSlot, PriceTableParent);
             PriceTableSlotUI tableSlotUI = slot.GetComponent<PriceTableSlotUI>();
             tableSlotUI.ItemsPricing = item;
-            tableSlotUI.UpdatePriceSlotUI();
+            tableSlotUI.UpdatePriceSlotUI(gameManager);
         }
     }
 

@@ -154,9 +154,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryItemData: {fileID: 0}
-  DropCount: 0
   DropItemIcon: {fileID: 3140872643042101006}
   DropItemCountText: {fileID: 1118715485474814261}
+  CanBePickedUp: 0
+  dropCount: 0
+  isDouble: 0
 --- !u!61 &3725526125939798436
 BoxCollider2D:
   m_ObjectHideFlags: 0

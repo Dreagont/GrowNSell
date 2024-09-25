@@ -14,8 +14,7 @@ public class Seed : MonoBehaviour
     public Vector3 position;
     public int temp = 0;
     public ExperientManager experientManager;
-    public GameObject XPPopup;
-    public GameObject Canvas;
+    public ObjectsManager objectsManager;
     public bool isDestroyed = false;
     public GameObject[] HarvestOuline;
     public int dayNotWater = 0;
@@ -23,8 +22,7 @@ public class Seed : MonoBehaviour
     {
         setOuline();
         experientManager = FindAnyObjectByType<ExperientManager>();
-        Canvas = GameObject.FindGameObjectWithTag("Canvas");
-
+        objectsManager = FindAnyObjectByType<ObjectsManager>();
         timePlanted = (GlobalVariables.currentDay - 1) * 120f;
         periodStates = SeedData.GrowTime / growStates;
         secondChangeState = (int)(120 * periodStates);
@@ -46,8 +44,10 @@ public class Seed : MonoBehaviour
 
     public void DestroyAfterNotWater()
     {
-        if (dayNotWater >3)
+        if (dayNotWater >3 && !Harvestable)
         {
+            objectsManager.SeedValues.Remove(position);
+            isDestroyed = true;
             Destroy(gameObject);
         }
     }
@@ -111,14 +111,9 @@ public class Seed : MonoBehaviour
 
     private void OnDestroy()
     {
-        if (Canvas != null && XPPopup != null && isDestroyed == false)
+        if (isDestroyed == false)
         {
-            experientManager.Experient = (int)(experientManager.Experient + SeedData.SeedProduct.GetTotalExperience());
-            GameObject popup = Instantiate(XPPopup, position, Quaternion.identity, Canvas.transform);
-            TextPopup goldPopup = popup.GetComponent<TextPopup>();
-            goldPopup.isAdd = false;
-            goldPopup.isGold = false;
-            goldPopup.goldPopup = (int)SeedData.SeedProduct.GetTotalExperience();
+            experientManager.SpawnExp(SeedData.SeedProduct.Experient, position);
         }
     }
 }

@@ -93,6 +93,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -100,10 +113,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 227
-        width: 12
-        height: 10
+        x: 0
+        y: 224
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,10 +134,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_1
       rect:
         serializedVersion: 2
-        x: 18
-        y: 227
-        width: 12
-        height: 10
+        x: 16
+        y: 224
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,10 +155,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_2
       rect:
         serializedVersion: 2
-        x: 34
-        y: 227
-        width: 12
-        height: 10
+        x: 32
+        y: 224
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,10 +176,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_3
       rect:
         serializedVersion: 2
-        x: 50
-        y: 227
-        width: 12
-        height: 10
+        x: 48
+        y: 224
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,10 +197,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_4
       rect:
         serializedVersion: 2
-        x: 66
-        y: 227
-        width: 12
-        height: 10
+        x: 64
+        y: 224
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,10 +218,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_5
       rect:
         serializedVersion: 2
-        x: 83
-        y: 226
-        width: 10
-        height: 12
+        x: 80
+        y: 224
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -226,10 +239,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_6
       rect:
         serializedVersion: 2
-        x: 99
-        y: 226
-        width: 10
-        height: 12
+        x: 96
+        y: 224
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -247,10 +260,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_7
       rect:
         serializedVersion: 2
-        x: 115
-        y: 226
-        width: 10
-        height: 12
+        x: 112
+        y: 224
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -268,10 +281,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_8
       rect:
         serializedVersion: 2
-        x: 131
-        y: 226
-        width: 10
-        height: 12
+        x: 128
+        y: 224
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -289,10 +302,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_9
       rect:
         serializedVersion: 2
-        x: 147
-        y: 226
-        width: 10
-        height: 12
+        x: 144
+        y: 224
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -310,10 +323,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_10
       rect:
         serializedVersion: 2
-        x: 163
-        y: 226
-        width: 10
-        height: 12
+        x: 160
+        y: 224
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -331,10 +344,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_11
       rect:
         serializedVersion: 2
-        x: 179
-        y: 226
-        width: 10
-        height: 12
+        x: 176
+        y: 224
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -352,10 +365,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_12
       rect:
         serializedVersion: 2
-        x: 195
-        y: 226
-        width: 10
-        height: 12
+        x: 192
+        y: 224
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -373,10 +386,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_13
       rect:
         serializedVersion: 2
-        x: 211
-        y: 226
-        width: 10
-        height: 12
+        x: 208
+        y: 224
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -394,10 +407,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_14
       rect:
         serializedVersion: 2
-        x: 227
-        y: 226
-        width: 10
-        height: 12
+        x: 224
+        y: 224
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -415,10 +428,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_15
       rect:
         serializedVersion: 2
-        x: 2
-        y: 210
-        width: 12
-        height: 11
+        x: 0
+        y: 208
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -436,10 +449,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_16
       rect:
         serializedVersion: 2
-        x: 18
-        y: 210
-        width: 12
-        height: 11
+        x: 16
+        y: 208
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -457,10 +470,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_17
       rect:
         serializedVersion: 2
-        x: 34
-        y: 210
-        width: 12
-        height: 11
+        x: 32
+        y: 208
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -478,10 +491,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_18
       rect:
         serializedVersion: 2
-        x: 50
-        y: 210
-        width: 12
-        height: 11
+        x: 48
+        y: 208
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -499,10 +512,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_19
       rect:
         serializedVersion: 2
-        x: 66
-        y: 210
-        width: 12
-        height: 11
+        x: 64
+        y: 208
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -520,10 +533,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_20
       rect:
         serializedVersion: 2
-        x: 83
-        y: 209
-        width: 10
-        height: 13
+        x: 80
+        y: 208
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -541,10 +554,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_21
       rect:
         serializedVersion: 2
-        x: 99
-        y: 209
-        width: 10
-        height: 13
+        x: 96
+        y: 208
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -562,10 +575,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_22
       rect:
         serializedVersion: 2
-        x: 115
-        y: 209
-        width: 10
-        height: 13
+        x: 112
+        y: 208
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -583,10 +596,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_23
       rect:
         serializedVersion: 2
-        x: 131
-        y: 209
-        width: 10
-        height: 13
+        x: 128
+        y: 208
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -604,10 +617,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_24
       rect:
         serializedVersion: 2
-        x: 147
-        y: 209
-        width: 10
-        height: 13
+        x: 144
+        y: 208
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -625,10 +638,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_25
       rect:
         serializedVersion: 2
-        x: 163
-        y: 209
-        width: 10
-        height: 13
+        x: 160
+        y: 208
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -646,10 +659,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_26
       rect:
         serializedVersion: 2
-        x: 179
-        y: 209
-        width: 10
-        height: 13
+        x: 176
+        y: 208
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -667,10 +680,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_27
       rect:
         serializedVersion: 2
-        x: 195
-        y: 209
-        width: 10
-        height: 13
+        x: 192
+        y: 208
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -688,10 +701,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_28
       rect:
         serializedVersion: 2
-        x: 211
-        y: 209
-        width: 10
-        height: 13
+        x: 208
+        y: 208
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -709,10 +722,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_29
       rect:
         serializedVersion: 2
-        x: 227
-        y: 209
-        width: 10
-        height: 13
+        x: 224
+        y: 208
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -730,10 +743,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_30
       rect:
         serializedVersion: 2
-        x: 1
-        y: 193
-        width: 14
-        height: 13
+        x: 0
+        y: 192
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -751,10 +764,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_31
       rect:
         serializedVersion: 2
-        x: 17
-        y: 193
-        width: 14
-        height: 13
+        x: 16
+        y: 192
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -772,10 +785,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_32
       rect:
         serializedVersion: 2
-        x: 33
-        y: 193
-        width: 14
-        height: 13
+        x: 32
+        y: 192
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -793,10 +806,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_33
       rect:
         serializedVersion: 2
-        x: 49
-        y: 193
-        width: 14
-        height: 13
+        x: 48
+        y: 192
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -814,10 +827,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_34
       rect:
         serializedVersion: 2
-        x: 65
-        y: 193
-        width: 14
-        height: 13
+        x: 64
+        y: 192
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -835,10 +848,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_35
       rect:
         serializedVersion: 2
-        x: 82
+        x: 80
         y: 192
-        width: 12
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -856,10 +869,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_36
       rect:
         serializedVersion: 2
-        x: 98
+        x: 96
         y: 192
-        width: 12
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -877,10 +890,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_37
       rect:
         serializedVersion: 2
-        x: 114
+        x: 112
         y: 192
-        width: 12
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -898,10 +911,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_38
       rect:
         serializedVersion: 2
-        x: 130
+        x: 128
         y: 192
-        width: 12
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -919,10 +932,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_39
       rect:
         serializedVersion: 2
-        x: 146
+        x: 144
         y: 192
-        width: 12
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -940,10 +953,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_40
       rect:
         serializedVersion: 2
-        x: 162
+        x: 160
         y: 192
-        width: 12
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -961,10 +974,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_41
       rect:
         serializedVersion: 2
-        x: 178
+        x: 176
         y: 192
-        width: 12
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -982,10 +995,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_42
       rect:
         serializedVersion: 2
-        x: 194
+        x: 192
         y: 192
-        width: 12
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1003,10 +1016,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_43
       rect:
         serializedVersion: 2
-        x: 210
+        x: 208
         y: 192
-        width: 12
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1024,10 +1037,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_44
       rect:
         serializedVersion: 2
-        x: 226
+        x: 224
         y: 192
-        width: 12
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1045,10 +1058,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_45
       rect:
         serializedVersion: 2
-        x: 2
-        y: 179
-        width: 12
-        height: 10
+        x: 0
+        y: 176
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1066,10 +1079,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_46
       rect:
         serializedVersion: 2
-        x: 18
-        y: 179
-        width: 12
-        height: 10
+        x: 16
+        y: 176
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1087,10 +1100,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_47
       rect:
         serializedVersion: 2
-        x: 34
-        y: 179
-        width: 12
-        height: 10
+        x: 32
+        y: 176
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1108,10 +1121,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_48
       rect:
         serializedVersion: 2
-        x: 50
-        y: 179
-        width: 12
-        height: 10
+        x: 48
+        y: 176
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1129,10 +1142,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_49
       rect:
         serializedVersion: 2
-        x: 66
-        y: 179
-        width: 12
-        height: 10
+        x: 64
+        y: 176
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1150,10 +1163,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_50
       rect:
         serializedVersion: 2
-        x: 83
-        y: 178
-        width: 10
-        height: 12
+        x: 80
+        y: 176
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1171,10 +1184,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_51
       rect:
         serializedVersion: 2
-        x: 99
-        y: 178
-        width: 10
-        height: 12
+        x: 96
+        y: 176
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1192,10 +1205,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_52
       rect:
         serializedVersion: 2
-        x: 115
-        y: 178
-        width: 10
-        height: 12
+        x: 112
+        y: 176
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1213,10 +1226,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_53
       rect:
         serializedVersion: 2
-        x: 131
-        y: 178
-        width: 10
-        height: 12
+        x: 128
+        y: 176
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1234,10 +1247,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_54
       rect:
         serializedVersion: 2
-        x: 147
-        y: 178
-        width: 10
-        height: 12
+        x: 144
+        y: 176
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1255,10 +1268,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_55
       rect:
         serializedVersion: 2
-        x: 163
-        y: 178
-        width: 10
-        height: 12
+        x: 160
+        y: 176
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1276,10 +1289,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_56
       rect:
         serializedVersion: 2
-        x: 179
-        y: 178
-        width: 10
-        height: 12
+        x: 176
+        y: 176
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1297,10 +1310,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_57
       rect:
         serializedVersion: 2
-        x: 195
-        y: 178
-        width: 10
-        height: 12
+        x: 192
+        y: 176
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1318,10 +1331,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_58
       rect:
         serializedVersion: 2
-        x: 211
-        y: 178
-        width: 10
-        height: 12
+        x: 208
+        y: 176
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1339,10 +1352,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_59
       rect:
         serializedVersion: 2
-        x: 227
-        y: 178
-        width: 10
-        height: 12
+        x: 224
+        y: 176
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1360,10 +1373,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_60
       rect:
         serializedVersion: 2
-        x: 2
-        y: 162
-        width: 12
-        height: 11
+        x: 0
+        y: 160
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1381,10 +1394,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_61
       rect:
         serializedVersion: 2
-        x: 18
-        y: 162
-        width: 12
-        height: 11
+        x: 16
+        y: 160
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1402,10 +1415,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_62
       rect:
         serializedVersion: 2
-        x: 34
-        y: 162
-        width: 12
-        height: 11
+        x: 32
+        y: 160
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1423,10 +1436,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_63
       rect:
         serializedVersion: 2
-        x: 50
-        y: 162
-        width: 12
-        height: 11
+        x: 48
+        y: 160
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1444,10 +1457,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_64
       rect:
         serializedVersion: 2
-        x: 66
-        y: 162
-        width: 12
-        height: 11
+        x: 64
+        y: 160
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1465,10 +1478,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_65
       rect:
         serializedVersion: 2
-        x: 83
-        y: 161
-        width: 10
-        height: 13
+        x: 80
+        y: 160
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1486,10 +1499,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_66
       rect:
         serializedVersion: 2
-        x: 99
-        y: 161
-        width: 10
-        height: 13
+        x: 96
+        y: 160
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1507,10 +1520,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_67
       rect:
         serializedVersion: 2
-        x: 115
-        y: 161
-        width: 10
-        height: 13
+        x: 112
+        y: 160
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1528,10 +1541,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_68
       rect:
         serializedVersion: 2
-        x: 131
-        y: 161
-        width: 10
-        height: 13
+        x: 128
+        y: 160
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1549,10 +1562,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_69
       rect:
         serializedVersion: 2
-        x: 147
-        y: 161
-        width: 10
-        height: 13
+        x: 144
+        y: 160
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1570,10 +1583,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_70
       rect:
         serializedVersion: 2
-        x: 163
-        y: 161
-        width: 10
-        height: 13
+        x: 160
+        y: 160
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1591,10 +1604,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_71
       rect:
         serializedVersion: 2
-        x: 179
-        y: 161
-        width: 10
-        height: 13
+        x: 176
+        y: 160
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1612,10 +1625,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_72
       rect:
         serializedVersion: 2
-        x: 195
-        y: 161
-        width: 10
-        height: 13
+        x: 192
+        y: 160
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1633,10 +1646,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_73
       rect:
         serializedVersion: 2
-        x: 211
-        y: 161
-        width: 10
-        height: 13
+        x: 208
+        y: 160
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1654,10 +1667,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_74
       rect:
         serializedVersion: 2
-        x: 227
-        y: 161
-        width: 10
-        height: 13
+        x: 224
+        y: 160
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1675,10 +1688,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_75
       rect:
         serializedVersion: 2
-        x: 1
-        y: 145
-        width: 14
-        height: 13
+        x: 0
+        y: 144
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1696,10 +1709,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_76
       rect:
         serializedVersion: 2
-        x: 17
-        y: 145
-        width: 14
-        height: 13
+        x: 16
+        y: 144
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1717,10 +1730,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_77
       rect:
         serializedVersion: 2
-        x: 33
-        y: 145
-        width: 14
-        height: 13
+        x: 32
+        y: 144
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1738,10 +1751,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_78
       rect:
         serializedVersion: 2
-        x: 49
-        y: 145
-        width: 14
-        height: 13
+        x: 48
+        y: 144
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1759,10 +1772,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_79
       rect:
         serializedVersion: 2
-        x: 65
-        y: 145
-        width: 14
-        height: 13
+        x: 64
+        y: 144
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1780,10 +1793,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_80
       rect:
         serializedVersion: 2
-        x: 82
+        x: 80
         y: 144
-        width: 12
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1801,10 +1814,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_81
       rect:
         serializedVersion: 2
-        x: 98
+        x: 96
         y: 144
-        width: 12
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1822,10 +1835,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_82
       rect:
         serializedVersion: 2
-        x: 114
+        x: 112
         y: 144
-        width: 12
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1843,10 +1856,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_83
       rect:
         serializedVersion: 2
-        x: 130
+        x: 128
         y: 144
-        width: 12
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1864,10 +1877,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_84
       rect:
         serializedVersion: 2
-        x: 146
+        x: 144
         y: 144
-        width: 12
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1885,10 +1898,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_85
       rect:
         serializedVersion: 2
-        x: 162
+        x: 160
         y: 144
-        width: 12
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1906,10 +1919,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_86
       rect:
         serializedVersion: 2
-        x: 178
+        x: 176
         y: 144
-        width: 12
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1927,10 +1940,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_87
       rect:
         serializedVersion: 2
-        x: 194
+        x: 192
         y: 144
-        width: 12
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1948,10 +1961,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_88
       rect:
         serializedVersion: 2
-        x: 210
+        x: 208
         y: 144
-        width: 12
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1969,10 +1982,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_89
       rect:
         serializedVersion: 2
-        x: 226
+        x: 224
         y: 144
-        width: 12
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1990,10 +2003,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_90
       rect:
         serializedVersion: 2
-        x: 2
-        y: 131
-        width: 12
-        height: 10
+        x: 0
+        y: 128
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2011,10 +2024,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_91
       rect:
         serializedVersion: 2
-        x: 18
-        y: 131
-        width: 12
-        height: 10
+        x: 16
+        y: 128
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2032,10 +2045,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_92
       rect:
         serializedVersion: 2
-        x: 34
-        y: 131
-        width: 12
-        height: 10
+        x: 32
+        y: 128
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2053,10 +2066,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_93
       rect:
         serializedVersion: 2
-        x: 50
-        y: 131
-        width: 12
-        height: 10
+        x: 48
+        y: 128
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2074,10 +2087,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_94
       rect:
         serializedVersion: 2
-        x: 66
-        y: 131
-        width: 12
-        height: 10
+        x: 64
+        y: 128
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2095,10 +2108,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_95
       rect:
         serializedVersion: 2
-        x: 83
-        y: 130
-        width: 10
-        height: 12
+        x: 80
+        y: 128
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2116,10 +2129,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_96
       rect:
         serializedVersion: 2
-        x: 99
-        y: 130
-        width: 10
-        height: 12
+        x: 96
+        y: 128
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2137,10 +2150,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_97
       rect:
         serializedVersion: 2
-        x: 115
-        y: 130
-        width: 10
-        height: 12
+        x: 112
+        y: 128
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2158,10 +2171,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_98
       rect:
         serializedVersion: 2
-        x: 131
-        y: 130
-        width: 10
-        height: 12
+        x: 128
+        y: 128
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2179,10 +2192,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_99
       rect:
         serializedVersion: 2
-        x: 147
-        y: 130
-        width: 10
-        height: 12
+        x: 144
+        y: 128
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2200,10 +2213,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_100
       rect:
         serializedVersion: 2
-        x: 162
-        y: 130
-        width: 12
-        height: 12
+        x: 160
+        y: 128
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2221,10 +2234,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_101
       rect:
         serializedVersion: 2
-        x: 178
-        y: 130
-        width: 12
-        height: 12
+        x: 176
+        y: 128
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2242,10 +2255,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_102
       rect:
         serializedVersion: 2
-        x: 194
-        y: 130
-        width: 12
-        height: 12
+        x: 192
+        y: 128
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2263,10 +2276,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_103
       rect:
         serializedVersion: 2
-        x: 210
-        y: 130
-        width: 12
-        height: 12
+        x: 208
+        y: 128
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2284,10 +2297,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_104
       rect:
         serializedVersion: 2
-        x: 226
-        y: 130
-        width: 12
-        height: 12
+        x: 224
+        y: 128
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2305,10 +2318,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_105
       rect:
         serializedVersion: 2
-        x: 2
-        y: 114
-        width: 12
-        height: 11
+        x: 0
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2326,10 +2339,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_106
       rect:
         serializedVersion: 2
-        x: 18
-        y: 114
-        width: 12
-        height: 11
+        x: 16
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2347,10 +2360,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_107
       rect:
         serializedVersion: 2
-        x: 34
-        y: 114
-        width: 12
-        height: 11
+        x: 32
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2368,10 +2381,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_108
       rect:
         serializedVersion: 2
-        x: 50
-        y: 114
-        width: 12
-        height: 11
+        x: 48
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2389,10 +2402,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_109
       rect:
         serializedVersion: 2
-        x: 66
-        y: 114
-        width: 12
-        height: 11
+        x: 64
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2410,10 +2423,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_110
       rect:
         serializedVersion: 2
-        x: 83
-        y: 113
-        width: 10
-        height: 13
+        x: 80
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2431,10 +2444,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_111
       rect:
         serializedVersion: 2
-        x: 99
-        y: 113
-        width: 10
-        height: 13
+        x: 96
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2452,10 +2465,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_112
       rect:
         serializedVersion: 2
-        x: 115
-        y: 113
-        width: 10
-        height: 13
+        x: 112
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2473,10 +2486,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_113
       rect:
         serializedVersion: 2
-        x: 131
-        y: 113
-        width: 10
-        height: 13
+        x: 128
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2494,10 +2507,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_114
       rect:
         serializedVersion: 2
-        x: 147
-        y: 113
-        width: 10
-        height: 13
+        x: 144
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2515,10 +2528,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_115
       rect:
         serializedVersion: 2
-        x: 162
-        y: 113
-        width: 12
-        height: 13
+        x: 160
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2536,10 +2549,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_116
       rect:
         serializedVersion: 2
-        x: 178
-        y: 113
-        width: 12
-        height: 13
+        x: 176
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2557,10 +2570,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_117
       rect:
         serializedVersion: 2
-        x: 194
-        y: 113
-        width: 12
-        height: 13
+        x: 192
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2578,10 +2591,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_118
       rect:
         serializedVersion: 2
-        x: 210
-        y: 113
-        width: 12
-        height: 13
+        x: 208
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2599,10 +2612,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_119
       rect:
         serializedVersion: 2
-        x: 226
-        y: 113
-        width: 12
-        height: 13
+        x: 224
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2620,10 +2633,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_120
       rect:
         serializedVersion: 2
-        x: 1
-        y: 97
-        width: 14
-        height: 13
+        x: 0
+        y: 96
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2641,10 +2654,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_121
       rect:
         serializedVersion: 2
-        x: 17
-        y: 97
-        width: 14
-        height: 13
+        x: 16
+        y: 96
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2662,10 +2675,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_122
       rect:
         serializedVersion: 2
-        x: 33
-        y: 97
-        width: 14
-        height: 13
+        x: 32
+        y: 96
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2683,10 +2696,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_123
       rect:
         serializedVersion: 2
-        x: 49
-        y: 97
-        width: 14
-        height: 13
+        x: 48
+        y: 96
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2704,10 +2717,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_124
       rect:
         serializedVersion: 2
-        x: 65
-        y: 97
-        width: 14
-        height: 13
+        x: 64
+        y: 96
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2725,10 +2738,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_125
       rect:
         serializedVersion: 2
-        x: 82
+        x: 80
         y: 96
-        width: 12
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2746,10 +2759,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_126
       rect:
         serializedVersion: 2
-        x: 98
+        x: 96
         y: 96
-        width: 12
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2767,10 +2780,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_127
       rect:
         serializedVersion: 2
-        x: 114
+        x: 112
         y: 96
-        width: 12
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2788,10 +2801,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_128
       rect:
         serializedVersion: 2
-        x: 130
+        x: 128
         y: 96
-        width: 12
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2809,10 +2822,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_129
       rect:
         serializedVersion: 2
-        x: 146
+        x: 144
         y: 96
-        width: 12
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2830,10 +2843,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_130
       rect:
         serializedVersion: 2
-        x: 161
+        x: 160
         y: 96
-        width: 14
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2851,10 +2864,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_131
       rect:
         serializedVersion: 2
-        x: 177
+        x: 176
         y: 96
-        width: 14
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2872,10 +2885,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_132
       rect:
         serializedVersion: 2
-        x: 193
+        x: 192
         y: 96
-        width: 14
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2893,10 +2906,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_133
       rect:
         serializedVersion: 2
-        x: 209
+        x: 208
         y: 96
-        width: 14
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2914,10 +2927,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_134
       rect:
         serializedVersion: 2
-        x: 225
+        x: 224
         y: 96
-        width: 14
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2935,10 +2948,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_135
       rect:
         serializedVersion: 2
-        x: 2
-        y: 83
-        width: 12
-        height: 10
+        x: 0
+        y: 80
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2956,10 +2969,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_136
       rect:
         serializedVersion: 2
-        x: 18
-        y: 83
-        width: 12
-        height: 10
+        x: 16
+        y: 80
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2977,10 +2990,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_137
       rect:
         serializedVersion: 2
-        x: 34
-        y: 83
-        width: 12
-        height: 10
+        x: 32
+        y: 80
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2998,10 +3011,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_138
       rect:
         serializedVersion: 2
-        x: 50
-        y: 83
-        width: 12
-        height: 10
+        x: 48
+        y: 80
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3019,10 +3032,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_139
       rect:
         serializedVersion: 2
-        x: 66
-        y: 83
-        width: 12
-        height: 10
+        x: 64
+        y: 80
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3040,10 +3053,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_140
       rect:
         serializedVersion: 2
-        x: 83
-        y: 82
-        width: 10
-        height: 12
+        x: 80
+        y: 80
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3061,10 +3074,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_141
       rect:
         serializedVersion: 2
-        x: 99
-        y: 82
-        width: 10
-        height: 12
+        x: 96
+        y: 80
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3082,10 +3095,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_142
       rect:
         serializedVersion: 2
-        x: 115
-        y: 82
-        width: 10
-        height: 12
+        x: 112
+        y: 80
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3103,10 +3116,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_143
       rect:
         serializedVersion: 2
-        x: 131
-        y: 82
-        width: 10
-        height: 12
+        x: 128
+        y: 80
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3124,10 +3137,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_144
       rect:
         serializedVersion: 2
-        x: 147
-        y: 82
-        width: 10
-        height: 12
+        x: 144
+        y: 80
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3142,13 +3155,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Health, Magic, Armour, Money Icons_145
+      name: Gold
       rect:
         serializedVersion: 2
-        x: 162
-        y: 83
-        width: 12
-        height: 11
+        x: 160
+        y: 80
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3166,10 +3179,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_146
       rect:
         serializedVersion: 2
-        x: 178
-        y: 83
-        width: 12
-        height: 11
+        x: 176
+        y: 80
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3187,10 +3200,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_147
       rect:
         serializedVersion: 2
-        x: 194
-        y: 82
-        width: 12
-        height: 12
+        x: 192
+        y: 80
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3208,10 +3221,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_148
       rect:
         serializedVersion: 2
-        x: 210
-        y: 82
-        width: 12
-        height: 12
+        x: 208
+        y: 80
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3229,10 +3242,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_149
       rect:
         serializedVersion: 2
-        x: 2
-        y: 66
-        width: 12
-        height: 11
+        x: 0
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3250,10 +3263,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_150
       rect:
         serializedVersion: 2
-        x: 18
-        y: 66
-        width: 12
-        height: 11
+        x: 16
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3271,10 +3284,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_151
       rect:
         serializedVersion: 2
-        x: 34
-        y: 66
-        width: 12
-        height: 11
+        x: 32
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3292,10 +3305,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_152
       rect:
         serializedVersion: 2
-        x: 50
-        y: 66
-        width: 12
-        height: 11
+        x: 48
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3313,10 +3326,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_153
       rect:
         serializedVersion: 2
-        x: 66
-        y: 66
-        width: 12
-        height: 11
+        x: 64
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3334,10 +3347,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_154
       rect:
         serializedVersion: 2
-        x: 83
-        y: 65
-        width: 10
-        height: 13
+        x: 80
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3355,10 +3368,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_155
       rect:
         serializedVersion: 2
-        x: 99
-        y: 65
-        width: 10
-        height: 13
+        x: 96
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3376,10 +3389,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_156
       rect:
         serializedVersion: 2
-        x: 115
-        y: 65
-        width: 10
-        height: 13
+        x: 112
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3397,10 +3410,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_157
       rect:
         serializedVersion: 2
-        x: 131
-        y: 65
-        width: 10
-        height: 13
+        x: 128
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3418,10 +3431,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_158
       rect:
         serializedVersion: 2
-        x: 147
-        y: 65
-        width: 10
-        height: 13
+        x: 144
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3439,10 +3452,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_159
       rect:
         serializedVersion: 2
-        x: 162
-        y: 66
-        width: 12
-        height: 12
+        x: 160
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3460,10 +3473,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_160
       rect:
         serializedVersion: 2
-        x: 178
-        y: 66
-        width: 12
-        height: 12
+        x: 176
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3481,10 +3494,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_161
       rect:
         serializedVersion: 2
-        x: 194
-        y: 65
-        width: 12
-        height: 13
+        x: 192
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3502,10 +3515,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_162
       rect:
         serializedVersion: 2
-        x: 210
-        y: 65
-        width: 12
-        height: 13
+        x: 208
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3523,10 +3536,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_163
       rect:
         serializedVersion: 2
-        x: 1
-        y: 49
-        width: 14
-        height: 13
+        x: 0
+        y: 48
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3544,10 +3557,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_164
       rect:
         serializedVersion: 2
-        x: 17
-        y: 49
-        width: 14
-        height: 13
+        x: 16
+        y: 48
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3565,10 +3578,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_165
       rect:
         serializedVersion: 2
-        x: 33
-        y: 49
-        width: 14
-        height: 13
+        x: 32
+        y: 48
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3586,10 +3599,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_166
       rect:
         serializedVersion: 2
-        x: 49
-        y: 49
-        width: 14
-        height: 13
+        x: 48
+        y: 48
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3607,10 +3620,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_167
       rect:
         serializedVersion: 2
-        x: 65
-        y: 49
-        width: 14
-        height: 13
+        x: 64
+        y: 48
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3628,10 +3641,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_168
       rect:
         serializedVersion: 2
-        x: 82
+        x: 80
         y: 48
-        width: 12
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3649,10 +3662,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_169
       rect:
         serializedVersion: 2
-        x: 98
+        x: 96
         y: 48
-        width: 12
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3670,10 +3683,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_170
       rect:
         serializedVersion: 2
-        x: 114
+        x: 112
         y: 48
-        width: 12
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3691,10 +3704,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_171
       rect:
         serializedVersion: 2
-        x: 130
+        x: 128
         y: 48
-        width: 12
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3712,10 +3725,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_172
       rect:
         serializedVersion: 2
-        x: 146
+        x: 144
         y: 48
-        width: 12
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3730,34 +3743,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gold Icon
-      rect:
-        serializedVersion: 2
-        x: 161
-        y: 49
-        width: 14
-        height: 14
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5c4022bb1e6ab0d47b0f6033f2b87099
-      internalID: 923279044
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Health, Magic, Armour, Money Icons_174
       rect:
         serializedVersion: 2
-        x: 177
-        y: 49
-        width: 14
-        height: 14
+        x: 176
+        y: 48
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3775,10 +3767,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_175
       rect:
         serializedVersion: 2
-        x: 193
+        x: 192
         y: 48
-        width: 14
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3796,10 +3788,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_176
       rect:
         serializedVersion: 2
-        x: 209
+        x: 208
         y: 48
-        width: 14
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3817,10 +3809,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_177
       rect:
         serializedVersion: 2
-        x: 2
-        y: 35
-        width: 12
-        height: 10
+        x: 0
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3838,10 +3830,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_178
       rect:
         serializedVersion: 2
-        x: 18
-        y: 35
-        width: 12
-        height: 10
+        x: 16
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3859,10 +3851,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_179
       rect:
         serializedVersion: 2
-        x: 34
-        y: 35
-        width: 12
-        height: 10
+        x: 32
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3880,10 +3872,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_180
       rect:
         serializedVersion: 2
-        x: 50
-        y: 35
-        width: 12
-        height: 10
+        x: 48
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3901,10 +3893,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_181
       rect:
         serializedVersion: 2
-        x: 66
-        y: 35
-        width: 12
-        height: 10
+        x: 64
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3922,10 +3914,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_182
       rect:
         serializedVersion: 2
-        x: 83
-        y: 34
-        width: 10
-        height: 12
+        x: 80
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3943,10 +3935,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_183
       rect:
         serializedVersion: 2
-        x: 99
-        y: 34
-        width: 10
-        height: 12
+        x: 96
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3964,10 +3956,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_184
       rect:
         serializedVersion: 2
-        x: 115
-        y: 34
-        width: 10
-        height: 12
+        x: 112
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3985,10 +3977,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_185
       rect:
         serializedVersion: 2
-        x: 131
-        y: 34
-        width: 10
-        height: 12
+        x: 128
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4006,10 +3998,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_186
       rect:
         serializedVersion: 2
-        x: 147
-        y: 34
-        width: 10
-        height: 12
+        x: 144
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4027,10 +4019,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_187
       rect:
         serializedVersion: 2
-        x: 162
-        y: 34
-        width: 13
-        height: 13
+        x: 160
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4048,10 +4040,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_188
       rect:
         serializedVersion: 2
-        x: 178
-        y: 34
-        width: 13
-        height: 13
+        x: 176
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4069,10 +4061,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_189
       rect:
         serializedVersion: 2
-        x: 195
-        y: 34
-        width: 11
-        height: 12
+        x: 192
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4090,10 +4082,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_190
       rect:
         serializedVersion: 2
-        x: 211
-        y: 34
-        width: 11
-        height: 12
+        x: 208
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4111,10 +4103,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_191
       rect:
         serializedVersion: 2
-        x: 2
-        y: 18
-        width: 12
-        height: 11
+        x: 0
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4132,10 +4124,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_192
       rect:
         serializedVersion: 2
-        x: 18
-        y: 18
-        width: 12
-        height: 11
+        x: 16
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4153,10 +4145,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_193
       rect:
         serializedVersion: 2
-        x: 34
-        y: 18
-        width: 12
-        height: 11
+        x: 32
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4174,10 +4166,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_194
       rect:
         serializedVersion: 2
-        x: 50
-        y: 18
-        width: 12
-        height: 11
+        x: 48
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4195,10 +4187,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_195
       rect:
         serializedVersion: 2
-        x: 66
-        y: 18
-        width: 12
-        height: 11
+        x: 64
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4216,10 +4208,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_196
       rect:
         serializedVersion: 2
-        x: 83
-        y: 17
-        width: 10
-        height: 13
+        x: 80
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4237,10 +4229,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_197
       rect:
         serializedVersion: 2
-        x: 99
-        y: 17
-        width: 10
-        height: 13
+        x: 96
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4258,10 +4250,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_198
       rect:
         serializedVersion: 2
-        x: 115
-        y: 17
-        width: 10
-        height: 13
+        x: 112
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4279,10 +4271,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_199
       rect:
         serializedVersion: 2
-        x: 131
-        y: 17
-        width: 10
-        height: 13
+        x: 128
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4300,10 +4292,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_200
       rect:
         serializedVersion: 2
-        x: 147
-        y: 17
-        width: 10
-        height: 13
+        x: 144
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4321,10 +4313,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_201
       rect:
         serializedVersion: 2
-        x: 162
-        y: 17
-        width: 13
-        height: 14
+        x: 160
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4342,10 +4334,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_202
       rect:
         serializedVersion: 2
-        x: 178
-        y: 17
-        width: 13
-        height: 14
+        x: 176
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4363,10 +4355,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_203
       rect:
         serializedVersion: 2
-        x: 195
-        y: 17
-        width: 11
-        height: 13
+        x: 192
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4384,10 +4376,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_204
       rect:
         serializedVersion: 2
-        x: 211
-        y: 17
-        width: 11
-        height: 13
+        x: 208
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4405,10 +4397,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_205
       rect:
         serializedVersion: 2
-        x: 1
-        y: 1
-        width: 14
-        height: 13
+        x: 0
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4426,10 +4418,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_206
       rect:
         serializedVersion: 2
-        x: 17
-        y: 1
-        width: 14
-        height: 13
+        x: 16
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4447,10 +4439,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_207
       rect:
         serializedVersion: 2
-        x: 33
-        y: 1
-        width: 14
-        height: 13
+        x: 32
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4468,10 +4460,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_208
       rect:
         serializedVersion: 2
-        x: 49
-        y: 1
-        width: 14
-        height: 13
+        x: 48
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4489,10 +4481,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_209
       rect:
         serializedVersion: 2
-        x: 65
-        y: 1
-        width: 14
-        height: 13
+        x: 64
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4510,10 +4502,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_210
       rect:
         serializedVersion: 2
-        x: 82
+        x: 80
         y: 0
-        width: 12
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4531,10 +4523,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_211
       rect:
         serializedVersion: 2
-        x: 98
+        x: 96
         y: 0
-        width: 12
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4552,10 +4544,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_212
       rect:
         serializedVersion: 2
-        x: 114
+        x: 112
         y: 0
-        width: 12
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4573,10 +4565,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_213
       rect:
         serializedVersion: 2
-        x: 130
+        x: 128
         y: 0
-        width: 12
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4594,10 +4586,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_214
       rect:
         serializedVersion: 2
-        x: 146
+        x: 144
         y: 0
-        width: 12
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4615,9 +4607,9 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_215
       rect:
         serializedVersion: 2
-        x: 161
+        x: 160
         y: 0
-        width: 15
+        width: 16
         height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -4636,9 +4628,9 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_216
       rect:
         serializedVersion: 2
-        x: 177
+        x: 176
         y: 0
-        width: 15
+        width: 16
         height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -4657,10 +4649,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_217
       rect:
         serializedVersion: 2
-        x: 194
+        x: 192
         y: 0
-        width: 13
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4678,10 +4670,10 @@ TextureImporter:
       name: Health, Magic, Armour, Money Icons_218
       rect:
         serializedVersion: 2
-        x: 210
+        x: 208
         y: 0
-        width: 13
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4691,6 +4683,27 @@ TextureImporter:
       bones: []
       spriteID: b0e7d99ff5f35b9498e75950a4e958e5
       internalID: -977673969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health, Magic, Armour, Money Icons_173
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3237321ccec63a4ba288eae717f6c88
+      internalID: 267328539
       vertices: []
       indices: 
       edges: []
@@ -4706,7 +4719,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Gold Icon: 923279044
+      Gold: -764482698
       Health, Magic, Armour, Money Icons_0: 1393116579
       Health, Magic, Armour, Money Icons_1: 1292129037
       Health, Magic, Armour, Money Icons_10: -1837531303
@@ -4759,7 +4772,6 @@ TextureImporter:
       Health, Magic, Armour, Money Icons_142: 1915562297
       Health, Magic, Armour, Money Icons_143: -84618102
       Health, Magic, Armour, Money Icons_144: 545961520
-      Health, Magic, Armour, Money Icons_145: -764482698
       Health, Magic, Armour, Money Icons_146: -1554892748
       Health, Magic, Armour, Money Icons_147: -1982333977
       Health, Magic, Armour, Money Icons_148: -1721757731
@@ -4790,6 +4802,7 @@ TextureImporter:
       Health, Magic, Armour, Money Icons_170: -1060930420
       Health, Magic, Armour, Money Icons_171: 172057847
       Health, Magic, Armour, Money Icons_172: -1571131339
+      Health, Magic, Armour, Money Icons_173: 267328539
       Health, Magic, Armour, Money Icons_174: -1215320869
       Health, Magic, Armour, Money Icons_175: 796491957
       Health, Magic, Armour, Money Icons_176: 1878933104

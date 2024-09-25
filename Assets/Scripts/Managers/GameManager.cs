@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -24,16 +23,23 @@ public class GameManager : MonoBehaviour
     public Text GoalGoldText1;
 
     public TextMeshProUGUI GoalDayText;
+    public TextMeshProUGUI WinMessage;
 
     public GameObject WinGameWindow;
     public GameObject LoseGameWindow;
     public GameObject GamePenaty;
 
-    public int EnergyBuff = 0;
+    public int MaxEnergyBuff = 0;
+    public int EnergyReductionBuff = 0;
     public float ExperientBuff = 0;
     public float GoldBuff = 0;
     public int ToolDamageBuff = 0;
+    public float PlowDropChance = 0f;
+    public float DoubleDropChance = 0f;
 
+    public DropsManager DropsManager;
+
+    public List<NewBuff> newBuffs = new List<NewBuff>();
     void Start()
     {
     }
@@ -43,6 +49,16 @@ public class GameManager : MonoBehaviour
     {
         UpdateTextUI();
         CompleteGoal();
+
+        //Energy += EnergyBuff;
+
+        if (Gold >= GoalGold)
+        {
+            GoalGoldText.color = Color.green;
+        } else
+        {
+            GoalGoldText.color = Color.red;
+        }
     }
 
     public void UpdateTextUI()
@@ -74,10 +90,57 @@ public class GameManager : MonoBehaviour
         return Gold - itemPrice >= 0;
     }
 
-
-    public void ConsumeEnergy(int energyCost)
+    public void ApplyAllBuff()
     {
-        CurrentEnergy -= energyCost;
+        MaxEnergyBuff = 0;
+        EnergyReductionBuff = 0;
+        ExperientBuff = 0;
+        GoldBuff = 0;
+        ToolDamageBuff = 0;
+        PlowDropChance = 0;
+        DoubleDropChance = 0;
+        foreach (var buff in newBuffs)
+        {
+            MaxEnergyBuff += buff.MaxEnergyBuff;
+            EnergyReductionBuff += buff.EnergyReductionBuff;
+            ExperientBuff += buff.ExperientBuff;
+            GoldBuff += buff.GoldBuff;
+            ToolDamageBuff += buff.ToolDamageBuff;
+            PlowDropChance += buff.PlowDropChance;
+            DoubleDropChance += buff.DoubleDropChance;
+        }
+        EnergyIncrease();
+    }
+
+    public void AddBuff(NewBuff buff)
+    {
+        newBuffs.Add(buff);
+        ApplyAllBuff();
+    }
+
+    public void EnergyIncrease()
+    {
+        Energy = 400 + MaxEnergyBuff;
+        
+    }
+
+    public float GetGoldAmount(int amount)
+    {
+        return (amount * (1 + GoldBuff));
+    }
+
+    public void ConsumeEnergyTools(int energyCost,int energyMulti)
+    {
+        int outEnergy = energyCost - (EnergyReductionBuff * energyMulti);
+        if (outEnergy >= 1)
+        {
+            CurrentEnergy = CurrentEnergy - outEnergy;
+
+        }
+        else
+        {
+            CurrentEnergy -= 1;
+        }
     }
 
     public bool ActionAble(int energyCost)
@@ -108,6 +171,12 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public bool isDoubleDrop(float chance)
+    {
+        float isDrop = Random.Range(0f, 1f);
+        return isDrop <= chance;
+    }
+
     private void LoseGame()
     {
         LoseGameWindow.SetActive(true);
@@ -117,8 +186,10 @@ public class GameManager : MonoBehaviour
     private void WinGame()
     {
         WinGameWindow.SetActive(true);
-        DayCheck += 10;
+        DayCheck += 7;
         GoalGold *= 4;
+        WinMessage.text = "Continue with " + GoalGold.ToString() + " Goal gold.";
+
     }
 
     public void RestartGame()

@@ -55,6 +55,7 @@ MonoBehaviour:
   goldPopup: 10
   isAdd: 0
   goldText: {fileID: 1115240796591410662}
+  isGold: 0
 --- !u!1 &4350349111609203290
 GameObject:
   m_ObjectHideFlags: 0
@@ -254,7 +255,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 923279044, guid: 20bfaafcb1d25c04f800abedc529a692, type: 3}
+  m_Sprite: {fileID: -764482698, guid: 20bfaafcb1d25c04f800abedc529a692, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

@@ -73,6 +73,7 @@ public enum ItemType
     None,
     Interaction,
     Seed,
+    Crop
 }
 
 public enum EquipableTag

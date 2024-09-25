@@ -21,8 +21,8 @@ MonoBehaviour:
   sellPrice: 15
   buyPrice: 15
   DropCount: 8
-  Experient: 5
-  itemType1: 0
+  Experient: 4
+  itemType1: 3
   itemType2: 0
   EquipableTag: 0
   Prefab: {fileID: 1737187064802512040, guid: 4cb2e45972c1402419c5df6815964d8a, type: 3}

@@ -10,22 +10,33 @@ public class PriceTableSlotUI : MonoBehaviour
     public Image ItemIcon;
     public TextMeshProUGUI ItemSellPrice;
     public TextMeshProUGUI ItemName;
-
+    public GameManager GameManager;
     void Start()
     {
         
     }
 
+    private void OnEnable()
+    {
+        GameManager = FindAnyObjectByType<GameManager>();
+
+    }
+    private void Awake()
+    {
+    }
+
     // Update is called once per frame
     void Update()
     {
-        UpdatePriceSlotUI();
+        UpdatePriceSlotUI(GameManager);
     }
 
-    public void UpdatePriceSlotUI()
+    public void UpdatePriceSlotUI(GameManager gameManager)
     {
+        
         ItemIcon.sprite = ItemsPricing.icon;
-        ItemSellPrice.text =((int)ItemsPricing.GetTotalSellPrice()).ToString();
+        //ItemSellPrice.text =((int)ItemsPricing.GetTotalSellPrice()).ToString();
+        ItemSellPrice.text =((int)gameManager.GetGoldAmount(ItemsPricing.sellPrice)).ToString();
         ItemName.text = ItemsPricing.displayName;
     }
 }

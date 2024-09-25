@@ -22,7 +22,7 @@ MonoBehaviour:
   buyPrice: 15
   DropCount: 5
   Experient: 5
-  itemType1: 0
+  itemType1: 3
   itemType2: 0
   EquipableTag: 0
   Prefab: {fileID: 0}
