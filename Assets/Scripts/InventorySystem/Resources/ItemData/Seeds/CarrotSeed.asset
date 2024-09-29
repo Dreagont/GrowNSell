@@ -14,16 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 56
   displayName: Carrot Seed
-  description: Yield 3 carrots in 3 days
+  description: Yield 2 carrots in 3 days. 30% chance not destroy farmland when harvest.
+  MaxStackSize: 9999
   icon: {fileID: -311732875, guid: 9470b17ec078762449d7fbcec5647f51, type: 3}
   dropIcon: {fileID: 617392419, guid: 9470b17ec078762449d7fbcec5647f51, type: 3}
-  MaxStackSize: 99
+  minSellPrice: 10
   sellPrice: 10
-  buyPrice: 15
-  DropCount: 1
-  Experient: 5
+  maxSellPrice: 15
+  buyPrice: 20
   itemType1: 2
   itemType2: 0
   EquipableTag: 0
+  SeedData: {fileID: 11400000, guid: bd1a6a013db20d146828f1c56a1178eb, type: 2}
+  PlaceAbleObject: {fileID: 0}
   Prefab: {fileID: 1737187064802512040, guid: eb00ddc317b765e46b4195468068e120, type: 3}
-  buffs: []

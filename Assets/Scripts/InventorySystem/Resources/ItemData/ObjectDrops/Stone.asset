@@ -14,12 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 9
   displayName: Stone
-  description: Stone
+  description: 
+  MaxStackSize: 9999
   icon: {fileID: -28450154, guid: 7f03d2669e399644f827b33bb44a1df1, type: 3}
   dropIcon: {fileID: -1199838761, guid: 7f03d2669e399644f827b33bb44a1df1, type: 3}
-  MaxStackSize: 9999
+  minSellPrice: 10
   sellPrice: 10
+  maxSellPrice: 20
   buyPrice: 15
   itemType1: 0
   itemType2: 0
   EquipableTag: 0
+  SeedData: {fileID: 0}
+  PlaceAbleObject: {fileID: 0}
+  Prefab: {fileID: 0}

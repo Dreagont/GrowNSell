@@ -1,14 +1,15 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Seed : MonoBehaviour
 {
     public SeedData SeedData;
-    private float growStates = 10;
-    private float periodStates;
+    public int periodStates;
     public int currentState = 0;
     public GameObject[] States;
-    public int secondChangeState;
-    public float timePlanted;
+    //public int secondChangeState;
+    public int[] distribution;
+    public int currentPeriod = 0;
     public Soil thisSoil;
     public bool Harvestable = false;
     public Vector3 position;
@@ -18,20 +19,39 @@ public class Seed : MonoBehaviour
     public bool isDestroyed = false;
     public GameObject[] HarvestOuline;
     public int dayNotWater = 0;
+    private GameManager gameManager;
     void Start()
     {
+        gameManager = FindAnyObjectByType<GameManager>();
         setOuline();
         experientManager = FindAnyObjectByType<ExperientManager>();
         objectsManager = FindAnyObjectByType<ObjectsManager>();
-        timePlanted = (GlobalVariables.currentDay - 1) * 120f;
-        periodStates = SeedData.GrowTime / growStates;
-        secondChangeState = (int)(120 * periodStates);
-        UpdateSeedSprite();
+        //periodStates = SeedData.GrowTime / growStates;
+        int remainder = States.Length % SeedData.GrowTime;
+        int baseAnimation = States.Length / SeedData.GrowTime;
+        distribution = new int[SeedData.GrowTime];
+        for (int i = 0; i < SeedData.GrowTime; i++)
+        {
+            if (i < remainder)
+            {
+                distribution[i] = (baseAnimation + 1);
+            } else
+            {
+                distribution[i] = (baseAnimation);
+            }
+        }
+
+        for (int i = 0; i < States.Length; i++)
+        {
+            States[i].SetActive(i == currentState);
+        }
+
+        //secondChangeState = (int)(120 * periodStates);
+        //UpdateSeedSprite();
     }
 
     void Update()
     {
-        ChangeSprite();
         if (Harvestable)
         {
             foreach (var item in HarvestOuline)
@@ -78,23 +98,18 @@ public class Seed : MonoBehaviour
 
     public void ChangeSprite()
     {
-        if (currentState < growStates - 1)
-        {
-            float timeSinceLastUpdate = GlobalVariables.TimeCounter - timePlanted;
-
-            int statesToAdvance = (int)(timeSinceLastUpdate / secondChangeState);
-
-            if (statesToAdvance > 0)
-            {
-                temp += statesToAdvance;
-                timePlanted += statesToAdvance * secondChangeState; 
-            }
-        }
+        temp = distribution[currentPeriod];
+        currentPeriod++;
     }
 
     public void UpdateSeedSprite()
     {
-        currentState += temp;  
+        currentState += distribution[currentPeriod];
+        currentPeriod++;
+        if (currentPeriod > distribution.Length - 1)
+        {
+            currentPeriod = distribution.Length -1;
+        }
         currentState = Mathf.Min(currentState, States.Length - 1);  
 
         for (int i = 0; i < States.Length; i++)
@@ -103,7 +118,7 @@ public class Seed : MonoBehaviour
         }
 
         temp = 0;
-        if (currentState == growStates - 1)
+        if (currentState == States.Length - 1)
         {
             Harvestable = true;
         }
@@ -111,9 +126,17 @@ public class Seed : MonoBehaviour
 
     private void OnDestroy()
     {
+        int gainAmount = SeedData.Experient;
         if (isDestroyed == false)
         {
-            experientManager.SpawnExp(SeedData.SeedProduct.Experient, position);
+            if (gameManager.IsSuccess(SeedData.DoubleExp))
+            {
+                gainAmount *= 2;
+            }
+
+            Debug.Log(SeedData.DoubleExp);
+
+            experientManager.SpawnExp(gainAmount,position);
         }
     }
 }

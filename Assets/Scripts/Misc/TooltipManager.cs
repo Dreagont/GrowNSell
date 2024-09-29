@@ -10,9 +10,13 @@ public class TooltipManager : MonoBehaviour
     public TextMeshProUGUI ItemPrice;
     public RectTransform rectTransform;
     public GameObject PriceBox;
+    public GameObject DescriptonBox;
+    public GameObject Material;
+    public Transform MaterialBox;
+    public GameObject MaterialItem;
     public float xOffset = 20f;
     public float yOffset = 20f;
-
+    public PlayerInventoryHolder PlayerInventoryHolder;
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -28,6 +32,7 @@ public class TooltipManager : MonoBehaviour
 
     void Start()
     {
+        PlayerInventoryHolder = FindAnyObjectByType<PlayerInventoryHolder>();
         Cursor.visible = true;
         gameObject.SetActive(false);
     }
@@ -48,18 +53,67 @@ public class TooltipManager : MonoBehaviour
 
     public void SetAndShowToolTip(string name, string description, int price)
     {
-        gameObject.SetActive(true); // Ensure the tooltip is active first
-        PriceBox.SetActive(true);   // Activate the PriceBox
+        if (price == -1)
+        {
+            PriceBox.SetActive(false);
+        }
+        else
+        {
+            PriceBox.SetActive(true);
+            ItemPrice.text = price.ToString();
+        }
+
+        if (description == "")
+        {
+            DescriptonBox.SetActive(false);
+            rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x, 100);
+        } else
+        {
+            DescriptonBox.SetActive(true);
+            rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x, 360);
+        }
+        gameObject.SetActive(true); 
         ItemName.text = name;
         ItemDescription.text = description;
-        ItemPrice.text = price.ToString();
         LayoutRebuilder.ForceRebuildLayoutImmediate(rectTransform);
     }
 
-    public void SetAndShowToolTip(string name, string description)
+    public void SetAndShowToolTipLock(string name, string description, CraftingMaterial[] materials)
     {
-        gameObject.SetActive(true); // Ensure the tooltip is active
-        PriceBox.SetActive(false);  // Deactivate the PriceBox
+        if (materials.Length != 0)
+        {
+            Material.SetActive(true);
+
+            foreach (var material in materials)
+            {
+                GameObject item = Instantiate(MaterialItem, MaterialBox);
+                CraftingMaterialUI materialUI = item.GetComponent<CraftingMaterialUI>();
+                materialUI.ItemIcon.sprite = material.InventoryItemData.icon;
+                materialUI.Quantity.text = material.Quantity.ToString();
+
+                if (PlayerInventoryHolder.HaveEnoughItem(material))
+                {
+                    materialUI.Quantity.color = Color.green;
+                } else
+                {
+                    materialUI.Quantity.color = Color.red;
+                }
+            }
+        }
+
+        if (description == "")
+        {
+            DescriptonBox.SetActive(false);
+            rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x, 100);
+        }
+        else
+        {
+            DescriptonBox.SetActive(true);
+            rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x, 360);
+        }
+        
+        gameObject.SetActive(true);
+        PriceBox.SetActive(false);
         ItemName.text = name;
         ItemDescription.text = description;
         LayoutRebuilder.ForceRebuildLayoutImmediate(rectTransform);
@@ -71,5 +125,14 @@ public class TooltipManager : MonoBehaviour
         gameObject.SetActive(false);
         ItemName.text = string.Empty;
         ItemDescription.text = string.Empty;
+    }
+
+    private void OnDisable()
+    {
+        Material.SetActive(false);
+        foreach (Transform child in MaterialBox)
+        {
+            Destroy(child.gameObject);
+        }
     }
 }

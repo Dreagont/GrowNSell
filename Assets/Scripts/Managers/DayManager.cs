@@ -16,6 +16,7 @@ public class DayManager : MonoBehaviour
     public Image SkipDayFade;
     private ShopUIController shopUIController;
     public bool canPassDay;
+    public PriceManager priceManager;
     private void Start()
     {
         shopUIController = FindAnyObjectByType<ShopUIController>();
@@ -56,9 +57,10 @@ public class DayManager : MonoBehaviour
         objectsManager.UpdateSeedSpriteAndState();
         objectsManager.WaterCheck();
         objectsManager.DeWaterAll();
-        gameManager.RefillEnergy();
+        gameManager.EnergyManager.RefillEnergy();
         gameManager.ShopRollCost = 10;
         shopUIController.RollNewItemsFree();
+        priceManager.RollAllSellPrices();
         Debug.Log("Day: " + GlobalVariables.currentDay);
     }
 

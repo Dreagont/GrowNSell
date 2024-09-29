@@ -14,16 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 14
   displayName: Turnip Seed
-  description: Yield 4 Turnips in 6 days
+  description: Yield 3 Turnips in 6 days. 50% double EXP when harvest.
+  MaxStackSize: 9999
   icon: {fileID: 1459797413, guid: 9470b17ec078762449d7fbcec5647f51, type: 3}
   dropIcon: {fileID: -194767173, guid: 9470b17ec078762449d7fbcec5647f51, type: 3}
-  MaxStackSize: 99
-  sellPrice: 10
-  buyPrice: 15
-  DropCount: 4
-  Experient: 5
+  minSellPrice: 40
+  sellPrice: 50
+  maxSellPrice: 50
+  buyPrice: 50
   itemType1: 2
   itemType2: 0
   EquipableTag: 0
+  SeedData: {fileID: 11400000, guid: 92cc1af5e8be2ba4b8c9b6a320673bf2, type: 2}
+  PlaceAbleObject: {fileID: 0}
   Prefab: {fileID: 1737187064802512040, guid: a4b95f06c6c0d8641b60ee23eccff374, type: 3}
-  buffs: []

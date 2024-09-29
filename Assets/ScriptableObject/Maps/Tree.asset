@@ -15,6 +15,7 @@ MonoBehaviour:
   Name: Tree
   DropItems:
   - {fileID: 11400000, guid: 0cedbd8decb94f4419e1ea8b0c896c03, type: 2}
-  DropQuantity: 3
+  DropQuantity: 1
   Health: 10
   Experience: 2
+  ObjectType: 0

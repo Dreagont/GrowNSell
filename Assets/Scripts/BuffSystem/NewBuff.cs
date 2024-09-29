@@ -14,5 +14,6 @@ public class NewBuff : ScriptableObject
     public int ToolDamageBuff = 0;
     public float PlowDropChance = 0;
     public float DoubleDropChance = 0f;
+    public float NotDestroyFarmland = 0f;
 
 }

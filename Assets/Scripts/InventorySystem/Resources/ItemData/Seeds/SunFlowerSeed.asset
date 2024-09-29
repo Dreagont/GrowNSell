@@ -14,16 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: -1
   displayName: Sunflower Seed
-  description: Yield 8 flower in 4 days
+  description: Yield 3 flower in 4 days. 50% double EXP when harvest.
+  MaxStackSize: 9999
   icon: {fileID: -181736864, guid: 9470b17ec078762449d7fbcec5647f51, type: 3}
   dropIcon: {fileID: 1199702529, guid: 9470b17ec078762449d7fbcec5647f51, type: 3}
-  MaxStackSize: 99
-  sellPrice: 2
-  buyPrice: 5
-  DropCount: 4
-  Experient: 5
+  minSellPrice: 20
+  sellPrice: 30
+  maxSellPrice: 30
+  buyPrice: 30
   itemType1: 2
   itemType2: 0
   EquipableTag: 0
+  SeedData: {fileID: 11400000, guid: e1d2a29c1ec125646b790c7094b63530, type: 2}
+  PlaceAbleObject: {fileID: 0}
   Prefab: {fileID: 1737187064802512040, guid: 4cb2e45972c1402419c5df6815964d8a, type: 3}
-  buffs: []

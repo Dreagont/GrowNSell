@@ -14,16 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 4
   displayName: Leek
-  description: Leeks have a mild, onion-like taste.
+  description: 
+  MaxStackSize: 9999
   icon: {fileID: 247829992, guid: 9470b17ec078762449d7fbcec5647f51, type: 3}
   dropIcon: {fileID: 682491640, guid: 9470b17ec078762449d7fbcec5647f51, type: 3}
-  MaxStackSize: 999
-  sellPrice: 70
+  minSellPrice: 20
+  sellPrice: 20
+  maxSellPrice: 40
   buyPrice: 15
-  DropCount: 1
-  Experient: 2
   itemType1: 3
   itemType2: 0
   EquipableTag: 0
+  SeedData: {fileID: 11400000, guid: f1556a1de5ee5c64f886eb25cdad4893, type: 2}
+  PlaceAbleObject: {fileID: 0}
   Prefab: {fileID: 0}
-  buffs: []

@@ -14,16 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 11
   displayName: Copper Pickxe
-  description: Mining stones.
+  description: 
+  MaxStackSize: 1
   icon: {fileID: 446434864, guid: 1ff9d6f4ecd51ba4a84696e4111b7002, type: 3}
   dropIcon: {fileID: -2102570648, guid: 1ff9d6f4ecd51ba4a84696e4111b7002, type: 3}
-  MaxStackSize: 1
+  minSellPrice: 10
   sellPrice: 1
+  maxSellPrice: 20
   buyPrice: 100
-  DropCount: 1
-  Experient: 5
   itemType1: 1
   itemType2: 0
   EquipableTag: 5
+  SeedData: {fileID: 0}
+  PlaceAbleObject: {fileID: 0}
   Prefab: {fileID: 0}
-  buffs: []

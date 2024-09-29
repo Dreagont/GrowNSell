@@ -14,16 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 5
   displayName: Turnip
-  description: Turnip
+  description: 
+  MaxStackSize: 9999
   icon: {fileID: -1844565218, guid: 9470b17ec078762449d7fbcec5647f51, type: 3}
   dropIcon: {fileID: -1682248151, guid: 9470b17ec078762449d7fbcec5647f51, type: 3}
-  MaxStackSize: 999
-  sellPrice: 50
+  minSellPrice: 40
+  sellPrice: 52
+  maxSellPrice: 80
   buyPrice: 15
-  DropCount: 4
-  Experient: 6
   itemType1: 3
   itemType2: 0
   EquipableTag: 0
+  SeedData: {fileID: 11400000, guid: 92cc1af5e8be2ba4b8c9b6a320673bf2, type: 2}
+  PlaceAbleObject: {fileID: 0}
   Prefab: {fileID: 0}
-  buffs: []

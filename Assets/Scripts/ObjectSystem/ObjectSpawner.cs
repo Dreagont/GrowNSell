@@ -4,7 +4,7 @@ using UnityEngine.Tilemaps;
 public class ObjectSpawner : MonoBehaviour
 {
     public Tilemap Ground;
-    public GameObject[] objects;
+    public GameObject[] BaseObjects;
     public Transform ObjectsParent;
 
     private void Start()
@@ -25,8 +25,8 @@ public class ObjectSpawner : MonoBehaviour
 
                     if (Random.Range(1, 4) < 3)
                     {
-                        int objectIndex = Random.Range(0, objects.Length);
-                        GameObject spawnedObject = Instantiate(objects[objectIndex], truePos, Quaternion.identity, ObjectsParent);
+                        int objectIndex = Random.Range(0, BaseObjects.Length);
+                        GameObject spawnedObject = Instantiate(BaseObjects[objectIndex], truePos, Quaternion.identity, ObjectsParent);
                         Object objectSpwaned = spawnedObject.GetComponent<Object>();
 
                         objectSpwaned.ObjectPosition = truePos;
@@ -38,28 +38,25 @@ public class ObjectSpawner : MonoBehaviour
             }
         }
     }
-    public void SpawnObject(BoundsInt newBounds)
+    public void SpawnObject(Vector3Int position)
     {
         int objectLayer = LayerMask.NameToLayer("Object");
 
-        foreach (var position in newBounds.allPositionsWithin)
+        
+        Vector3 truePos = Ground.CellToWorld(position) + new Vector3(0.5f, 0.5f, 0);
+
+        if (Random.Range(1, 4) < 3)
         {
-            if (Ground.HasTile(position))
-            {
-                Vector3 truePos = Ground.CellToWorld(position) + new Vector3(0.5f, 0.5f, 0);
+            int objectIndex = Random.Range(0, BaseObjects.Length);
+            GameObject spawnedObject = Instantiate(BaseObjects[objectIndex], truePos, Quaternion.identity, ObjectsParent);
+            Object objectSpwaned = spawnedObject.GetComponent<Object>();
 
-                if (Random.Range(1, 4) < 3)
-                {
-                    int objectIndex = Random.Range(0, objects.Length);
-                    GameObject spawnedObject = Instantiate(objects[objectIndex], truePos, Quaternion.identity, ObjectsParent);
-                    Object objectSpwaned = spawnedObject.GetComponent<Object>();
+            objectSpwaned.ObjectPosition = truePos;
 
-                    objectSpwaned.ObjectPosition = truePos;
-
-                    SetLayerRecursively(spawnedObject, objectLayer);
-                }
-            }
+            SetLayerRecursively(spawnedObject, objectLayer);
         }
+            
+        
     }
 
     void SetLayerRecursively(GameObject obj, int layer)

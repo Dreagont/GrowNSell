@@ -58,8 +58,9 @@ public class ObjectsManager : MonoBehaviour
             if (seed.thisSoil.isWatered)  
             {
                 seed.UpdateSeedSprite();  
-                SeedValues[seed.position] = seed.currentState; 
-                Debug.Log("Watered seed growing at position: " + seed.position);
+                SeedValues[seed.position] = seed.currentState;
+                //seed.ChangeSprite();
+
             } else
             {
                 seed.temp = 0;

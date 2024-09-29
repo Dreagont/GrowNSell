@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: Stone
   DropItems:
   - {fileID: 11400000, guid: 77a3b31e98d2fcf408203bdb6c59b9e4, type: 2}
-  DropQuantity: 3
+  DropQuantity: 1
   Health: 10
   Experience: 2
   ObjectType: 1

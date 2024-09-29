@@ -15,13 +15,10 @@ public class ShopSlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     private PlayerInventoryHolder playerInventoryHolder;
     private GameManager gameManager;
     public int sellQuanity;
-    public GameObject goldAddText;
-    public Canvas canvas;
     private Coroutine showTooltipCoroutine;
 
     void Start()
     {
-        canvas = FindAnyObjectByType<Canvas>();
         playerInventoryHolder = FindAnyObjectByType<PlayerInventoryHolder>();
         gameManager = FindObjectOfType<GameManager>();
         SetUi();
@@ -47,19 +44,13 @@ public class ShopSlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 
     public void BuyItem()
     {
-        if (gameManager.CanAffordItem(InventoryItemData.buyPrice))
+        if (gameManager.GoldManager.CanAffordItem(InventoryItemData.buyPrice))
         {
             if (playerInventoryHolder.AddToHotBar(InventoryItemData, 1))
             {
                 sellQuanity--;
                 SetUi();
-                gameManager.Gold -= InventoryItemData.buyPrice;
-                Vector3 mousePosition = Input.mousePosition;
-                GameObject popup = Instantiate(goldAddText, mousePosition, Quaternion.identity, canvas.transform);
-                TextPopup goldPopup = popup.GetComponent<TextPopup>();
-                goldPopup.isAdd = false;
-                goldPopup.isGold = true;
-                goldPopup.goldPopup = InventoryItemData.buyPrice;
+                gameManager.GoldManager.SpawnGoldText(-InventoryItemData.buyPrice, false, 1);
             } else
             {
                 return;
@@ -96,7 +87,7 @@ public class ShopSlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 
     public void BuyAllItems()
     {
-        int maxAffordableQuantity = Mathf.FloorToInt(gameManager.Gold / InventoryItemData.buyPrice); 
+        int maxAffordableQuantity = Mathf.FloorToInt(gameManager.GoldManager.Gold / InventoryItemData.buyPrice); 
         int quantityToBuy = Mathf.Min(maxAffordableQuantity, sellQuanity); 
 
         if (quantityToBuy > 0)
@@ -104,16 +95,10 @@ public class ShopSlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
             if (playerInventoryHolder.AddToHotBar(InventoryItemData, quantityToBuy))
             {
                 sellQuanity -= quantityToBuy; 
-                gameManager.Gold -= quantityToBuy * InventoryItemData.buyPrice;
 
                 SetUi();
 
-                Vector3 mousePosition = Input.mousePosition;
-                GameObject popup = Instantiate(goldAddText, mousePosition, Quaternion.identity, canvas.transform);
-                TextPopup goldPopup = popup.GetComponent<TextPopup>();
-                goldPopup.isAdd = false;
-                goldPopup.isGold = true;
-                goldPopup.goldPopup = quantityToBuy * InventoryItemData.buyPrice;
+                gameManager.GoldManager.SpawnGoldText(-InventoryItemData.buyPrice,false, quantityToBuy);
             }
         }
         TooltipManager.instance.HideTooltip();
@@ -125,7 +110,13 @@ public class ShopSlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
         yield return new WaitForSeconds(0.1f);
         if (InventoryItemData != null)
         {
-            TooltipManager.instance.SetAndShowToolTip(InventoryItemData.displayName, InventoryItemData.description);
+            if (InventoryItemData.description != "")
+            {
+                TooltipManager.instance.SetAndShowToolTip(InventoryItemData.displayName, InventoryItemData.description,-1);
+            } else
+            {
+
+            }
 
         }
     }

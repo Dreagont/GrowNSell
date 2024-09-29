@@ -13,9 +13,10 @@ public class DropItemData : MonoBehaviour
     public int dropCount;
     public bool isDouble = false;
 
-    public void InitializeDrop(InventoryItemData itemData)
+    public void InitializeDrop(InventoryItemData itemData, int count)
     {
         this.inventoryItemData = itemData;
+        this.dropCount = count;
     }
     public void InitializeDrop(InventoryItemData itemData, bool isDoubleDrop)
     {
@@ -23,9 +24,13 @@ public class DropItemData : MonoBehaviour
         if (isDoubleDrop)
         {
             isDouble = true ;
-        } else
+            Debug.Log("yes");
+
+        }
+        else
         {
             isDouble = false ;
+            Debug.Log("No");
         }
     }
     void Start()
@@ -35,7 +40,9 @@ public class DropItemData : MonoBehaviour
 
     void Update()
     {
-        this.dropCount = isDouble ? inventoryItemData.DropCount * 2 : inventoryItemData.DropCount;
+        if (inventoryItemData.SeedData != null) {
+            this.dropCount = isDouble ? inventoryItemData.SeedData.DropCount * 2 : inventoryItemData.SeedData.DropCount;
+        }
         DropItemCountText.text = dropCount.ToString();
 
     }

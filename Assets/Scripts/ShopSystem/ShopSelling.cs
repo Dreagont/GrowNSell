@@ -6,9 +6,7 @@ using UnityEngine.UI;
 public class ShopSelling : MonoBehaviour
 {
     private PlayerInventoryHolder inventoryHolder;
-    private GameManager gameManager;
-    public GameObject goldAddText;
-    public Transform canvas;
+    public GameManager gameManager;
 
     void Start()
     {
@@ -34,16 +32,9 @@ public class ShopSelling : MonoBehaviour
                     {
                         goldToAdd = (int)(sellSlot.StackSize * (sellSlot.ItemData.sellPrice));
                     }
-                    gameManager.Gold += goldToAdd;
-                    sellSlot.RemoveFromStack(sellSlot.StackSize);
-                    Debug.Log("Added " + goldToAdd);
+                    gameManager.GoldManager.SpawnGoldText(sellSlot.ItemData.sellPrice, true, sellSlot.StackSize);
 
-                    Vector3 mousePosition = Input.mousePosition;
-                    GameObject popup = Instantiate(goldAddText, mousePosition, Quaternion.identity, canvas);
-                    TextPopup goldPopup = popup.GetComponent<TextPopup>();
-                    goldPopup.isGold = true;
-                    goldPopup.isAdd = true;
-                    goldPopup.goldPopup = goldToAdd;
+                    sellSlot.RemoveFromStack(sellSlot.StackSize);
                 }
                 else
                 {
@@ -65,17 +56,12 @@ public class ShopSelling : MonoBehaviour
     {     
         if (sellSlot != null && sellSlot.ItemData != null)
         {
-            int goldToAdd = (int)(sellSlot.StackSize * sellSlot.ItemData.GetTotalSellPrice());
-            gameManager.Gold += goldToAdd;
+            int goldToAdd = (int)(sellSlot.StackSize * sellSlot.ItemData.sellPrice);
+            gameManager.GoldManager.Gold += goldToAdd;
             sellSlot.RemoveFromStack(sellSlot.StackSize);
             Debug.Log("Added " + goldToAdd);
 
-            Vector3 mousePosition = Input.mousePosition;
-            GameObject popup = Instantiate(goldAddText, mousePosition, Quaternion.identity, canvas);
-            TextPopup goldPopup = popup.GetComponent<TextPopup>();
-            goldPopup.isGold = true;
-            goldPopup.isAdd = true;
-            goldPopup.goldPopup = goldToAdd;
+            gameManager.GoldManager.SpawnGoldText(sellSlot.ItemData.sellPrice, true, sellSlot.StackSize);
         }
         else
         {

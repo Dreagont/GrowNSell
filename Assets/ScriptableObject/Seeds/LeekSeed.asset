@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: LeekSeed
   m_EditorClassIdentifier: 
   SeedName: Leek Sedd
-  SeedLevel: 1
   GrowTime: 2
-  Season: 0
+  Experient: 2
+  DropCount: 2
+  DoubleExp: 0
+  DoubleDrop: 0.3
+  NotDestroy: 0
+  Description: Double drop
   SeedProduct: {fileID: 11400000, guid: b644a4b1d062cde468621aae4a4370f5, type: 2}

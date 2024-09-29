@@ -121,7 +121,7 @@ public abstract class InventoryDisplay : MonoBehaviour
                 slot.UpdateInventorySlot();
             }
 
-        } else
+        } else if (mouseInventoryItem.AsssignedInventorySlot.ItemData == slot.AssignedInventorySlot.ItemData)
         {
             if (slot.AssignedInventorySlot.SplitfStack(out InventorySlots item))
             {
@@ -131,7 +131,6 @@ public abstract class InventoryDisplay : MonoBehaviour
                 mouseInventoryItem.ItemCount.text = mouseInventoryItem.AsssignedInventorySlot.StackSize.ToString();
                 slot.UpdateInventorySlot();
             }
-
         }
 
     }

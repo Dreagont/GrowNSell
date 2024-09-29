@@ -75,14 +75,14 @@ public class ShopUIController : MonoBehaviour
 
     private int GetNumberOfItemsForSale()
     {
-        return (1 + shopLevel) < allAvailableItems.Count ? (1 + shopLevel) : allAvailableItems.Count;
+        return (2 + shopLevel) < allAvailableItems.Count ? (2 + shopLevel) : allAvailableItems.Count;
     }
 
     public void RollNewItems()
     {
-        if (gameManager.CanAffordItem(gameManager.ShopRollCost))
+        if (gameManager.GoldManager.CanAffordItem(gameManager.ShopRollCost))
         {
-            gameManager.Gold -= gameManager.ShopRollCost;
+            gameManager.GoldManager.Gold -= gameManager.ShopRollCost;
             gameManager.ShopRollCost *= 2;
             itemsForSale.Clear();
 
@@ -142,9 +142,9 @@ public class ShopUIController : MonoBehaviour
 
     public void OnButtonUpgradePressed()
     {
-        if (gameManager.CanAffordItem(gameManager.ShopUpgradeCost))
+        if (gameManager.GoldManager.CanAffordItem(gameManager.ShopUpgradeCost))
         {
-            gameManager.Gold -= gameManager.ShopUpgradeCost;
+            gameManager.GoldManager.Gold -= gameManager.ShopUpgradeCost;
             gameManager.ShopUpgradeCost *= 2;
             gameManager.ShopRollCost = 10;
             shopLevel += 1;

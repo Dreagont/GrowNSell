@@ -10,13 +10,13 @@ public class NewBuffUI : MonoBehaviour
     public TextMeshProUGUI buffNameText;
     public TextMeshProUGUI buffDescriptionText;
     public Image buffSprite;
-    public BuffManager buffManager;
+    public NewBuffManager buffManager;
     public bool canClick = false;
     GameManager GameManager;
     void Start()
     {
         GameManager = FindAnyObjectByType<GameManager>();
-        buffManager = FindAnyObjectByType<BuffManager>();
+        buffManager = FindAnyObjectByType<NewBuffManager>();
         UpdateBuffUI();
         StartCoroutine(ClickCooldown());
     }
@@ -29,7 +29,7 @@ public class NewBuffUI : MonoBehaviour
     {
         if (canClick)
         {
-            GameManager.AddBuff(buff);
+            GameManager.BuffManager.AddBuff(buff);
             buffManager.ToggleBuffShopUI();
         }
 

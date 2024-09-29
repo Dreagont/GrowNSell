@@ -9,6 +9,7 @@ public class PriceTableSlotUI : MonoBehaviour
     public InventoryItemData ItemsPricing;
     public Image ItemIcon;
     public TextMeshProUGUI ItemSellPrice;
+    public TextMeshProUGUI ItemCurrentSellPrice;
     public TextMeshProUGUI ItemName;
     public GameManager GameManager;
     void Start()
@@ -36,7 +37,8 @@ public class PriceTableSlotUI : MonoBehaviour
         
         ItemIcon.sprite = ItemsPricing.icon;
         //ItemSellPrice.text =((int)ItemsPricing.GetTotalSellPrice()).ToString();
-        ItemSellPrice.text =((int)gameManager.GetGoldAmount(ItemsPricing.sellPrice)).ToString();
+        ItemSellPrice.text = ((int)gameManager.GetGoldAmount(ItemsPricing.minSellPrice)).ToString() + " - " + ((int)gameManager.GetGoldAmount(ItemsPricing.maxSellPrice)).ToString();
         ItemName.text = ItemsPricing.displayName;
+        ItemCurrentSellPrice.text = ((int)gameManager.GetGoldAmount(ItemsPricing.sellPrice)).ToString();
     }
 }

@@ -115,6 +115,37 @@ public class PlayerInventoryHolder : InventoryHolder
             SelectedSlot = 0;
         }
     }
+    public bool HaveEnoughItem(CraftingMaterial material)
+    {
+        if (primaryInventorySystem.HaveItemInventory(material.InventoryItemData) + secondaryInventorySystem.HaveItemInventory(material.InventoryItemData) < material.Quantity)
+        {
+            return false;
+        }
+
+        return true;
+    }
+
+    public bool CraftableItem(CraftingMaterial[] materials)
+    {
+        foreach (var material in materials)
+        {
+            if (!HaveEnoughItem(material)) return false;
+        }
+
+        return true;
+    }
+
+    public void RemoveItemForCraft(CraftingMaterial[] materials)
+    {
+        foreach (var material in materials)
+        {
+            int remainingAmount = primaryInventorySystem.TakeItemFromInventory(material.InventoryItemData, material.Quantity);
+            if (remainingAmount > 0)
+            {
+                secondaryInventorySystem.TakeItemFromInventory(material.InventoryItemData, remainingAmount);
+            }
+        }
+    }
 
 
     public void LoadAll(SaveData data)
@@ -184,14 +215,26 @@ public class PlayerInventoryHolder : InventoryHolder
 
     public bool AddToHotBar(InventoryItemData inventoryItemData, int amount)
     {
-        if (primaryInventorySystem.AddToInventory(inventoryItemData, amount))
+        if (secondaryInventorySystem.HaveItemInventory(inventoryItemData) > 0)
         {
-            return true;
+            if (secondaryInventorySystem.AddToInventory(inventoryItemData, amount))
+            {
+                return true;
+            }
         } else
-        if (secondaryInventorySystem.AddToInventory(inventoryItemData, amount))
         {
-            return true;
+            if (primaryInventorySystem.AddToInventory(inventoryItemData, amount))
+            {
+                return true;
+            }
+            else
+        if (secondaryInventorySystem.AddToInventory(inventoryItemData, amount))
+            {
+                return true;
+            }
         }
+
+        
 
         return false;
     }

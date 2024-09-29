@@ -58,7 +58,7 @@ public class ExperientManager : MonoBehaviour
 
     public int GetExperientGain(int amount)
     {
-        return (int)((amount * (1 + gameManager.ExperientBuff)));
+        return (int)((amount * (1 + gameManager.BuffManager.ExperientBuff)));
     }
 
     public void SpawnExp(int amount, Vector3 position)

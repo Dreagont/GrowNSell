@@ -14,16 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 12
   displayName: Corn Seed
-  description: Yield 5 corns in 5 days
+  description: Yield 3 corns in 5 days. 30% double drop when harvest.
+  MaxStackSize: 9999
   icon: {fileID: 2031544064, guid: 9470b17ec078762449d7fbcec5647f51, type: 3}
   dropIcon: {fileID: 621378414, guid: 9470b17ec078762449d7fbcec5647f51, type: 3}
-  MaxStackSize: 99
+  minSellPrice: 20
   sellPrice: 8
-  buyPrice: 10
-  DropCount: 5
-  Experient: 5
+  maxSellPrice: 40
+  buyPrice: 40
   itemType1: 2
   itemType2: 0
   EquipableTag: 0
+  SeedData: {fileID: 11400000, guid: ee5445b65da3d1045bcc1a444bdecb45, type: 2}
+  PlaceAbleObject: {fileID: 0}
   Prefab: {fileID: 1737187064802512040, guid: 98c3ec8430c9d0c4ab471e9c48d54bb6, type: 3}
-  buffs: []

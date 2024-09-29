@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: TurnipSeed
   m_EditorClassIdentifier: 
   SeedName: Turnip Sedd
-  SeedLevel: 1
   GrowTime: 6
-  Season: 0
+  Experient: 6
+  DropCount: 4
+  DoubleExp: 0.5
+  DoubleDrop: 0
+  NotDestroy: 0
+  Description: Double Exp
   SeedProduct: {fileID: 11400000, guid: 07757a87061afbd4f965fce67ea48682, type: 2}

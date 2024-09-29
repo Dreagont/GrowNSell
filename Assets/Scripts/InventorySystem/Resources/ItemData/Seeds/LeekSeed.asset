@@ -14,16 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 13
   displayName: Leek Seed
-  description: Yield 1 Leek in 2 days
+  description: Yield 2 Leek in 2 days. 30% double drop when harvest.
+  MaxStackSize: 9999
   icon: {fileID: 70986012, guid: 9470b17ec078762449d7fbcec5647f51, type: 3}
   dropIcon: {fileID: -1195124376, guid: 9470b17ec078762449d7fbcec5647f51, type: 3}
-  MaxStackSize: 99
+  minSellPrice: 10
   sellPrice: 15
-  buyPrice: 20
-  DropCount: 1
-  Experient: 5
+  maxSellPrice: 15
+  buyPrice: 15
   itemType1: 2
   itemType2: 0
   EquipableTag: 0
+  SeedData: {fileID: 11400000, guid: f1556a1de5ee5c64f886eb25cdad4893, type: 2}
+  PlaceAbleObject: {fileID: 0}
   Prefab: {fileID: 1737187064802512040, guid: 051cf8df987c4394e8123f1e23167d65, type: 3}
-  buffs: []

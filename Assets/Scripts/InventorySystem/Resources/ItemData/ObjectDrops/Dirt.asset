@@ -14,16 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 8
   displayName: Dirt
-  description: Use to expand island.
+  description: 
+  MaxStackSize: 9999
   icon: {fileID: -1406636669, guid: 7f03d2669e399644f827b33bb44a1df1, type: 3}
   dropIcon: {fileID: -1864038786, guid: 7f03d2669e399644f827b33bb44a1df1, type: 3}
-  MaxStackSize: 9999
+  minSellPrice: 10
   sellPrice: 5
+  maxSellPrice: 20
   buyPrice: 15
-  DropCount: 1
-  Experient: 5
   itemType1: 0
   itemType2: 0
   EquipableTag: 0
+  SeedData: {fileID: 0}
+  PlaceAbleObject: {fileID: 0}
   Prefab: {fileID: 0}
-  buffs: []

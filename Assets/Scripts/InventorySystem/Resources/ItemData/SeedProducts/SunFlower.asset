@@ -14,16 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 15
   displayName: Sun Flower
-  description: Sun Flower
+  description: 
+  MaxStackSize: 9999
   icon: {fileID: -989098507, guid: 9470b17ec078762449d7fbcec5647f51, type: 3}
   dropIcon: {fileID: -834446183, guid: 9470b17ec078762449d7fbcec5647f51, type: 3}
-  MaxStackSize: 999
-  sellPrice: 15
+  minSellPrice: 35
+  sellPrice: 42
+  maxSellPrice: 60
   buyPrice: 15
-  DropCount: 8
-  Experient: 4
   itemType1: 3
   itemType2: 0
   EquipableTag: 0
+  SeedData: {fileID: 11400000, guid: e1d2a29c1ec125646b790c7094b63530, type: 2}
+  PlaceAbleObject: {fileID: 0}
   Prefab: {fileID: 1737187064802512040, guid: 4cb2e45972c1402419c5df6815964d8a, type: 3}
-  buffs: []

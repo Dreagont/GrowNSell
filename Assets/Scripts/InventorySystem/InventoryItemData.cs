@@ -7,64 +7,39 @@ public class InventoryItemData : ScriptableObject
     public int ID = -1;
     public string displayName;
     public string description;
+    public int MaxStackSize;
+
     public Sprite icon;
     public Sprite dropIcon;
-    public int MaxStackSize;
-    public int sellPrice = 10;
+
+    public int minSellPrice = 10;
+    public int sellPrice = 15;
+    public int maxSellPrice = 20;
     public int buyPrice = 15;
-    public int DropCount = 1;
-    public int Experient = 5;
+
     public ItemType itemType1;
     public ItemType itemType2;
 
     public EquipableTag EquipableTag;
+
+    public SeedData SeedData;
+    public PlaceAbleObject PlaceAbleObject;
+
     public GameObject Prefab;
 
-    public List<Buff> buffs = new List<Buff>();
+    private int originalMinSellPrice;
+    private int originalMaxSellPrice;
 
-    public float GetTotalSellPrice()
+    void OnEnable()
     {
-        float totalPercentageIncrease = 0f;
-        foreach (var buff in buffs)
-        {
-            totalPercentageIncrease += buff.sellPriceMultiplier;
-        }
-        return sellPrice * (1 + totalPercentageIncrease);
+        originalMinSellPrice = minSellPrice;
+        originalMaxSellPrice = maxSellPrice;
     }
 
-    public int GetTotalDropCount()
+    public void ResetPrices()
     {
-        float totalPercentageIncrease = 0f;
-        foreach (var buff in buffs)
-        {
-            totalPercentageIncrease += buff.dropCountMultiplier;
-        }
-        return (int)(DropCount * (1 + totalPercentageIncrease));
-    }
-
-    public float GetTotalExperience()
-    {
-        float totalPercentageIncrease = 0f;
-        foreach (var buff in buffs)
-        {
-            totalPercentageIncrease += buff.expMultiplier;
-        }
-        return (int)(Experient * (1 + totalPercentageIncrease));
-    }
-
-    public void AddBuff(Buff newBuff)
-    {
-        buffs.Add(newBuff);
-    }
-
-    public void RemoveBuff(Buff buff)
-    {
-        buffs.Remove(buff);
-    }
-
-    public void ResetBuff()
-    {
-        buffs.Clear();
+        minSellPrice = originalMinSellPrice;
+        maxSellPrice = originalMaxSellPrice;
     }
 }
 
@@ -73,7 +48,8 @@ public enum ItemType
     None,
     Interaction,
     Seed,
-    Crop
+    Crop,
+    PlaceAble,
 }
 
 public enum EquipableTag

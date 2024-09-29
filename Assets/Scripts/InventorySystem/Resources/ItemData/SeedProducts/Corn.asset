@@ -14,16 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 3
   displayName: Corn
-  description: Corn
+  description: 
+  MaxStackSize: 9999
   icon: {fileID: -173318929, guid: 9470b17ec078762449d7fbcec5647f51, type: 3}
   dropIcon: {fileID: 1792799273, guid: 9470b17ec078762449d7fbcec5647f51, type: 3}
-  MaxStackSize: 999
-  sellPrice: 60
+  minSellPrice: 30
+  sellPrice: 48
+  maxSellPrice: 70
   buyPrice: 15
-  DropCount: 5
-  Experient: 5
   itemType1: 3
   itemType2: 0
   EquipableTag: 0
+  SeedData: {fileID: 11400000, guid: ee5445b65da3d1045bcc1a444bdecb45, type: 2}
+  PlaceAbleObject: {fileID: 0}
   Prefab: {fileID: 0}
-  buffs: []

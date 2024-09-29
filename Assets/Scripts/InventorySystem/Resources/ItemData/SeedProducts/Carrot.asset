@@ -14,16 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 7
   displayName: Carrot
-  description: Carrot
+  description: 
+  MaxStackSize: 9999
   icon: {fileID: 1876435354, guid: 9470b17ec078762449d7fbcec5647f51, type: 3}
   dropIcon: {fileID: 343708870, guid: 9470b17ec078762449d7fbcec5647f51, type: 3}
-  MaxStackSize: 9999
-  sellPrice: 20
+  minSellPrice: 35
+  sellPrice: 47
+  maxSellPrice: 60
   buyPrice: 15
-  DropCount: 3
-  Experient: 3
   itemType1: 3
   itemType2: 0
   EquipableTag: 0
+  SeedData: {fileID: 11400000, guid: bd1a6a013db20d146828f1c56a1178eb, type: 2}
+  PlaceAbleObject: {fileID: 0}
   Prefab: {fileID: 0}
-  buffs: []

@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: CornSeed
   m_EditorClassIdentifier: 
   SeedName: Corn Sedd
-  SeedLevel: 1
   GrowTime: 5
-  Season: 0
+  Experient: 3
+  DropCount: 3
+  DoubleExp: 0
+  DoubleDrop: 0.3
+  NotDestroy: 0
+  Description: Double drop
   SeedProduct: {fileID: 11400000, guid: be2a5343cd277d44cac187d1cf59e363, type: 2}

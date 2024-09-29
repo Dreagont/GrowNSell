@@ -20,9 +20,9 @@ public class BuffManager : MonoBehaviour
 
     void Start()
     {
-        RollNewBuffs();
-        PopulateBuffShop();
-        ResetAllBuff();
+        //RollNewBuffs();
+        //PopulateBuffShop();
+        //ResetAllBuff();
     }
 
     void Update()
@@ -30,7 +30,7 @@ public class BuffManager : MonoBehaviour
         
     }
 
-    public void ApplyBuff(InventoryItemData item, Buff buff)
+   /* public void ApplyBuff(InventoryItemData item, Buff buff)
     {
         item.AddBuff(buff);
     }
@@ -78,7 +78,7 @@ public class BuffManager : MonoBehaviour
         }
 
         PopulateBuffShop();
-    }
+    }*/
 
     public void ToggleBuffShopUI()
     {
@@ -93,12 +93,12 @@ public class BuffManager : MonoBehaviour
             BuffShopUI.SetActive(true);
             GlobalVariables.CanAction = false;
             FadeScreen.SetActive(true);
-            RollNewBuffs();
+            //RollNewBuffs();
         }
     }
 
     public void OnRollButtonPressed()
     {
-        RollNewBuffs();
+        //RollNewBuffs();
     }
 }

@@ -29,14 +29,14 @@ public class BuffUI : MonoBehaviour
         if (canClick)
         {
             ApplyBuff(buff.itemBuffed, buff);
-            buffManager.ToggleBuffShopUI();
+            //buffManager.ToggleBuffShopUI();
         }
         
     }
 
     public void ApplyBuff(InventoryItemData item, Buff buff)
     {
-        item.AddBuff(buff);
+        //item.AddBuff(buff);
     }
 
     public void UpdateBuffUI()

@@ -14,16 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 6
   displayName: Copper Watering Can
-  description: Water crops to grow
+  description: 
+  MaxStackSize: 1
   icon: {fileID: -274833639, guid: 149d97fc8d899244b8ed11be675859d3, type: 3}
   dropIcon: {fileID: -1734537955, guid: 1ff9d6f4ecd51ba4a84696e4111b7002, type: 3}
-  MaxStackSize: 1
+  minSellPrice: 10
   sellPrice: 1
+  maxSellPrice: 20
   buyPrice: 15
-  DropCount: 1
-  Experient: 5
   itemType1: 1
   itemType2: 0
   EquipableTag: 2
+  SeedData: {fileID: 0}
+  PlaceAbleObject: {fileID: 0}
   Prefab: {fileID: 0}
-  buffs: []

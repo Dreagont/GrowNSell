@@ -24,11 +24,13 @@ public class InventorySlotUi : MonoBehaviour
 
     public ShopSelling ShopSelling;
 
+    private GameManager gameManager;
+
     private void Awake()
     {
         IsSelected.gameObject.SetActive(false);
         ClearSlot();
-
+        gameManager = FindAnyObjectByType<GameManager>();
         button = GetComponent<Button>();
         button?.onClick.AddListener(OnUISlotClick);
         ParentDisplay = transform.parent.GetComponent<InventoryDisplay>();
@@ -141,7 +143,8 @@ public class InventorySlotUi : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         if (assignedInventorySlot.ItemData != null)
         {
-            TooltipManager.instance.SetAndShowToolTip(assignedInventorySlot.ItemData.displayName, assignedInventorySlot.ItemData.description,(int) assignedInventorySlot.ItemData.GetTotalSellPrice());
+            //TooltipManager.instance.SetAndShowToolTip(assignedInventorySlot.ItemData.displayName, assignedInventorySlot.ItemData.description,(int)(assignedInventorySlot.ItemData.sellPrice));
+            TooltipManager.instance.SetAndShowToolTip(assignedInventorySlot.ItemData.displayName, assignedInventorySlot.ItemData.description,(int)(gameManager.GetGoldAmount(assignedInventorySlot.ItemData.sellPrice)));
 
         }
     }

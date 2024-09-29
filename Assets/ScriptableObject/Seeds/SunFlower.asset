@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: SunFlower
   m_EditorClassIdentifier: 
   SeedName: Sun Flower Seed
-  SeedLevel: 1
   GrowTime: 4
-  Season: 0
+  Experient: 4
+  DropCount: 3
+  DoubleExp: 0.5
+  DoubleDrop: 0
+  NotDestroy: 0
+  Description: Double Exp
   SeedProduct: {fileID: 11400000, guid: 5e72bef2b701ddc4cb069984aff3d75d, type: 2}
