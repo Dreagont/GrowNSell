@@ -37,8 +37,8 @@ public class PriceTableSlotUI : MonoBehaviour
         
         ItemIcon.sprite = ItemsPricing.icon;
         //ItemSellPrice.text =((int)ItemsPricing.GetTotalSellPrice()).ToString();
-        ItemSellPrice.text = ((int)gameManager.GetGoldAmount(ItemsPricing.minSellPrice)).ToString() + " - " + ((int)gameManager.GetGoldAmount(ItemsPricing.maxSellPrice)).ToString();
+        ItemSellPrice.text = ((int)gameManager.GetCropGoldAmount(ItemsPricing.minSellPrice)).ToString() + " - " + ((int)gameManager.GetCropGoldAmount(ItemsPricing.maxSellPrice)).ToString();
         ItemName.text = ItemsPricing.displayName;
-        ItemCurrentSellPrice.text = ((int)gameManager.GetGoldAmount(ItemsPricing.sellPrice)).ToString();
+        ItemCurrentSellPrice.text = ((int)gameManager.GetCropGoldAmount(ItemsPricing.sellPrice)).ToString();
     }
 }

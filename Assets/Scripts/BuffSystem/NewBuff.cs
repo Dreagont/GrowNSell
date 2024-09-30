@@ -10,7 +10,8 @@ public class NewBuff : ScriptableObject
     public int MaxEnergyBuff = 0;
     public int EnergyReductionBuff = 0;
     public float ExperientBuff = 0;
-    public float GoldBuff = 0;
+    public float CropGoldBuff = 0;
+    public float MaterialGoldBuff = 0;
     public int ToolDamageBuff = 0;
     public float PlowDropChance = 0;
     public float DoubleDropChance = 0f;

@@ -38,7 +38,14 @@ public class ShopSlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     {
         ItemIcon.sprite = InventoryItemData.icon;
         ItemName.text = InventoryItemData.displayName;
-        ItemPrice.text = GlobalVariables.FormatNumber(InventoryItemData.buyPrice);
+        if (InventoryItemData.itemType1 == ItemType.Material)
+        {
+            ItemPrice.text = GlobalVariables.FormatNumber((int)gameManager.GetMaterialGoldAmount(-InventoryItemData.buyPrice));
+        }
+        else
+        {
+            ItemPrice.text = GlobalVariables.FormatNumber(InventoryItemData.buyPrice);
+        }
         sellQuantityText.text = sellQuanity.ToString();
     }
 
@@ -50,7 +57,15 @@ public class ShopSlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
             {
                 sellQuanity--;
                 SetUi();
-                gameManager.GoldManager.SpawnGoldText(-InventoryItemData.buyPrice, false, 1);
+                if (InventoryItemData.itemType1 == ItemType.Material)
+                {
+                    gameManager.GoldManager.SpawnGoldText((int)gameManager.GetMaterialGoldAmount(-InventoryItemData.buyPrice), false, 1);
+
+                }
+                else
+                {
+                    gameManager.GoldManager.SpawnGoldText(-InventoryItemData.buyPrice, false, 1);
+                }
             } else
             {
                 return;
@@ -97,8 +112,16 @@ public class ShopSlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
                 sellQuanity -= quantityToBuy; 
 
                 SetUi();
+                if (InventoryItemData.itemType1 == ItemType.Material)
+                {
+                    gameManager.GoldManager.SpawnGoldText((int)gameManager.GetMaterialGoldAmount(-InventoryItemData.buyPrice), false, quantityToBuy);
 
-                gameManager.GoldManager.SpawnGoldText(-InventoryItemData.buyPrice,false, quantityToBuy);
+                }
+                else
+                {
+                    gameManager.GoldManager.SpawnGoldText(-InventoryItemData.buyPrice, false, quantityToBuy);
+
+                }
             }
         }
         TooltipManager.instance.HideTooltip();

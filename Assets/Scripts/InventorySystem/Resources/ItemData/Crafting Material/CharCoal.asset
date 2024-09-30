@@ -10,21 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c7ca7bc84f6875647b44506e56f5535e, type: 3}
-  m_Name: CopperSprinkler
+  m_Name: CharCoal
   m_EditorClassIdentifier: 
   ID: -1
-  displayName: Copper Sprinkler
-  description: Auto water crop in 3x3 radius.
-  MaxStackSize: 0
-  icon: {fileID: 911703485, guid: 53f7be045b0d43548afef308a3820851, type: 3}
-  dropIcon: {fileID: 918210134, guid: 53f7be045b0d43548afef308a3820851, type: 3}
-  minSellPrice: 10
+  displayName: Charcoal
+  description: 
+  MaxStackSize: 9999
+  icon: {fileID: -125177388, guid: 2c9b0bff2da13684db8428ea4ad0a713, type: 3}
+  dropIcon: {fileID: 28015160, guid: 2c9b0bff2da13684db8428ea4ad0a713, type: 3}
+  minSellPrice: 15
   sellPrice: 10
-  maxSellPrice: 20
-  buyPrice: 15
-  itemType1: 4
+  maxSellPrice: 30
+  buyPrice: 40
+  itemType1: 5
   itemType2: 0
   EquipableTag: 0
   SeedData: {fileID: 0}
-  PlaceAbleObject: {fileID: 11400000, guid: 61641f04d8f7e284db71a3af6b9ed096, type: 2}
+  PlaceAbleObject: {fileID: 0}
   Prefab: {fileID: 0}

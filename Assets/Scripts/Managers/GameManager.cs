@@ -29,12 +29,15 @@ public class GameManager : MonoBehaviour
     }
    
 
-    public float GetGoldAmount(int amount)
+    public float GetCropGoldAmount(int amount)
     {
-        return (amount * (1 + BuffManager.GoldBuff));
+        return (amount * (1 + BuffManager.CropGoldBuff));
+    }
+    public float GetMaterialGoldAmount(int amount)
+    {
+        return (amount * (1 + BuffManager.MaterialGoldBuff));
     }
 
-   
 
     public bool IsSuccess(float chance)
     {

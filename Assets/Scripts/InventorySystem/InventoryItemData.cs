@@ -23,7 +23,7 @@ public class InventoryItemData : ScriptableObject
     public EquipableTag EquipableTag;
 
     public SeedData SeedData;
-    public PlaceAbleObject PlaceAbleObject;
+    public PlaceAbleObjectData PlaceAbleObject;
 
     public GameObject Prefab;
 
@@ -50,6 +50,7 @@ public enum ItemType
     Seed,
     Crop,
     PlaceAble,
+    Material
 }
 
 public enum EquipableTag

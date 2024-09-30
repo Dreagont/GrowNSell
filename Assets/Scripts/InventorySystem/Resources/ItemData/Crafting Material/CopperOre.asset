@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c7ca7bc84f6875647b44506e56f5535e, type: 3}
-  m_Name: Dirt
+  m_Name: CopperOre
   m_EditorClassIdentifier: 
-  ID: 8
-  displayName: Dirt
+  ID: -1
+  displayName: Copper Ore
   description: 
   MaxStackSize: 9999
-  icon: {fileID: -1406636669, guid: 7f03d2669e399644f827b33bb44a1df1, type: 3}
-  dropIcon: {fileID: -1864038786, guid: 7f03d2669e399644f827b33bb44a1df1, type: 3}
-  minSellPrice: 10
-  sellPrice: 5
-  maxSellPrice: 20
-  buyPrice: 15
-  itemType1: 0
+  icon: {fileID: 870651460, guid: 2c9b0bff2da13684db8428ea4ad0a713, type: 3}
+  dropIcon: {fileID: -1369282024, guid: 2c9b0bff2da13684db8428ea4ad0a713, type: 3}
+  minSellPrice: 20
+  sellPrice: 28
+  maxSellPrice: 40
+  buyPrice: 50
+  itemType1: 5
   itemType2: 0
   EquipableTag: 0
   SeedData: {fileID: 0}

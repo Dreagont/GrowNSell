@@ -10,7 +10,8 @@ public class NewBuffManager : MonoBehaviour
     public int MaxEnergyBuff = 0;
     public int EnergyReductionBuff = 0;
     public float ExperientBuff = 0;
-    public float GoldBuff = 0;
+    public float CropGoldBuff = 0;
+    public float MaterialGoldBuff = 0;
     public int ToolDamageBuff = 0;
     public float PlowDropChance = 0f;
     public float DoubleDropChance = 0f;
@@ -42,7 +43,8 @@ public class NewBuffManager : MonoBehaviour
         MaxEnergyBuff = 0;
         EnergyReductionBuff = 0;
         ExperientBuff = 0;
-        GoldBuff = 0;
+        CropGoldBuff = 0;
+        MaterialGoldBuff = 0;
         ToolDamageBuff = 0;
         PlowDropChance = 0;
         DoubleDropChance = 0;
@@ -52,15 +54,16 @@ public class NewBuffManager : MonoBehaviour
             MaxEnergyBuff += buff.MaxEnergyBuff;
             EnergyReductionBuff += buff.EnergyReductionBuff;
             ExperientBuff += buff.ExperientBuff;
-            GoldBuff += buff.GoldBuff;
+            CropGoldBuff += buff.CropGoldBuff;
+            MaterialGoldBuff = buff.MaterialGoldBuff;
             ToolDamageBuff += buff.ToolDamageBuff;
             PlowDropChance += buff.PlowDropChance;
             DoubleDropChance += buff.DoubleDropChance;
             NotDestroyFarmland += buff.NotDestroyFarmland;
 
-            if (GoldBuff <= -1)
+            if (CropGoldBuff <= -1)
             {
-                GoldBuff = 1;
+                CropGoldBuff = 1;
             }
         }
         GameManager.EnergyManager.EnergyIncrease();

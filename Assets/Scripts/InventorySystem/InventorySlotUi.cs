@@ -144,7 +144,7 @@ public class InventorySlotUi : MonoBehaviour
         if (assignedInventorySlot.ItemData != null)
         {
             //TooltipManager.instance.SetAndShowToolTip(assignedInventorySlot.ItemData.displayName, assignedInventorySlot.ItemData.description,(int)(assignedInventorySlot.ItemData.sellPrice));
-            TooltipManager.instance.SetAndShowToolTip(assignedInventorySlot.ItemData.displayName, assignedInventorySlot.ItemData.description,(int)(gameManager.GetGoldAmount(assignedInventorySlot.ItemData.sellPrice)));
+            TooltipManager.instance.SetAndShowToolTip(assignedInventorySlot.ItemData.displayName, assignedInventorySlot.ItemData.description,(int)(gameManager.GetCropGoldAmount(assignedInventorySlot.ItemData.sellPrice)));
 
         }
     }

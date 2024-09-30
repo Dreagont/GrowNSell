@@ -44,8 +44,10 @@ public class TileManager : MonoBehaviour
 
     [Header("Object Parents")]
     public Transform dropItems;
-    public Transform soilsParent;  
+    public Transform soilsParent;
     public Transform seedsParent;
+    public Transform HighLightObjectParent;
+    public Transform PlaceItemParent;
 
     [Header("Animations")]
     public GameObject chopAnimationPrefab;
@@ -55,10 +57,15 @@ public class TileManager : MonoBehaviour
     public GameObject digAnimationPrefab;
     public GameObject dropItemPrefab;
 
+    public GameObject HighLightObject;
+    public GameObject PlaceAbleObject;
     private ExperientManager experientManager;
+    public bool isPlaceObject = false;
+    private ObjectSpawner objectSpawner;
 
     void Start()
     {
+        objectSpawner = FindAnyObjectByType<ObjectSpawner>();
         experientManager = FindAnyObjectByType<ExperientManager>();
         interactableMap.gameObject.SetActive(true);
         playerInventoryHolder = FindAnyObjectByType<PlayerInventoryHolder>();
@@ -88,13 +95,7 @@ public class TileManager : MonoBehaviour
             {
                 if (Input.GetMouseButtonDown(0))
                 {
-                    if (holdItem.EquipableTag == EquipableTag.Shovel)
-                    {
-                    }
-                    else if (holdItem.EquipableTag == EquipableTag.WateringCan)
-                    {
-                        //Watering();
-                    } else if (holdItem.EquipableTag == EquipableTag.Hoe)
+                    if (holdItem.EquipableTag == EquipableTag.Hoe)
                     {
                         Plow();
 
@@ -108,14 +109,13 @@ public class TileManager : MonoBehaviour
                     {
                         Mine();
                     }
-
                 }
 
                 if (Input.GetMouseButtonDown(1))
                 {
                     if (holdItem.EquipableTag == EquipableTag.Hoe)
                     {
-                       DestroyCrop();
+                        DestroyCrop();
                     }
                 }
 
@@ -126,7 +126,7 @@ public class TileManager : MonoBehaviour
                         Watering();
                     }
                 }
-                    HighlightTileUnderMouse();
+                HighlightTileUnderMouse(cellPosition, 1);
             }
             else if (holdItem.itemType1 == ItemType.Seed || holdItem.itemType2 == ItemType.Seed)
             {
@@ -134,26 +134,35 @@ public class TileManager : MonoBehaviour
                 {
                     PlantSeed();
                 }
-                HighlightTileUnderMouse();
+                HighlightTileUnderMouse(cellPosition, 1);
 
+            } else if (holdItem.itemType1 == ItemType.PlaceAble || holdItem.itemType2 == ItemType.PlaceAble)
+            {
+                if (Input.GetMouseButtonDown(0))
+                {
+
+                    objectSpawner.PlaceItem(holdItem,cellPosition,PlaceAbleObject,PlaceItemParent);
+                }
+                HighlightTileUnderMouse(cellPosition, holdItem.PlaceAbleObject.Radius);
             }
             else
             {
-                highlightMap.SetTile(previousHighlightedCell, null);
+                DeHighLight();
             }
         }
         else
         {
-            highlightMap.SetTile(previousHighlightedCell, null);
+            DeHighLight();
+
         }
         CheckForItemPickup();
     }
 
     private void Mine()
     {
-        int soilLayerMask = LayerMask.GetMask("Object");
+        int objectLayerMask = LayerMask.GetMask("Object");
         Vector3 worldPosition = new Vector3(cellPosition.x + 0.5f, cellPosition.y + 0.5f, 0);
-        Collider2D hitCollider = Physics2D.OverlapPoint(worldPosition, soilLayerMask);
+        Collider2D hitCollider = Physics2D.OverlapPoint(worldPosition, objectLayerMask);
 
         if (hitCollider != null)
         {
@@ -163,20 +172,23 @@ public class TileManager : MonoBehaviour
             if (objectHit.ObjectData.ObjectType == ObjectType.Stone && gameManager.EnergyManager.ActionAble(PickaxeEnergy * energyMulti))
             {
                 Vector3 worldPosition1 = new Vector3(cellPosition.x + 0.0f, cellPosition.y + 0.5f, 0);
-
+                
+                objectSpawner.ObjectPosition.Remove(objectHit.ObjectPosition);
+                Debug.Log(objectHit.ObjectPosition);
                 SpawnAnimation(mineAnimationPrefab, worldPosition1);
                 StartCoroutine(ExecuteAfterDelay(0.4f, objectHit, PickaxeEnergy * energyMulti, energyMulti));
             }
-        } else
+        }
+        else
         {
         }
     }
 
     private void ChopWood()
     {
-        int soilLayerMask = LayerMask.GetMask("Object");
+        int objectLayerMask = LayerMask.GetMask("Object");
         Vector3 worldPosition = new Vector3(cellPosition.x + 0.5f, cellPosition.y + 0.5f, 0);
-        Collider2D hitCollider = Physics2D.OverlapPoint(worldPosition, soilLayerMask);
+        Collider2D hitCollider = Physics2D.OverlapPoint(worldPosition, objectLayerMask);
 
         if (hitCollider != null)
         {
@@ -208,7 +220,7 @@ public class TileManager : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
 
-        if (objectHit != null)  
+        if (objectHit != null)
         {
             DestroyObject(objectHit, energy, energyMulti);
         }
@@ -231,13 +243,13 @@ public class TileManager : MonoBehaviour
 
     public void DropItem(Object objectHit)
     {
-        GameObject instantiatedAnimation = Instantiate(dropItemPrefab, objectHit.ObjectPosition, Quaternion.identity,dropItems);
+        GameObject instantiatedAnimation = Instantiate(dropItemPrefab, objectHit.ObjectPosition, Quaternion.identity, dropItems);
         DropItemData dropItemData = instantiatedAnimation.GetComponent<DropItemData>();
 
         if (dropItemData != null)
         {
             dropItemData.InitializeDrop(objectHit.ObjectData.DropItems[0], objectHit.ObjectData.DropQuantity);
-            StartCoroutine(EnablePickupAfterDelay(instantiatedAnimation, 1f)); 
+            StartCoroutine(EnablePickupAfterDelay(instantiatedAnimation, 1f));
         }
     }
 
@@ -250,26 +262,27 @@ public class TileManager : MonoBehaviour
 
             if (dropItemData != null)
             {
-               if (isDouble)
-               {
+                if (isDouble)
+                {
                     dropItemData.InitializeDrop(itemDrop, true);
 
-               } else
-               {
-                    dropItemData.InitializeDrop(itemDrop,1);
-               }
+                }
+                else
+                {
+                    dropItemData.InitializeDrop(itemDrop, 1);
+                }
 
                 StartCoroutine(EnablePickupAfterDelay(instantiatedAnimation, 1f));
             }
         }
 
-        
+
     }
 
     private IEnumerator EnablePickupAfterDelay(GameObject dropItem, float delay)
     {
         yield return new WaitForSeconds(delay);
-        dropItem.GetComponent<DropItemData>().CanBePickedUp = true; 
+        dropItem.GetComponent<DropItemData>().CanBePickedUp = true;
     }
 
     private bool isPickingUp = false;
@@ -299,7 +312,7 @@ public class TileManager : MonoBehaviour
     private IEnumerator MoveItemTowardsMouse(GameObject dropItem, Vector3 targetPosition)
     {
         DropItemData dropItemData = dropItem.GetComponent<DropItemData>();
-        
+
 
         float speed = 10f;
 
@@ -349,7 +362,7 @@ public class TileManager : MonoBehaviour
         }
         else
         {
-            
+
         }
     }
 
@@ -372,7 +385,7 @@ public class TileManager : MonoBehaviour
                 {
                     seed.isDestroyed = true;
                     ObjectsManager.SeedValues.Remove(seedPosition);
-                    StartCoroutine(DelayDestroy(seed.gameObject)); 
+                    StartCoroutine(DelayDestroy(seed.gameObject));
                 }
             }
 
@@ -400,7 +413,8 @@ public class TileManager : MonoBehaviour
                 StartCoroutine(WaterDelay(worldPosition, cellPosition, soil));
 
             }
-        } else
+        }
+        else
         {
             Debug.Log("No soil to water here!");
         }
@@ -470,7 +484,8 @@ public class TileManager : MonoBehaviour
         if (gameManager.IsSuccess(chance))
         {
             return;
-        } else
+        }
+        else
         {
             Vector3Int grassPos = new Vector3Int((int)(seed.position.x - 0.5f), (int)(seed.position.y), 0);
             FarmSoilMap.SetTile(grassPos, GrassTile);
@@ -478,14 +493,14 @@ public class TileManager : MonoBehaviour
             ObjectsManager.SoilValues.Remove(new Vector3(seed.position.x, seed.position.y + 0.5f, seed.position.z));
             Destroy(seed.thisSoil.gameObject);
         }
-       
+
     }
 
     public void PlantSeed()
     {
         if (IsSoilAtPosition(cellPosition))
         {
-            
+
             Vector3 seedPosition = new Vector3(cellPosition.x + 0.5f, cellPosition.y, 0);
 
 
@@ -494,7 +509,7 @@ public class TileManager : MonoBehaviour
                 Debug.Log("A seed is already planted here!");
                 return;
             }
-            
+
             GameObject seedInstance = Instantiate(playerInventoryHolder.PrimaryInventorySystem.InventorySlots[playerInventoryHolder.SelectedSlot].ItemData.Prefab, seedPosition, Quaternion.identity, seedsParent);
             int soilLayerMask = LayerMask.GetMask("Soil");
             Collider2D hitCollider = Physics2D.OverlapPoint(new Vector3(cellPosition.x + 0.5f, cellPosition.y + 0.5f, 0), soilLayerMask);
@@ -559,38 +574,78 @@ public class TileManager : MonoBehaviour
         Vector3 truePos = new Vector3(position.x + 0.5f, position.y + 0.5f, 0);
         Instantiate(PlantingSoil, truePos, Quaternion.identity, soilsParent);
         gameManager.EnergyManager.ConsumeEnergyTools(HoePlowEnergy, 1);
-        DropItem(gameManager.DropsManager.DropPlowItem(gameManager.BuffManager.PlowDropChance),truePos, false);
+        DropItem(gameManager.DropsManager.DropPlowItem(gameManager.BuffManager.PlowDropChance), truePos, false);
         DropItem(SoilDrop, truePos, false);
-        experientManager.SpawnExp(1,truePos);
+        experientManager.SpawnExp(1, truePos);
         ObjectsManager.SoilValues.Add(truePos, false);
     }
 
-
-    public string GetTileName(Vector3Int position)
+    public void HighlightTileUnderMouse(Vector3Int cellPosition, int radius)
     {
-        if (interactableMap != null)
-        {
-            TileBase tile = interactableMap.GetTile(position);
-
-            if (tile != null) { return tile.name; }
-        }
-        return "no name";
-    }
-
-    private void HighlightTileUnderMouse()
-    {
+        int count = 0;
 
         if (cellPosition != previousHighlightedCell)
         {
-            if (FarmSoilMap.GetTile(cellPosition).name != "Water")
+            if (radius > 1 && isPlaceObject == true)
             {
-                highlightMap.SetTile(previousHighlightedCell, null);
+                DeHighLight();
+                int side = (radius - 1) / 2;
+                for (int x = -side; x <= side; x++)
+                {
+                    for (int y = -side; y <= side; y++)
+                    {
+                        Vector3Int offsetPosition = new Vector3Int(cellPosition.x + x, cellPosition.y + y, cellPosition.z);
+                        Vector3 highPos = new Vector3(cellPosition.x + x + 0.5f, cellPosition.y + y + 0.5f, cellPosition.z);
+
+                        if (offsetPosition == cellPosition)
+                        {
+                            continue;
+                        }
+
+                        if (FarmSoilMap.GetTile(offsetPosition) != null && FarmSoilMap.GetTile(offsetPosition).name != "Water")
+                        {
+                            Instantiate(HighLightObject, highPos, Quaternion.identity, HighLightObjectParent);
+                            count++;
+                        }
+                        else
+                        {
+                            DeHighLight();
+                        }
+
+                    }
+                }
                 previousHighlightedCell = cellPosition;
-                highlightMap.SetTile(cellPosition, highlightTile);
-            } else
-            {
-                highlightMap.SetTile(previousHighlightedCell, null);
+                Debug.Log(count);
             }
+            else if (isPlaceObject == false)
+            {
+                if (FarmSoilMap.GetTile(cellPosition) != null && FarmSoilMap.GetTile(cellPosition).name != "Water")
+                {
+                    DeHighLight();
+                    Vector3 highPos = new Vector3(cellPosition.x + 0.5f, cellPosition.y + 0.5f, cellPosition.z);
+                    Instantiate(HighLightObject, highPos, Quaternion.identity, HighLightObjectParent);
+                    previousHighlightedCell = cellPosition;
+                }
+                else
+                {
+                    DeHighLight();
+                }
+
+            }
+        }
+        else
+        {
+            //DeHighLight();
+        }
+
+
+    }
+
+    public void DeHighLight()
+    {
+        foreach (Transform child in HighLightObjectParent)
+        {
+            Destroy(child.gameObject);
         }
     }
 }

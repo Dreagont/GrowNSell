@@ -18,5 +18,9 @@ MonoBehaviour:
   MaxEnergyBuff: 0
   EnergyReductionBuff: 0
   ExperientBuff: 0
-  GoldBuff: 0.1
+  CropGoldBuff: 0.1
+  MaterialGoldBuff: 0
   ToolDamageBuff: 0
+  PlowDropChance: 0
+  DoubleDropChance: 0
+  NotDestroyFarmland: 0

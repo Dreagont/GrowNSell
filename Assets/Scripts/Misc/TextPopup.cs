@@ -21,7 +21,7 @@ public class TextPopup : MonoBehaviour
             else
             {
                 goldText.color = Color.red;
-                goldText.text = "-" + goldPopup.ToString();
+                goldText.text =  goldPopup.ToString();
             }
         } else
         {
