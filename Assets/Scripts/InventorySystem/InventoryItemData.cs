@@ -23,7 +23,7 @@ public class InventoryItemData : ScriptableObject
     public EquipableTag EquipableTag;
 
     public SeedData SeedData;
-    public PlaceAbleObjectData PlaceAbleObject;
+    public PlaceAbleObjectData PlaceAbleObjectData;
 
     public GameObject Prefab;
 

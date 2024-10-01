@@ -9,11 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f5c72b37eb7a8743955be7a479798a5, type: 3}
-  m_Name: CopperSprinkler
+  m_Script: {fileID: 11500000, guid: ecb01ca44485bbe4f91829d5f3826ab9, type: 3}
+  m_Name: GoldOre
   m_EditorClassIdentifier: 
-  Radius: 3
-  PlaceAbleType: 1
-  Health: 10
-  PlaceItemObjectData: {fileID: 11400000, guid: 6fd533b0a6b954542999f501943e565a, type: 2}
-  SpawnedObjects: []
+  Name: Gold Ore
+  DropItems:
+  - {fileID: 11400000, guid: 0681940471082fe47b90a1d333bb0350, type: 2}
+  DropQuantity: 1
+  Health: 40
+  Experience: 8
+  ObjectScore: 5
+  ObjectType: 1

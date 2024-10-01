@@ -9,11 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f5c72b37eb7a8743955be7a479798a5, type: 3}
-  m_Name: CopperSprinkler
+  m_Script: {fileID: 11500000, guid: ecb01ca44485bbe4f91829d5f3826ab9, type: 3}
+  m_Name: Tree
   m_EditorClassIdentifier: 
-  Radius: 3
-  PlaceAbleType: 1
+  Name: Tree
+  DropItems:
+  - {fileID: 11400000, guid: 0cedbd8decb94f4419e1ea8b0c896c03, type: 2}
+  DropQuantity: 1
   Health: 10
-  PlaceItemObjectData: {fileID: 11400000, guid: 6fd533b0a6b954542999f501943e565a, type: 2}
-  SpawnedObjects: []
+  Experience: 2
+  ObjectScore: 1
+  ObjectType: 0

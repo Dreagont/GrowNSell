@@ -8,13 +8,13 @@ public class ObjectsManager : MonoBehaviour
     public Dictionary<Vector3, bool> SoilValues = new Dictionary<Vector3, bool>();
     public Dictionary<Vector3, int> SeedValues = new Dictionary<Vector3, int>();
     public Tilemap WaterSoilMap;
-    public Soil[] Soils;
-    public Seed[] Seeds;
+    public List<Soil> Soils = new List<Soil>();
+    public List<Seed> Seeds = new List<Seed>();
 
     void Update()
     {
-        Soils = FindObjectsOfType<Soil>();
-        Seeds = FindObjectsOfType<Seed>();
+        //Soils = FindObjectsOfType<Soil>();
+        //Seeds = FindObjectsOfType<Seed>();
     }
 
     public void DeWaterAll()
@@ -33,6 +33,17 @@ public class ObjectsManager : MonoBehaviour
             if (WaterSoilMap.HasTile(position))
             {
                 WaterSoilMap.SetTile(position, null);
+            }
+        }
+    }
+
+    public void DisposeFarmland()
+    {
+        foreach (var soil in Soils)
+        {
+            if (!soil.isSeeded)
+            {
+                Destroy(soil.gameObject);
             }
         }
     }

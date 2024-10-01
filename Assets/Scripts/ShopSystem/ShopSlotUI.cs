@@ -36,11 +36,14 @@ public class ShopSlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 
     public void SetUi()
     {
+        gameManager = FindObjectOfType<GameManager>();
+
         ItemIcon.sprite = InventoryItemData.icon;
         ItemName.text = InventoryItemData.displayName;
         if (InventoryItemData.itemType1 == ItemType.Material)
         {
-            ItemPrice.text = GlobalVariables.FormatNumber((int)gameManager.GetMaterialGoldAmount(-InventoryItemData.buyPrice));
+            ItemPrice.text = GlobalVariables.FormatNumber((int)gameManager.GetMaterialGoldAmount(InventoryItemData.buyPrice));
+
         }
         else
         {
@@ -133,9 +136,10 @@ public class ShopSlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
         yield return new WaitForSeconds(0.1f);
         if (InventoryItemData != null)
         {
+            TooltipManager.instance.SetAndShowToolTip(InventoryItemData.displayName, InventoryItemData.description, -1);
+
             if (InventoryItemData.description != "")
             {
-                TooltipManager.instance.SetAndShowToolTip(InventoryItemData.displayName, InventoryItemData.description,-1);
             } else
             {
 

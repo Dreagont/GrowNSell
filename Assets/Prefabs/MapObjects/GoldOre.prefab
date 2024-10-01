@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 4631611119782185048}
   - component: {fileID: 388718464672749701}
   m_Layer: 0
-  m_Name: CopperOre
+  m_Name: GoldOre
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -152,7 +152,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -246160216, guid: 91c568a5afba0d44fb147ddf299caa3e, type: 3}
+  m_Sprite: {fileID: -674291144, guid: 91c568a5afba0d44fb147ddf299caa3e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -176,7 +176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ObjectPosition: {x: 0, y: 0, z: 0}
-  ObjectData: {fileID: 11400000, guid: 7c5913213e9ff254e91e46a74582fed9, type: 2}
+  ObjectData: {fileID: 11400000, guid: c3d4aea459f277d4eb2a54312d2e0a07, type: 2}
   ObjectHealth: 0
   HealthBarFill: {fileID: 6769574099511827583}
   HealthBar: {fileID: 8995633513515624876}

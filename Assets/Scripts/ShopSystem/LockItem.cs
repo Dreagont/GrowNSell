@@ -30,7 +30,7 @@ public class LockItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         {
             if (GameManager.GoldManager.CanAffordItem(LockItemData.Price) && PlayerInventoryHolder.CraftableItem(LockItemData.craftingMaterials))
             {
-                GameManager.GoldManager.Gold -= LockItemData.Price;
+                GameManager.GoldManager.SpawnGoldText(-LockItemData.Price, false, 1);
                 PlayerInventoryHolder.RemoveItemForCraft(LockItemData.craftingMaterials);
                 IslandExpander.GenerateArena(10, 10, 1);
                 Destroy(gameObject);
@@ -39,7 +39,7 @@ public class LockItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
             
         } else if (GameManager.GoldManager.CanAffordItem(LockItemData.Price))
         {
-            GameManager.GoldManager.Gold -= LockItemData.Price;
+            GameManager.GoldManager.SpawnGoldText(-LockItemData.Price, false, 1);
             ShopUIController.allAvailableItems.Add(LockItemData.lockItem);
             Destroy(gameObject);
         }

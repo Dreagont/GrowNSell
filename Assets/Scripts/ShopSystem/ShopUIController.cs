@@ -82,7 +82,7 @@ public class ShopUIController : MonoBehaviour
     {
         if (gameManager.GoldManager.CanAffordItem(gameManager.ShopRollCost))
         {
-            gameManager.GoldManager.Gold -= gameManager.ShopRollCost;
+            gameManager.GoldManager.SpawnGoldText(-gameManager.ShopRollCost,false,1);
             gameManager.ShopRollCost *= 2;
             itemsForSale.Clear();
 
@@ -144,7 +144,7 @@ public class ShopUIController : MonoBehaviour
     {
         if (gameManager.GoldManager.CanAffordItem(gameManager.ShopUpgradeCost))
         {
-            gameManager.GoldManager.Gold -= gameManager.ShopUpgradeCost;
+            gameManager.GoldManager.SpawnGoldText(-gameManager.ShopUpgradeCost, false, 1);
             gameManager.ShopUpgradeCost *= 2;
             gameManager.ShopRollCost = 10;
             shopLevel += 1;

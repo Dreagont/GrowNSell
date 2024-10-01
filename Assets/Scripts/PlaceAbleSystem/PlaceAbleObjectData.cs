@@ -8,6 +8,8 @@ public class PlaceAbleObjectData : ScriptableObject
     public int Radius;
     public PlaceAbleType PlaceAbleType;
     public int Health;
+    public ObjectData PlaceItemObjectData;
+    public List<GameObject> SpawnedObjects;
 }
 
 public enum PlaceAbleType

@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: -1
   displayName: Copper Sprinkler
   description: Auto water crop in 3x3 radius.
-  MaxStackSize: 0
+  MaxStackSize: 99
   icon: {fileID: 911703485, guid: 53f7be045b0d43548afef308a3820851, type: 3}
   dropIcon: {fileID: 918210134, guid: 53f7be045b0d43548afef308a3820851, type: 3}
   minSellPrice: 10
@@ -26,5 +26,5 @@ MonoBehaviour:
   itemType2: 0
   EquipableTag: 0
   SeedData: {fileID: 0}
-  PlaceAbleObject: {fileID: 11400000, guid: 61641f04d8f7e284db71a3af6b9ed096, type: 2}
+  PlaceAbleObjectData: {fileID: 11400000, guid: 61641f04d8f7e284db71a3af6b9ed096, type: 2}
   Prefab: {fileID: 0}

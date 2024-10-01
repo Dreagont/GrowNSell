@@ -10,6 +10,7 @@ public class ActionManager : MonoBehaviour
     public InventoryItemData Pickaxe;
     public InventoryItemData WateringCan;
     public InventoryItemData Shovel;
+    public InventoryItemData Mine;
 
     void Start()
     {
@@ -32,6 +33,7 @@ public class ActionManager : MonoBehaviour
         InventoryHolder.AddToHotBar(Pickaxe, 1);
         InventoryHolder.AddToHotBar(WateringCan, 1);
         InventoryHolder.AddToHotBar(Shovel, 1);
+        InventoryHolder.AddToHotBar(Mine, 1);
     }
 
 

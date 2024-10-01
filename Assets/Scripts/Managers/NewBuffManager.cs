@@ -55,7 +55,7 @@ public class NewBuffManager : MonoBehaviour
             EnergyReductionBuff += buff.EnergyReductionBuff;
             ExperientBuff += buff.ExperientBuff;
             CropGoldBuff += buff.CropGoldBuff;
-            MaterialGoldBuff = buff.MaterialGoldBuff;
+            MaterialGoldBuff += buff.MaterialGoldBuff;
             ToolDamageBuff += buff.ToolDamageBuff;
             PlowDropChance += buff.PlowDropChance;
             DoubleDropChance += buff.DoubleDropChance;

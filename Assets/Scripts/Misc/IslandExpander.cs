@@ -132,7 +132,7 @@ public class IslandExpander : MonoBehaviour
                     Vector3Int tilePosition = new Vector3Int(x, y, 0);
                     interactMap.SetTile(tilePosition, interactTile);
                     tilemap.SetTile(tilePosition, arenaTile);
-                    ObjectSpawner.SpawnObject(tilePosition);
+                    //ObjectSpawner.SpawnObject(tilePosition);
                 }
             }
 

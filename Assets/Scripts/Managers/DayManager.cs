@@ -17,9 +17,15 @@ public class DayManager : MonoBehaviour
     private ShopUIController shopUIController;
     public bool canPassDay;
     public PriceManager priceManager;
+    private PlaceAbleObject[] placeAbleObjects;
+    private ObjectSpawner ObjectSpawner;
+    private TileManager tileManager;
+    public int BaseTreePerDay = 30;
     private void Start()
     {
+        ObjectSpawner = FindAnyObjectByType<ObjectSpawner>();   
         shopUIController = FindAnyObjectByType<ShopUIController>();
+        tileManager = FindAnyObjectByType<TileManager>();
         SkipDayFade.gameObject.SetActive(true);
         gameManager = GetComponentInParent<GameManager>();
         SkipDayFade.color = new Color(SkipDayFade.color.r, SkipDayFade.color.g, SkipDayFade.color.b, 0); 
@@ -57,12 +63,79 @@ public class DayManager : MonoBehaviour
         objectsManager.UpdateSeedSpriteAndState();
         objectsManager.WaterCheck();
         objectsManager.DeWaterAll();
+        objectsManager.DisposeFarmland();
         gameManager.EnergyManager.RefillEnergy();
         gameManager.ShopRollCost = 10;
         shopUIController.RollNewItemsFree();
         priceManager.RollAllSellPrices();
+        placeAbleObjects = FindObjectsOfType<PlaceAbleObject>();
+        ActiveSprinkler();
+        ActiveMine();
+        ReGrowTree();
         Debug.Log("Day: " + GlobalVariables.currentDay);
     }
+
+
+    public void ActiveSprinkler()
+    {
+        int i = 1;
+        foreach (var placeAbleObject in placeAbleObjects)
+        {
+            if (placeAbleObject.ItemPlaceAbleObject.PlaceAbleObjectData.PlaceAbleType == PlaceAbleType.Sprinkler)
+            {
+                placeAbleObject.WaterPlant(placeAbleObject.ItemPlaceAbleObject.PlaceAbleObjectData.Radius);
+                Debug.Log("Found " + i++ + " Sprinkler");
+            }
+
+        }
+    }
+
+    public void ActiveMine()
+    {
+        int i = 1;
+        foreach (var placeAbleObject in placeAbleObjects)
+        {
+            if (placeAbleObject.ItemPlaceAbleObject.PlaceAbleObjectData.PlaceAbleType == PlaceAbleType.MineralGen)
+            {
+                placeAbleObject.SpawnMineral(placeAbleObject.ItemPlaceAbleObject.PlaceAbleObjectData.Radius);
+                Debug.Log("Found " + i++ + " Miner");
+            }
+
+        }
+    }
+
+    public void ReGrowTree()
+    {
+        int TreePerDay = BaseTreePerDay;
+
+        while (TreePerDay > 0) 
+        {
+            foreach (var position in ObjectSpawner.Ground.cellBounds.allPositionsWithin)
+            {
+                if (ObjectSpawner.Ground.HasTile(position))
+                {
+                    if (ObjectSpawner.Ground.GetTile(position).name == "RandomGrass")
+                    {
+                        if (Random.Range(1, 100) < 5)
+                        {
+                            Vector3 treePos = ObjectSpawner.Ground.CellToWorld(position) + new Vector3(0.5f, 0.5f, 0);
+                            if (!ObjectSpawner.ObjectPosition.Contains(treePos))
+                            {
+                                ObjectSpawner.SpawnObject(position, ObjectSpawner.BaseWoodObjects, 100);
+                                Debug.Log("Grow");
+                                TreePerDay--;
+
+                                if (TreePerDay <= 0)
+                                    break;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
 
     void HandleSpeedUpInput()
     {

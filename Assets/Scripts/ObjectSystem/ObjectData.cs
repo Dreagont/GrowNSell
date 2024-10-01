@@ -10,6 +10,7 @@ public class ObjectData : ScriptableObject
     public int DropQuantity;
     public int Health = 10;
     public int Experience = 2;
+    public int ObjectScore = 0;
     public ObjectType ObjectType;
 }
 

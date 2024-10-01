@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c7ca7bc84f6875647b44506e56f5535e, type: 3}
-  m_Name: IronSprinkler
+  m_Name: GoldOre
   m_EditorClassIdentifier: 
   ID: -1
-  displayName: Iron Sprinkler
-  description: Auto water crop in 4x4 radius.
-  MaxStackSize: 99
-  icon: {fileID: 1263140006, guid: 53f7be045b0d43548afef308a3820851, type: 3}
-  dropIcon: {fileID: 216027090, guid: 53f7be045b0d43548afef308a3820851, type: 3}
-  minSellPrice: 10
+  displayName: Gold Ore
+  description: 
+  MaxStackSize: 9999
+  icon: {fileID: -1983066395, guid: 2c9b0bff2da13684db8428ea4ad0a713, type: 3}
+  dropIcon: {fileID: -89914648, guid: 2c9b0bff2da13684db8428ea4ad0a713, type: 3}
+  minSellPrice: 60
   sellPrice: 10
-  maxSellPrice: 20
-  buyPrice: 15
-  itemType1: 4
+  maxSellPrice: 120
+  buyPrice: 150
+  itemType1: 5
   itemType2: 0
   EquipableTag: 0
   SeedData: {fileID: 0}

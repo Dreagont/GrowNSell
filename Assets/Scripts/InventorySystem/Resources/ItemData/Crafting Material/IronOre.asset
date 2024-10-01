@@ -13,18 +13,18 @@ MonoBehaviour:
   m_Name: IronOre
   m_EditorClassIdentifier: 
   ID: -1
-  displayName: IronOre
+  displayName: Iron Ore
   description: 
   MaxStackSize: 9999
   icon: {fileID: -1594462591, guid: 2c9b0bff2da13684db8428ea4ad0a713, type: 3}
   dropIcon: {fileID: 1396613697, guid: 2c9b0bff2da13684db8428ea4ad0a713, type: 3}
   minSellPrice: 40
-  sellPrice: 10
+  sellPrice: 41
   maxSellPrice: 60
   buyPrice: 70
   itemType1: 5
   itemType2: 0
   EquipableTag: 0
   SeedData: {fileID: 0}
-  PlaceAbleObject: {fileID: 0}
+  PlaceAbleObjectData: {fileID: 0}
   Prefab: {fileID: 0}
