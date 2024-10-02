@@ -10,9 +10,10 @@ public class ObjectSpawner : MonoBehaviour
     public Transform ObjectsParent;
     public List<Vector3> ObjectPosition = new List<Vector3>();
     public int totalscore = 0;
+    private TileManager TileManager;
     private void Start()
     {
-        Debug.Log(BaseWoodObjects.Count);
+        TileManager = FindAnyObjectByType<TileManager>();   
     }
     public void SpawnObject()
     {
@@ -126,6 +127,10 @@ public class ObjectSpawner : MonoBehaviour
             objectPlace.ObjectPosition = worldPosition;
             placeAble.ItemPlaceAbleObject = holdItem;
             objectPlace.ObjectData = holdItem.PlaceAbleObjectData.PlaceItemObjectData;
+            if (placeAble.ItemPlaceAbleObject.PlaceAbleObjectData.Undertile !=  null)
+            {
+                TileManager.FarmSoilMap.SetTile(cellPosition, placeAble.ItemPlaceAbleObject.PlaceAbleObjectData.Undertile);
+            }
             SetLayerRecursively(placeItem, objectLayer);
         }
     }

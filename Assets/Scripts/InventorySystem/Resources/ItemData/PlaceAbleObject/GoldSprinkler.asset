@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c7ca7bc84f6875647b44506e56f5535e, type: 3}
-  m_Name: T1Mine
+  m_Name: GoldSprinkler
   m_EditorClassIdentifier: 
   ID: -1
-  displayName: Tier 1 Mine
-  description: Generate mineral in 3x3 radius.
+  displayName: Gold Sprinkler
+  description: Auto water crop in 7x7 radius.
   MaxStackSize: 99
-  icon: {fileID: 229420932, guid: 32666fd0d4136914baf8814b5111c697, type: 3}
-  dropIcon: {fileID: 229420932, guid: 32666fd0d4136914baf8814b5111c697, type: 3}
+  icon: {fileID: 492879050, guid: 53f7be045b0d43548afef308a3820851, type: 3}
+  dropIcon: {fileID: -375498916, guid: 53f7be045b0d43548afef308a3820851, type: 3}
   minSellPrice: 10
   sellPrice: 10
   maxSellPrice: 20
@@ -26,5 +26,5 @@ MonoBehaviour:
   itemType2: 0
   EquipableTag: 0
   SeedData: {fileID: 0}
-  PlaceAbleObjectData: {fileID: 11400000, guid: 0e20b6e5f618610489bc9fffdc1ae3bc, type: 2}
+  PlaceAbleObjectData: {fileID: 11400000, guid: 12fe73b8c20fbd848865b7ae7466e222, type: 2}
   Prefab: {fileID: 0}

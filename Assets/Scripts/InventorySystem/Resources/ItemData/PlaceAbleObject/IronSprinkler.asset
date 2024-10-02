@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: -1
   displayName: Iron Sprinkler
-  description: Auto water crop in 4x4 radius.
+  description: Auto water crop in 5x5 radius.
   MaxStackSize: 99
   icon: {fileID: 1263140006, guid: 53f7be045b0d43548afef308a3820851, type: 3}
   dropIcon: {fileID: 216027090, guid: 53f7be045b0d43548afef308a3820851, type: 3}
@@ -26,5 +26,5 @@ MonoBehaviour:
   itemType2: 0
   EquipableTag: 0
   SeedData: {fileID: 0}
-  PlaceAbleObjectData: {fileID: 0}
+  PlaceAbleObjectData: {fileID: 11400000, guid: dbd5f08ff0fe5484b86dce38ed6c13f5, type: 2}
   Prefab: {fileID: 0}

@@ -40,11 +40,24 @@ public class LockItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         } else if (GameManager.GoldManager.CanAffordItem(LockItemData.Price))
         {
             GameManager.GoldManager.SpawnGoldText(-LockItemData.Price, false, 1);
-            ShopUIController.allAvailableItems.Add(LockItemData.lockItem);
+            foreach (var item in LockItemData.lockItem)
+            {
+                ShopUIController.allAvailableItems.Add(item);
+            }
             Destroy(gameObject);
         }
+    }
 
-
+    public void CraftingItem()
+    {
+        if (PlayerInventoryHolder.CraftableItem(LockItemData.craftingMaterials))
+        {
+            PlayerInventoryHolder.RemoveItemForCraft(LockItemData.craftingMaterials);
+            foreach (var item in LockItemData.lockItem)
+            {
+                PlayerInventoryHolder.AddToHotBar(item,1);
+            }
+        }
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -76,8 +89,8 @@ public class LockItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         yield return new WaitForSeconds(0.1f);
         if (LockItemData != null)
         {
-
-            TooltipManager.instance.SetAndShowToolTipLock(LockItemData.ItemName, LockItemData.ItemDescription, LockItemData.craftingMaterials);
+           TooltipManager.instance.SetAndShowToolTipLock(LockItemData.ItemName, LockItemData.ItemDescription, LockItemData.craftingMaterials);
+            
         }
     }
 }

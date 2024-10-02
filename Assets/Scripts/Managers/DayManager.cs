@@ -28,7 +28,9 @@ public class DayManager : MonoBehaviour
         tileManager = FindAnyObjectByType<TileManager>();
         SkipDayFade.gameObject.SetActive(true);
         gameManager = GetComponentInParent<GameManager>();
-        SkipDayFade.color = new Color(SkipDayFade.color.r, SkipDayFade.color.g, SkipDayFade.color.b, 0); 
+        SkipDayFade.color = new Color(SkipDayFade.color.r, SkipDayFade.color.g, SkipDayFade.color.b, 0);
+        ReGrowTree();
+
     }
 
     void Update()
@@ -122,7 +124,6 @@ public class DayManager : MonoBehaviour
                             if (!ObjectSpawner.ObjectPosition.Contains(treePos))
                             {
                                 ObjectSpawner.SpawnObject(position, ObjectSpawner.BaseWoodObjects, 100);
-                                Debug.Log("Grow");
                                 TreePerDay--;
 
                                 if (TreePerDay <= 0)

@@ -614,6 +614,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LockItemData: {fileID: 11400000, guid: 4be314f42b03237459a16b9576b44db7, type: 2}
   ShopUIController: {fileID: 0}
+  GameManager: {fileID: 0}
 --- !u!114 &3647358547642821573
 MonoBehaviour:
   m_ObjectHideFlags: 0

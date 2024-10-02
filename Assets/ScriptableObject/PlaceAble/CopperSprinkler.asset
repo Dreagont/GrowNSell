@@ -17,3 +17,4 @@ MonoBehaviour:
   Health: 10
   PlaceItemObjectData: {fileID: 11400000, guid: 6fd533b0a6b954542999f501943e565a, type: 2}
   SpawnedObjects: []
+  Undertile: {fileID: 11400000, guid: 72a7e2dd32124bd4394426c70ce2728e, type: 2}

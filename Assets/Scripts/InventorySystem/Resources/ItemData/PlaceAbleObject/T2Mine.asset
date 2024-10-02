@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c7ca7bc84f6875647b44506e56f5535e, type: 3}
-  m_Name: T1Mine
+  m_Name: T2Mine
   m_EditorClassIdentifier: 
   ID: -1
-  displayName: Tier 1 Mine
+  displayName: Tier 2 Mine
   description: Generate mineral in 3x3 radius.
   MaxStackSize: 99
-  icon: {fileID: 229420932, guid: 32666fd0d4136914baf8814b5111c697, type: 3}
-  dropIcon: {fileID: 229420932, guid: 32666fd0d4136914baf8814b5111c697, type: 3}
+  icon: {fileID: 78600348, guid: 32666fd0d4136914baf8814b5111c697, type: 3}
+  dropIcon: {fileID: 78600348, guid: 32666fd0d4136914baf8814b5111c697, type: 3}
   minSellPrice: 10
   sellPrice: 10
   maxSellPrice: 20
@@ -26,5 +26,5 @@ MonoBehaviour:
   itemType2: 0
   EquipableTag: 0
   SeedData: {fileID: 0}
-  PlaceAbleObjectData: {fileID: 11400000, guid: 0e20b6e5f618610489bc9fffdc1ae3bc, type: 2}
+  PlaceAbleObjectData: {fileID: 11400000, guid: de91e01cfae51e44e980f38a1b4bdfa7, type: 2}
   Prefab: {fileID: 0}

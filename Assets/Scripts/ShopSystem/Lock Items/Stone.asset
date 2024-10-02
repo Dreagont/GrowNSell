@@ -17,5 +17,8 @@ MonoBehaviour:
   ItemDescription: Shop now selling stone
   Price: 100
   Icon: {fileID: 828193707, guid: 2c9b0bff2da13684db8428ea4ad0a713, type: 3}
-  lockItem: {fileID: 11400000, guid: 77a3b31e98d2fcf408203bdb6c59b9e4, type: 2}
+  lockItem:
+  - {fileID: 11400000, guid: 77a3b31e98d2fcf408203bdb6c59b9e4, type: 2}
+  - {fileID: 11400000, guid: ab030544d61892d478aaab99051b4c85, type: 2}
+  - {fileID: 11400000, guid: 0cedbd8decb94f4419e1ea8b0c896c03, type: 2}
   triggerIndex: -1

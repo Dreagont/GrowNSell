@@ -11,7 +11,7 @@ public class LockItemData : ScriptableObject
     public string ItemDescription;
     public int Price;
     public Sprite Icon;
-    public InventoryItemData lockItem;
+    public InventoryItemData[] lockItem;
     public int triggerIndex = -1;
 }
 

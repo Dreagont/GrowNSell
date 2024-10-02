@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ecb01ca44485bbe4f91829d5f3826ab9, type: 3}
-  m_Name: CopperSprinkler
+  m_Name: T2Mine
   m_EditorClassIdentifier: 
-  Name: Copper Sprinkler
+  Name: T2 Mine
   DropItems:
-  - {fileID: 11400000, guid: 1b5f95d13a5a01f48b62b940ac763378, type: 2}
+  - {fileID: 11400000, guid: 0beceb9cfd6670f4fa9089c1a58fc851, type: 2}
   DropQuantity: 1
   Health: 15
   Experience: 0

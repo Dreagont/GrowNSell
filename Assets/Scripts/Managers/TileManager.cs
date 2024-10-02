@@ -236,8 +236,16 @@ public class TileManager : MonoBehaviour
 
         if (objectHit.ObjectHealth <= 0)
         {
+            Vector3 postion = objectHit.ObjectPosition - new Vector3(0.5f, 0.5f, 0);
+            Vector3Int IPosition = Vector3Int.RoundToInt(postion);
+
+            Debug.Log(IPosition);
             DropItem(objectHit);
             Destroy(objectHit.gameObject);
+            if (FarmSoilMap.GetTile(IPosition).name != "RandomGrass")
+            {
+                FarmSoilMap.SetTile(IPosition, GrassTile);
+            }
         }
     }
 
