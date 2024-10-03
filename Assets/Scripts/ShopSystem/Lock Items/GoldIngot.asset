@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a98e28881e2f88f469dfb284f3d5a50b, type: 3}
+  m_Name: GoldIngot
+  m_EditorClassIdentifier: 
+  craftingMaterials: []
+  ItemName: Gold Ingot
+  ItemDescription: Shop now selling Gold Ingot.
+  Price: 700
+  Icon: {fileID: -1219209711, guid: 2c9b0bff2da13684db8428ea4ad0a713, type: 3}
+  lockItem:
+  - {fileID: 11400000, guid: 532e60242775594479a5d7d502aa4187, type: 2}
+  triggerIndex: -1

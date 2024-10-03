@@ -26,5 +26,6 @@ MonoBehaviour:
   itemType2: 0
   EquipableTag: 1
   SeedData: {fileID: 0}
-  PlaceAbleObject: {fileID: 0}
+  PlaceAbleObjectData: {fileID: 0}
+  ToolData: {fileID: 11400000, guid: 0e675463e2c5e5b46be345b92c3f52f8, type: 2}
   Prefab: {fileID: 0}

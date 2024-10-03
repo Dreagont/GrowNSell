@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Stone
   m_EditorClassIdentifier: 
   craftingMaterials: []
-  ItemName: Stone Age
-  ItemDescription: Shop now selling stone
+  ItemName: Basic Material
+  ItemDescription: Shop now selling stone, dirt and wood.
   Price: 100
-  Icon: {fileID: 828193707, guid: 2c9b0bff2da13684db8428ea4ad0a713, type: 3}
+  Icon: {fileID: 1024300010, guid: 2c9b0bff2da13684db8428ea4ad0a713, type: 3}
   lockItem:
   - {fileID: 11400000, guid: 77a3b31e98d2fcf408203bdb6c59b9e4, type: 2}
   - {fileID: 11400000, guid: ab030544d61892d478aaab99051b4c85, type: 2}

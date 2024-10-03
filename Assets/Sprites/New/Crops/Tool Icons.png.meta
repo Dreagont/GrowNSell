@@ -93,6 +93,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -391,7 +404,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tool Icons_26
+      name: IronHoe
       rect:
         serializedVersion: 2
         x: 0
@@ -412,7 +425,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tool Icons_27
+      name: IronHoeDrop
       rect:
         serializedVersion: 2
         x: 16
@@ -475,7 +488,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tool Icons_30
+      name: IronCan
       rect:
         serializedVersion: 2
         x: 64
@@ -496,7 +509,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tool Icons_31
+      name: IronCanDrop
       rect:
         serializedVersion: 2
         x: 80
@@ -517,7 +530,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tool Icons_32
+      name: IronAxe
       rect:
         serializedVersion: 2
         x: 96
@@ -538,7 +551,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tool Icons_33
+      name: IronAxeDrop
       rect:
         serializedVersion: 2
         x: 112
@@ -559,7 +572,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tool Icons_34
+      name: IronPickaxe
       rect:
         serializedVersion: 2
         x: 128
@@ -580,7 +593,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tool Icons_35
+      name: IronPickaxDrop
       rect:
         serializedVersion: 2
         x: 144
@@ -1749,6 +1762,14 @@ TextureImporter:
       CopperHammer: 1206542706
       CopperPickaxe: 446434864
       CopperRod: 40668988
+      IronAxe: 747445206
+      IronAxeDrop: 1830052840
+      IronCan: -1248741473
+      IronCanDrop: 1304403980
+      IronHoe: 1275681469
+      IronHoeDrop: 715500930
+      IronPickaxDrop: -104713094
+      IronPickaxe: -1095903391
       Tool Icons_0: -1165356777
       Tool Icons_1: -1720254832
       Tool Icons_10: 668889200
@@ -1760,21 +1781,12 @@ TextureImporter:
       Tool Icons_16: -45699161
       Tool Icons_17: -1734537955
       Tool Icons_19: 89117402
-      Tool Icons_2: 240256080
       Tool Icons_21: -2102570648
       Tool Icons_23: -226673566
       Tool Icons_25: 1484761345
-      Tool Icons_26: 1275681469
-      Tool Icons_27: 715500930
       Tool Icons_28: 1258394697
       Tool Icons_29: 1254440884
       Tool Icons_3: -1997296399
-      Tool Icons_30: -1248741473
-      Tool Icons_31: 1304403980
-      Tool Icons_32: 747445206
-      Tool Icons_33: 1830052840
-      Tool Icons_34: -1095903391
-      Tool Icons_35: -104713094
       Tool Icons_36: -1985392908
       Tool Icons_37: 2021329392
       Tool Icons_38: 1003452701

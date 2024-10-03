@@ -15,3 +15,6 @@ MonoBehaviour:
   Radius: 5
   PlaceAbleType: 1
   Health: 15
+  PlaceItemObjectData: {fileID: 0}
+  SpawnedObjects: []
+  Undertile: {fileID: 11400000, guid: 72a7e2dd32124bd4394426c70ce2728e, type: 2}

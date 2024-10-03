@@ -23,7 +23,10 @@ public class ShopUIController : MonoBehaviour
     public GameManager gameManager;
 
     public int shopLevel = 1;
-    public int maxQuantityOfItems = 5;
+    public int maxQuantityOfISeeds = 10;
+    public int maxQuantityOfMaterial = 25;
+    public int minQuantityOfMaterial = 10;
+
     private void Start()
     {
         gameManager = FindAnyObjectByType<GameManager>();
@@ -90,9 +93,16 @@ public class ShopUIController : MonoBehaviour
 
             for (int i = 0; i < numberOfItems; i++)
             {
+                int randomQuantity = 0;
                 InventoryItemData randomItem = allAvailableItems[Random.Range(0, allAvailableItems.Count)];
-                int randomQuantity = Random.Range(1, maxQuantityOfItems);
-
+                if (randomItem.itemType1 == ItemType.Material)
+                {
+                    randomQuantity = Random.Range(minQuantityOfMaterial, maxQuantityOfMaterial);
+                }
+                else
+                {
+                    randomQuantity = Random.Range(1, maxQuantityOfISeeds);
+                }
                 itemsForSale.Add(new ShopItem(randomItem, randomQuantity));
             }
 
@@ -109,9 +119,16 @@ public class ShopUIController : MonoBehaviour
 
         for (int i = 0; i < numberOfItems; i++)
         {
+            int randomQuantity = 0;
             InventoryItemData randomItem = allAvailableItems[Random.Range(0, allAvailableItems.Count)];
-            int randomQuantity = Random.Range(1, maxQuantityOfItems);
-
+            if (randomItem.itemType1 == ItemType.Material)
+            {
+                randomQuantity = Random.Range(minQuantityOfMaterial, maxQuantityOfMaterial);
+            }
+            else
+            {
+                randomQuantity = Random.Range(1, maxQuantityOfISeeds);
+            }
             itemsForSale.Add(new ShopItem(randomItem, randomQuantity));
         }
 

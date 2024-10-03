@@ -24,7 +24,7 @@ public class InventoryItemData : ScriptableObject
 
     public SeedData SeedData;
     public PlaceAbleObjectData PlaceAbleObjectData;
-
+    public ToolData ToolData;
     public GameObject Prefab;
 
     private int originalMinSellPrice;

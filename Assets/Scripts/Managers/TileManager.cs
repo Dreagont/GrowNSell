@@ -6,14 +6,6 @@ using UnityEngine.UIElements;
 
 public class TileManager : MonoBehaviour
 {
-    [Header("Tools Energy")]
-    public int AxeEnergy = 6;
-    public int PickaxeEnergy = 6;
-    public int HoePlowEnergy = 16;
-    public int HoeHarvestEnergy = 2;
-    public int WaterEnergy = 8;
-
-
     [Header("Tilemaps")]
     public Tilemap interactableMap;
     public Tilemap highlightMap;
@@ -62,6 +54,7 @@ public class TileManager : MonoBehaviour
     private ExperientManager experientManager;
     public bool isPlaceObject = false;
     private ObjectSpawner objectSpawner;
+    private InventoryItemData holdItem;
 
     void Start()
     {
@@ -87,7 +80,7 @@ public class TileManager : MonoBehaviour
     {
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         cellPosition = interactableMap.WorldToCell(mousePos);
-        InventoryItemData holdItem = playerInventoryHolder.holdingItem;
+        holdItem = playerInventoryHolder.holdingItem;
 
         if (holdItem != null && GlobalVariables.CanAction)
         {
@@ -97,16 +90,16 @@ public class TileManager : MonoBehaviour
                 {
                     if (holdItem.EquipableTag == EquipableTag.Hoe)
                     {
-                        Plow();
-                        Harvest();
+                        Plow(holdItem.ToolData.ToolEnergy);
+                        Harvest(holdItem.ToolData.ToolEnergy);
                     }
                     else if (holdItem.EquipableTag == EquipableTag.Axe)
                     {
-                        ChopWood();
+                        ChopWood(holdItem.ToolData.ToolEnergy);
                     }
                     else if (holdItem.EquipableTag == EquipableTag.Pickaxe)
                     {
-                        Mine();
+                        Mine(holdItem.ToolData.ToolEnergy);
                     }
                 }
 
@@ -122,7 +115,7 @@ public class TileManager : MonoBehaviour
                 {
                     if (holdItem.EquipableTag == EquipableTag.WateringCan)
                     {
-                        Watering(cellPosition, true, true);
+                        Watering(cellPosition, true, true, holdItem.ToolData.ToolEnergy);
                     }
                 }
                 HighlightTileUnderMouse(cellPosition, 1);
@@ -159,7 +152,7 @@ public class TileManager : MonoBehaviour
         CheckForItemPickup();
     }
 
-    private void Mine()
+    private void Mine(int PickaxeEnergy)
     {
         int objectLayerMask = LayerMask.GetMask("Object");
         Vector3 worldPosition = new Vector3(cellPosition.x + 0.5f, cellPosition.y + 0.5f, 0);
@@ -185,7 +178,7 @@ public class TileManager : MonoBehaviour
         }
     }
 
-    private void ChopWood()
+    private void ChopWood(int AxeEnergy)
     {
         int objectLayerMask = LayerMask.GetMask("Object");
         Vector3 worldPosition = new Vector3(cellPosition.x + 0.5f, cellPosition.y + 0.5f, 0);
@@ -340,10 +333,10 @@ public class TileManager : MonoBehaviour
     }
 
 
-    private IEnumerator AddToParentAfterDelay(float delay, Vector3Int pos)
+    private IEnumerator AddToParentAfterDelay(float delay, Vector3Int pos,int HoePlowEnergy)
     {
         yield return new WaitForSeconds(delay);
-        SetInteracted(pos);
+        SetInteracted(pos, HoePlowEnergy);
     }
 
 
@@ -360,14 +353,14 @@ public class TileManager : MonoBehaviour
         }
     }
 
-    public void Plow()
+    public void Plow(int HoePlowEnergy)
     {
         if (IsInteractable(cellPosition) && gameManager.EnergyManager.ActionAble(8))
         {
             Vector3 worldPosition1 = new Vector3(cellPosition.x + 0.0f, cellPosition.y + 0.5f, 0);
 
             SpawnAnimation(plowAnimationPrefab, worldPosition1);
-            StartCoroutine(AddToParentAfterDelay(0.2f, cellPosition));
+            StartCoroutine(AddToParentAfterDelay(0.2f, cellPosition, HoePlowEnergy));
         }
         else
         {
@@ -405,7 +398,7 @@ public class TileManager : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
         Destroy(gameObject);
     }
-    public void Watering(Vector3Int cellPosition, bool spwanAnimation, bool consumeEnergy)
+    public void Watering(Vector3Int cellPosition, bool spwanAnimation, bool consumeEnergy,int WaterEnergy)
     {
         int soilLayerMask = LayerMask.GetMask("Soil");
         Vector3 worldPosition = new Vector3(cellPosition.x + 0.5f, cellPosition.y + 0.5f, 0);
@@ -421,7 +414,7 @@ public class TileManager : MonoBehaviour
                     Vector3 worldPosition1 = new Vector3(cellPosition.x + 0.0f, cellPosition.y + 1f, 0);
                     SpawnAnimation(waterAnimationPrefab, worldPosition1);
                 }
-                StartCoroutine(WaterDelay(worldPosition, cellPosition, soil, consumeEnergy));
+                StartCoroutine(WaterDelay(worldPosition, cellPosition, soil, consumeEnergy, WaterEnergy));
 
             }
         }
@@ -431,13 +424,13 @@ public class TileManager : MonoBehaviour
         }
     }
 
-    public IEnumerator WaterDelay(Vector3 worldPosition, Vector3Int cellPosition, Soil soil, bool consumeEnergy)
+    public IEnumerator WaterDelay(Vector3 worldPosition, Vector3Int cellPosition, Soil soil, bool consumeEnergy, int WaterEnergy)
     {
         yield return new WaitForSeconds(0.2f);
-        WaterPlant(worldPosition, cellPosition, soil, consumeEnergy);
+        WaterPlant(worldPosition, cellPosition, soil, consumeEnergy, WaterEnergy);
     }
 
-    public void WaterPlant(Vector3 worldPosition, Vector3Int cellPosition, Soil soil, bool consumeEnergy)
+    public void WaterPlant(Vector3 worldPosition, Vector3Int cellPosition, Soil soil, bool consumeEnergy, int WaterEnergy)
     {
         soil.isWatered = true;
         FarmWaterMap.SetTile(cellPosition, WateredSoilTile);
@@ -453,7 +446,7 @@ public class TileManager : MonoBehaviour
         }
     }
 
-    public void Harvest()
+    public void Harvest(int HoeHarvestEnergy)
     {
         int seedLayerMask = LayerMask.GetMask("Seed");
         Vector3 worldPosition = new Vector3(cellPosition.x + 0.5f, cellPosition.y + 0.5f, 0);
@@ -467,19 +460,19 @@ public class TileManager : MonoBehaviour
                 if (seed.Harvestable && gameManager.EnergyManager.ActionAble(1))
                 {
                     worldPosition.x -= 0.5f;
-                    StartCoroutine(HarvestDelay(seed));
+                    StartCoroutine(HarvestDelay(seed, HoeHarvestEnergy));
                     SpawnAnimation(plowAnimationPrefab, worldPosition);
                 }
             }
         }
     }
-    public IEnumerator HarvestDelay(Seed seed)
+    public IEnumerator HarvestDelay(Seed seed, int HoeHarvestEnergy)
     {
         yield return new WaitForSeconds(0.2f);
-        HarvestPlant(seed);
+        HarvestPlant(seed, HoeHarvestEnergy);
     }
 
-    public void HarvestPlant(Seed seed)
+    public void HarvestPlant(Seed seed, int HoeHarvestEnergy)
     {
 
         ObjectsManager.SeedValues.Remove(seed.position);
@@ -585,7 +578,7 @@ public class TileManager : MonoBehaviour
         return false;
     }
 
-    public void SetInteracted(Vector3Int position)
+    public void SetInteracted(Vector3Int position, int HoePlowEnergy)
     {
         interactableMap.SetTile(position, interactedTile);
         FarmSoilMap.SetTile(position, SoilTile);

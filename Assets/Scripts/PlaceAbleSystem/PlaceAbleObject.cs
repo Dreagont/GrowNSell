@@ -39,7 +39,7 @@ public class PlaceAbleObject : MonoBehaviour, IPointerEnterHandler, IPointerExit
             for (int y = -side; y <= side; y++)
             {
                 Vector3Int offsetPosition = new Vector3Int(position.x + x, position.y + y, position.z);                
-                TileManager.Watering(offsetPosition, false, false);
+                TileManager.Watering(offsetPosition, false, false,0);
             }
         }
     }

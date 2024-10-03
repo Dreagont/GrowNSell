@@ -11,8 +11,11 @@ public class LockItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public GameManager GameManager;
     private IslandExpander IslandExpander;
     private PlayerInventoryHolder PlayerInventoryHolder;   
+    private LockItemUI lockItemUI;
+    private LockItemList LockItemList;
     void Start()
     {
+        LockItemList = FindAnyObjectByType<LockItemList>();
         PlayerInventoryHolder = FindAnyObjectByType<PlayerInventoryHolder>();
         IslandExpander = FindAnyObjectByType<IslandExpander>(); 
         GameManager = FindAnyObjectByType<GameManager>();
@@ -37,7 +40,13 @@ public class LockItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
                 return;
             }
             
-        } else if (GameManager.GoldManager.CanAffordItem(LockItemData.Price))
+        } else if (LockItemData.triggerIndex == 1)
+        {
+            ShopUIController.OnButtonUpgradePressed();
+            lockItemUI = GetComponent<LockItemUI>();
+            lockItemUI.SetPrice(GameManager.ShopUpgradeCost);
+        } else
+        if (GameManager.GoldManager.CanAffordItem(LockItemData.Price))
         {
             GameManager.GoldManager.SpawnGoldText(-LockItemData.Price, false, 1);
             foreach (var item in LockItemData.lockItem)
@@ -53,9 +62,22 @@ public class LockItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         if (PlayerInventoryHolder.CraftableItem(LockItemData.craftingMaterials))
         {
             PlayerInventoryHolder.RemoveItemForCraft(LockItemData.craftingMaterials);
-            foreach (var item in LockItemData.lockItem)
+
+            if (LockItemData.triggerIndex == 0)
             {
-                PlayerInventoryHolder.AddToHotBar(item,1);
+                foreach (var item in LockItemData.lockItemDatas)
+                {
+                    LockItemList.CraftingItems.Add(item);
+                    Destroy(gameObject);
+                    LockItemList.CraftingItems.Remove(this.LockItemData);
+                    LockItemList.PopulateCraftingPanel();
+                }
+            } else
+            {
+                foreach (var item in LockItemData.lockItem)
+                {
+                    PlayerInventoryHolder.AddToHotBar(item, 1);
+                }
             }
         }
     }
@@ -92,5 +114,10 @@ public class LockItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
            TooltipManager.instance.SetAndShowToolTipLock(LockItemData.ItemName, LockItemData.ItemDescription, LockItemData.craftingMaterials);
             
         }
+    }
+
+    private void OnDestroy()
+    {
+        TooltipManager.instance.HideTooltip();
     }
 }

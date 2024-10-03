@@ -10,8 +10,10 @@ public class LockItemList : MonoBehaviour
     public Transform CraftingItemParent;
     public GameObject shopSlotPrefab;
     public GameObject craftingItemPrefab;
+    private GameManager gameManager;
     void Start()
     {
+        gameManager = FindAnyObjectByType<GameManager>();
         PopulateShopUnlock();
         PopulateCraftingPanel();
     }
@@ -20,7 +22,7 @@ public class LockItemList : MonoBehaviour
     {
         
     }
-    private void PopulateCraftingPanel()
+    public void PopulateCraftingPanel()
     {
         foreach (Transform child in CraftingItemParent)
         {
@@ -50,8 +52,15 @@ public class LockItemList : MonoBehaviour
             LockItem lockItem = slot.GetComponent<LockItem>();
             LockItemUI lockItemUI = slot.GetComponent<LockItemUI>();
 
+            if (lockItem.LockItemData.triggerIndex == 1)
+            {
+                lockItemUI.SetPrice(gameManager.ShopUpgradeCost);
+            } else
+            {
+                lockItemUI.ItemPrice.text = lockItemdata.Price.ToString();
+            }
+
             lockItemUI.ItemIcon.sprite = lockItemdata.Icon;
-            lockItemUI.ItemPrice.text = lockItemdata.Price.ToString();
             lockItem.LockItemData = lockItemdata;
         }
     }

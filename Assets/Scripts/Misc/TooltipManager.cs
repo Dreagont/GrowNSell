@@ -90,6 +90,7 @@ public class TooltipManager : MonoBehaviour
                 CraftingMaterialUI materialUI = item.GetComponent<CraftingMaterialUI>();
                 materialUI.ItemIcon.sprite = material.InventoryItemData.icon;
                 materialUI.Quantity.text = material.Quantity.ToString();
+                materialUI.MaterialName.text = material.InventoryItemData.displayName;
 
                 if (PlayerInventoryHolder.HaveEnoughItem(material))
                 {
@@ -104,7 +105,7 @@ public class TooltipManager : MonoBehaviour
         if (description == "")
         {
             DescriptonBox.SetActive(false);
-            rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x, 100);
+            rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x, 90);
         }
         else
         {

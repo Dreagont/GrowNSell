@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a98e28881e2f88f469dfb284f3d5a50b, type: 3}
+  m_Name: Advance Furnace
+  m_EditorClassIdentifier: 
+  craftingMaterials:
+  - InventoryItemData: {fileID: 11400000, guid: 77a3b31e98d2fcf408203bdb6c59b9e4, type: 2}
+    Quantity: 100
+  ItemName: Advance Furnate
+  ItemDescription: You can craft Iron Ingot and Gold Ingot.
+  Price: 0
+  Icon: {fileID: 1531317547, guid: 721f2ef21ef6d5b46b080e624a16743f, type: 3}
+  lockItem:
+  - {fileID: 11400000, guid: 24946f4fb9cf0704eb89f0d805599917, type: 2}
+  triggerIndex: 0
+  lockItemDatas:
+  - {fileID: 11400000, guid: 395e73ca4b5661c4fb24f487e65d6891, type: 2}
+  - {fileID: 11400000, guid: 58f68852ddaa4f24da5e3be0a5aa76f7, type: 2}

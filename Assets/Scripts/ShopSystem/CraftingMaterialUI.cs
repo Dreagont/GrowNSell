@@ -8,6 +8,7 @@ public class CraftingMaterialUI : MonoBehaviour
 {
     public Image ItemIcon;
     public TextMeshProUGUI Quantity;
+    public TextMeshProUGUI MaterialName;
     void Start()
     {
         

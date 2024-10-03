@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f5c72b37eb7a8743955be7a479798a5, type: 3}
   m_Name: T3Mine
   m_EditorClassIdentifier: 
-  Radius: 9
+  Radius: 3
   PlaceAbleType: 3
   Health: 15
   PlaceItemObjectData: {fileID: 11400000, guid: a5f927d36c9903a4e9a23322ddb09826, type: 2}
