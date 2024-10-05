@@ -17,6 +17,7 @@ public class InventoryItemData : ScriptableObject
     public int maxSellPrice = 20;
     public int buyPrice = 15;
 
+    public int EnergyRecover;
     public ItemType itemType1;
     public ItemType itemType2;
 
@@ -50,7 +51,8 @@ public enum ItemType
     Seed,
     Crop,
     PlaceAble,
-    Material
+    Material,
+    ConsumeAble
 }
 
 public enum EquipableTag

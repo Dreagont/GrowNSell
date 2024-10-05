@@ -22,7 +22,7 @@ public class IslandExpander : MonoBehaviour
 
     }
 
-    private void Update()
+    /*private void Update()
     {
         if (Input.GetKeyDown(KeyCode.D))
         {
@@ -40,7 +40,7 @@ public class IslandExpander : MonoBehaviour
         {
             GenerateArena(10, 10, 4);
         }
-    }
+    }*/
 
     public void GenerateArena(int width, int height, int side)
     {
@@ -132,7 +132,7 @@ public class IslandExpander : MonoBehaviour
                     Vector3Int tilePosition = new Vector3Int(x, y, 0);
                     interactMap.SetTile(tilePosition, interactTile);
                     tilemap.SetTile(tilePosition, arenaTile);
-                    //ObjectSpawner.SpawnObject(tilePosition);
+                    ObjectSpawner.SpawnObject(tilePosition);
                 }
             }
 

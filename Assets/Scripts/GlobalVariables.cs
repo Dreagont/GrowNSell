@@ -5,6 +5,7 @@ using UnityEngine;
 public static class GlobalVariables 
 {
     public static bool CanAction = true;
+    public static bool CanInput = false;
 
     public static float DayDuration = 120f;
     public static float TimeCounter = 0;

@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: IronHoe
   m_EditorClassIdentifier: 
   ToolEnergy: 16
+  ToolRadius: 3
   ToolTier: 2
   ToolAnimation: {fileID: 5546798731084494312, guid: 01021e4b58f16404e8aa19234e7faaf0, type: 3}

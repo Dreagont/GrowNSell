@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7ca7bc84f6875647b44506e56f5535e, type: 3}
   m_Name: IronCan
   m_EditorClassIdentifier: 
-  ID: 6
-  displayName: Copper Watering Can
+  ID: -1
+  displayName: Iron Watering Can
   description: 
   MaxStackSize: 1
-  icon: {fileID: -274833639, guid: 149d97fc8d899244b8ed11be675859d3, type: 3}
-  dropIcon: {fileID: -1734537955, guid: 1ff9d6f4ecd51ba4a84696e4111b7002, type: 3}
+  icon: {fileID: -1248741473, guid: 1ff9d6f4ecd51ba4a84696e4111b7002, type: 3}
+  dropIcon: {fileID: 1304403980, guid: 1ff9d6f4ecd51ba4a84696e4111b7002, type: 3}
   minSellPrice: 10
   sellPrice: 1
   maxSellPrice: 20
@@ -27,5 +27,5 @@ MonoBehaviour:
   EquipableTag: 2
   SeedData: {fileID: 0}
   PlaceAbleObjectData: {fileID: 0}
-  ToolData: {fileID: 11400000, guid: 200b38306cd5e4243822d4652bbd5ef3, type: 2}
+  ToolData: {fileID: 11400000, guid: 857f82cf807d4104fa2b5c5b6ed5979b, type: 2}
   Prefab: {fileID: 0}

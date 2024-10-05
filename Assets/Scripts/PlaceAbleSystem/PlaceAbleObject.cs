@@ -11,6 +11,7 @@ public class PlaceAbleObject : MonoBehaviour, IPointerEnterHandler, IPointerExit
     public GameManager GameManager;
     private SpriteRenderer spriteRenderer;
     private ObjectSpawner ObjectSpawner;
+    public int RadiusBonus = 0;
     void Start()
     {
         GameManager = FindAnyObjectByType<GameManager>();
@@ -25,7 +26,6 @@ public class PlaceAbleObject : MonoBehaviour, IPointerEnterHandler, IPointerExit
 
     void Update()
     {
-
     }
 
     public void WaterPlant(int radius)
@@ -39,13 +39,14 @@ public class PlaceAbleObject : MonoBehaviour, IPointerEnterHandler, IPointerExit
             for (int y = -side; y <= side; y++)
             {
                 Vector3Int offsetPosition = new Vector3Int(position.x + x, position.y + y, position.z);                
-                TileManager.Watering(offsetPosition, false, false,0);
+                TileManager.Watering(offsetPosition, false, false,0, null,1);
             }
         }
     }
 
     public void SpawnMineral(int radius)
     {
+        radius += GameManager.BuffManager.MineRange; 
         Vector3 objectMapPos = gameObject.transform.position - new Vector3(0.5f, 0.5f, 0);
         Vector3Int position = Vector3Int.RoundToInt(objectMapPos);
 
@@ -55,7 +56,10 @@ public class PlaceAbleObject : MonoBehaviour, IPointerEnterHandler, IPointerExit
             for (int y = -side; y <= side; y++)
             {
                 Vector3Int offsetPosition = new Vector3Int(position.x + x, position.y + y, position.z);
-                ObjectSpawner.SpawnObject(offsetPosition, ItemPlaceAbleObject.PlaceAbleObjectData.SpawnedObjects, 50);
+                if (TileManager.FarmSoilMap.GetTile(offsetPosition).name == "RandomGrass")
+                {
+                    ObjectSpawner.SpawnObject(offsetPosition, ItemPlaceAbleObject.PlaceAbleObjectData.SpawnedObjects, 50);
+                }
             }
         }
     }

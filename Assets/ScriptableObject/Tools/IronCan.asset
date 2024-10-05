@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: IronCan
   m_EditorClassIdentifier: 
   ToolEnergy: 8
+  ToolRadius: 3
   ToolTier: 2
   ToolAnimation: {fileID: 1221888531054597653, guid: 2c168047d23fb4642a962267d0e89eb1, type: 3}

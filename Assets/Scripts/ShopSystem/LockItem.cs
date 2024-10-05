@@ -45,6 +45,18 @@ public class LockItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
             ShopUIController.OnButtonUpgradePressed();
             lockItemUI = GetComponent<LockItemUI>();
             lockItemUI.SetPrice(GameManager.ShopUpgradeCost);
+        }
+        else if (LockItemData.triggerIndex == 2)
+        {
+            if (GameManager.GoldManager.CanAffordItem(LockItemData.Price) && PlayerInventoryHolder.CraftableItem(LockItemData.craftingMaterials))
+            {
+                GameManager.GoldManager.SpawnGoldText(-LockItemData.Price, false, 1);
+                PlayerInventoryHolder.RemoveItemForCraft(LockItemData.craftingMaterials);
+                IslandExpander.GenerateArena(10, 10, 4);
+                Destroy(gameObject);
+                return;
+            }
+
         } else
         if (GameManager.GoldManager.CanAffordItem(LockItemData.Price))
         {

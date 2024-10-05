@@ -20,7 +20,7 @@ MonoBehaviour:
   ItemName: Gold Sprinkler
   ItemDescription: Water crops in 7x7 radius.
   Price: 0
-  Icon: {fileID: 492879050, guid: 53f7be045b0d43548afef308a3820851, type: 3}
+  Icon: {fileID: -375498916, guid: 53f7be045b0d43548afef308a3820851, type: 3}
   lockItem:
   - {fileID: 11400000, guid: ae2ad6994a2859b4eac06d9a92c350d7, type: 2}
   triggerIndex: -1

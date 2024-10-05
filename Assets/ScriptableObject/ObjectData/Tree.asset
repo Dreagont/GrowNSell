@@ -18,5 +18,5 @@ MonoBehaviour:
   DropQuantity: 1
   Health: 10
   Experience: 2
-  ObjectScore: 1
+  ObjectScore: 20
   ObjectType: 0

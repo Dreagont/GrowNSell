@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: CopperPickaxe
   m_EditorClassIdentifier: 
   ToolEnergy: 6
+  ToolRadius: 1
   ToolTier: 1
   ToolAnimation: {fileID: 7850038672230613486, guid: 57756fc79f132e2489af19f858cc9065, type: 3}

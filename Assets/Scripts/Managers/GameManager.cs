@@ -17,11 +17,19 @@ public class GameManager : MonoBehaviour
 
     public NewBuffManager BuffManager;
 
+    public string PlayerName;
+
     public int ShopRollCost = 10;
     public int ShopUpgradeCost = 1000;
 
+    public bool canAction = true;
+
     void Start()
     {
+        if (DontDestroyWhenReload.Instance.PlayerName != "")
+        {
+            PlayerName = DontDestroyWhenReload.Instance.PlayerName;
+        }
     }
 
     void Update()

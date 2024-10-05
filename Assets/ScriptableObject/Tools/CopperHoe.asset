@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: CopperHoe
   m_EditorClassIdentifier: 
   ToolEnergy: 16
+  ToolRadius: 1
   ToolTier: 1
   ToolAnimation: {fileID: 6710248110984906298, guid: 17544d1a21d118342b9a950722327d39, type: 3}

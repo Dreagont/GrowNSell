@@ -104,17 +104,25 @@ public class Seed : MonoBehaviour
 
     public void UpdateSeedSprite()
     {
+        if (isDestroyed || gameObject == null)
+        {
+            return;
+        }
+
         currentState += distribution[currentPeriod];
         currentPeriod++;
         if (currentPeriod > distribution.Length - 1)
         {
-            currentPeriod = distribution.Length -1;
+            currentPeriod = distribution.Length - 1;
         }
-        currentState = Mathf.Min(currentState, States.Length - 1);  
+        currentState = Mathf.Min(currentState, States.Length - 1);
 
         for (int i = 0; i < States.Length; i++)
         {
-            States[i].SetActive(i == currentState);
+            if (States[i] != null)
+            {
+                States[i].SetActive(i == currentState);
+            }
         }
 
         temp = 0;
@@ -123,6 +131,7 @@ public class Seed : MonoBehaviour
             Harvestable = true;
         }
     }
+
 
     private void OnDestroy()
     {

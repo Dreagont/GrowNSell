@@ -115,7 +115,7 @@ public class ObjectSpawner : MonoBehaviour
         int objectLayer = LayerMask.NameToLayer("Object");
         Vector3 worldPosition = new Vector3(cellPosition.x + 0.5f, cellPosition.y + 0.5f, 0);
 
-        if (ObjectPosition.Contains(worldPosition))
+        if (ObjectPosition.Contains(worldPosition) || TileManager.FarmSoilMap.GetTile(cellPosition).name != "RandomGrass")
         {
             return;
         } else
@@ -131,6 +131,8 @@ public class ObjectSpawner : MonoBehaviour
             {
                 TileManager.FarmSoilMap.SetTile(cellPosition, placeAble.ItemPlaceAbleObject.PlaceAbleObjectData.Undertile);
             }
+            TileManager.playerInventoryHolder.PrimaryInventorySystem.InventorySlots[TileManager.playerInventoryHolder.SelectedSlot].RemoveFromStack(1);
+            TileManager.inventoryDisplay.UpdateSlotStatic(TileManager.playerInventoryHolder.PrimaryInventorySystem.InventorySlots[TileManager.playerInventoryHolder.SelectedSlot]);
             SetLayerRecursively(placeItem, objectLayer);
         }
     }

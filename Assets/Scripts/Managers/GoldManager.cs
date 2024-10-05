@@ -7,9 +7,12 @@ using UnityEngine.UI;
 
 public class GoldManager : MonoBehaviour
 {
+    public GameManager GameManager;
+    public LeaderBoard LeaderBoard;
     public int Gold = 1000;
     public int GoalGold = 5000;
     public int DayCheck = 5;
+    public int TotalGold = 0;
 
     public TextMeshProUGUI GoalDayText;
     public TextMeshProUGUI WinMessage;
@@ -24,6 +27,7 @@ public class GoldManager : MonoBehaviour
 
     public GameObject goldAddText;
     public Canvas Canvas;
+    public ThanksWindow ThanksWindow;
     void Start()
     {
         Canvas = FindAnyObjectByType<Canvas>();
@@ -92,6 +96,7 @@ public class GoldManager : MonoBehaviour
         }
 
     }
+
     private void LoseGame()
     {
         LoseGameWindow.SetActive(true);
@@ -109,14 +114,22 @@ public class GoldManager : MonoBehaviour
 
     public void RestartGame()
     {
+        LeaderBoard.SetLeaderBoard(GameManager.PlayerName, TotalGold);
         GamePenaty.SetActive(false);
-        GlobalVariables.currentDay = 0;
+        GlobalVariables.currentDay = 1;
         GlobalVariables.CanAction = true;
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+        ThanksWindow.gameObject.SetActive(false);
     }
 
     public void SpawnGoldText(int price, bool isAdd, int quantity)
     {
+        if (price > 0)
+        {
+            TotalGold += price * quantity;
+        }
         Gold = Gold + price * quantity;
         Vector3 mousePosition = Input.mousePosition;
         GameObject popup = Instantiate(goldAddText, mousePosition, Quaternion.identity, Canvas.transform);

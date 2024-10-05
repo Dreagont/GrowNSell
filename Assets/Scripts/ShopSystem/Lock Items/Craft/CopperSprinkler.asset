@@ -20,7 +20,7 @@ MonoBehaviour:
   ItemName: Copper Sprinkler
   ItemDescription: Water crops in 3x3 radius.
   Price: 0
-  Icon: {fileID: 911703485, guid: 53f7be045b0d43548afef308a3820851, type: 3}
+  Icon: {fileID: 918210134, guid: 53f7be045b0d43548afef308a3820851, type: 3}
   lockItem:
   - {fileID: 11400000, guid: 1b5f95d13a5a01f48b62b940ac763378, type: 2}
   triggerIndex: -1

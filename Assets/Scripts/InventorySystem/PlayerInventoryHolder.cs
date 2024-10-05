@@ -57,14 +57,18 @@ public class PlayerInventoryHolder : InventoryHolder
     {
         HandleSlotSelection();
 
-        if (Keyboard.current.iKey.wasPressedThisFrame)
+        if (GlobalVariables.CanInput)
         {
-            OpenInventory();
-        }
+            if (Keyboard.current.iKey.wasPressedThisFrame)
+            {
+                OpenInventory();
+            }
 
-        if (Keyboard.current.escapeKey.wasPressedThisFrame)
-        {
-            CloseInventory();
+            if (Keyboard.current.escapeKey.wasPressedThisFrame)
+            {
+                CloseInventory();
+            }
+
         }
 
         holdingItem = GetHoldingItem();

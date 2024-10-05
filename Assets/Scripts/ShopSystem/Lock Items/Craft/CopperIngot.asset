@@ -15,6 +15,8 @@ MonoBehaviour:
   craftingMaterials:
   - InventoryItemData: {fileID: 11400000, guid: 79dccea6c79a0bb4eb4edd941b25dd06, type: 2}
     Quantity: 5
+  - InventoryItemData: {fileID: 11400000, guid: 24946f4fb9cf0704eb89f0d805599917, type: 2}
+    Quantity: 5
   ItemName: Copper Ingot
   ItemDescription: 
   Price: 0
@@ -22,3 +24,4 @@ MonoBehaviour:
   lockItem:
   - {fileID: 11400000, guid: 55b173b01969ca4418facfea3ad536bd, type: 2}
   triggerIndex: -1
+  lockItemDatas: []

@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: IronAxe
   m_EditorClassIdentifier: 
   ToolEnergy: 6
+  ToolRadius: 1
   ToolTier: 2
   ToolAnimation: {fileID: 635432142430936016, guid: 1053926e4d4fa0945a7cb71b2566192c, type: 3}

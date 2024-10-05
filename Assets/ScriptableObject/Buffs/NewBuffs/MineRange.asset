@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3c6b25c63eb76e4989d0a444a5d930b, type: 3}
+  m_Name: MineRange
+  m_EditorClassIdentifier: 
+  BuffIcon: {fileID: -1042912877, guid: 721f2ef21ef6d5b46b080e624a16743f, type: 3}
+  buffName: Go Deeper
+  description: Increase 1 mine range.
+  MaxEnergyBuff: 0
+  EnergyReductionBuff: 0
+  ExperientBuff: 0
+  CropGoldBuff: 0
+  MaterialGoldBuff: 0
+  ToolDamageBuff: 0
+  PlowDropChance: 0
+  DoubleDropChance: 0
+  NotDestroyFarmland: 0
+  MaterialBonus: 0
+  MineRange: 2
+  TreeRegrow: 0

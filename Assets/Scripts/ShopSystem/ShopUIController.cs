@@ -44,8 +44,13 @@ public class ShopUIController : MonoBehaviour
             ShopUI.SetActive(false);
             GlobalVariables.CanAction = true;
         }
+
+        if (Keyboard.current.rKey.wasPressedThisFrame && GlobalVariables.CanInput)
+        {
+            RollNewItems();
+        }
+
         rollPriceText.text = "Roll:"+ gameManager.ShopRollCost.ToString();
-        UpgradePriceText.text = gameManager.ShopUpgradeCost.ToString();
     }
 
     private void PopulateShop()

@@ -28,9 +28,12 @@ public class ShopSelling : MonoBehaviour
                     if (sellSlot.ItemData.itemType1 == ItemType.Crop || sellSlot.ItemData.itemType2 == ItemType.Crop)
                     {
                         goldToAdd = (int)(gameManager.GetCropGoldAmount(sellSlot.ItemData.sellPrice));
+                    } else if (sellSlot.ItemData.itemType1 == ItemType.Material || sellSlot.ItemData.itemType2 == ItemType.Material)
+                    {
+                        goldToAdd = (int)(gameManager.GetMaterialGoldAmount(sellSlot.ItemData.sellPrice));
                     } else
                     {
-                        goldToAdd = (int)(sellSlot.ItemData.sellPrice);
+                        goldToAdd = sellSlot.ItemData.sellPrice;
                     }
                     gameManager.GoldManager.SpawnGoldText(goldToAdd, true, sellSlot.StackSize);
 

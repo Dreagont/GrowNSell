@@ -16,13 +16,16 @@ public class NewBuffManager : MonoBehaviour
     public float PlowDropChance = 0f;
     public float DoubleDropChance = 0f;
     public float NotDestroyFarmland = 0.2f;
+    public int MaterialBonus = 0;
+    public int MineRange = 0;
+    public int TreeRegrow = 3;
 
     public List<NewBuff> newBuffs = new List<NewBuff>();
 
     public GameObject buffSlotPrefab;
     public Transform buffSlotParent;
-    public List<GameObject> allAvailableBuffs;
-    public List<GameObject> buffsForSale;
+    public List<NewBuff> allAvailableBuffs;
+    public List<NewBuff> buffsForSale;
     public int numberOfBuffsToDisplay = 3;
 
     public GameManager GameManager;
@@ -49,6 +52,9 @@ public class NewBuffManager : MonoBehaviour
         PlowDropChance = 0;
         DoubleDropChance = 0;
         NotDestroyFarmland = 0.2f;
+        MaterialBonus = 0;
+        MineRange = 0;
+        TreeRegrow = 3;
         foreach (var buff in newBuffs)
         {
             MaxEnergyBuff += buff.MaxEnergyBuff;
@@ -60,7 +66,9 @@ public class NewBuffManager : MonoBehaviour
             PlowDropChance += buff.PlowDropChance;
             DoubleDropChance += buff.DoubleDropChance;
             NotDestroyFarmland += buff.NotDestroyFarmland;
-
+            MaterialBonus += buff.MaterialBonus;
+            MineRange += buff.MineRange;
+            TreeRegrow += buff.TreeRegrow;
             if (CropGoldBuff <= -1)
             {
                 CropGoldBuff = 1;
@@ -85,7 +93,7 @@ public class NewBuffManager : MonoBehaviour
     {
         buffsForSale.Clear();
 
-        List<GameObject> availableBuffs = new List<GameObject>(allAvailableBuffs);
+        List<NewBuff> availableBuffs = allAvailableBuffs;
 
         for (int i = 0; i < numberOfBuffsToDisplay; i++)
         {
@@ -93,10 +101,15 @@ public class NewBuffManager : MonoBehaviour
                 break;
 
             int randomIndex = Random.Range(0, availableBuffs.Count);
-            GameObject randomBuff = availableBuffs[randomIndex];
+            NewBuff randomBuff = availableBuffs[randomIndex];
+
+            if (buffsForSale.Contains(randomBuff))
+            {
+                i--;
+                continue;
+            }
 
             buffsForSale.Add(randomBuff);
-            availableBuffs.RemoveAt(randomIndex);
         }
 
         PopulateBuffShop();
@@ -109,9 +122,12 @@ public class NewBuffManager : MonoBehaviour
             Destroy(child.gameObject);
         }
 
-        foreach (GameObject buff in buffsForSale)
+        foreach (NewBuff buff in buffsForSale)
         {
-            GameObject slot = Instantiate(buff, buffSlotParent);
+            GameObject slot = Instantiate(buffSlotPrefab, buffSlotParent);
+            NewBuffUI buffUI = slot.GetComponent<NewBuffUI>();
+            buffUI.buff = buff;
+            buffUI.UpdateBuffUI();
         }
     }
 

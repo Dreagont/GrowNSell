@@ -36,9 +36,23 @@ public class PriceTableSlotUI : MonoBehaviour
     {
         
         ItemIcon.sprite = ItemsPricing.icon;
-        //ItemSellPrice.text =((int)ItemsPricing.GetTotalSellPrice()).ToString();
-        ItemSellPrice.text = ((int)gameManager.GetCropGoldAmount(ItemsPricing.minSellPrice)).ToString() + " - " + ((int)gameManager.GetCropGoldAmount(ItemsPricing.maxSellPrice)).ToString();
+        if (ItemsPricing.itemType1 == ItemType.Material)
+        {
+            ItemSellPrice.text = ((int)gameManager.GetMaterialGoldAmount(ItemsPricing.minSellPrice)).ToString() + " - " + ((int)gameManager.GetMaterialGoldAmount(ItemsPricing.maxSellPrice)).ToString();
+            ItemCurrentSellPrice.text = ((int)gameManager.GetMaterialGoldAmount(ItemsPricing.sellPrice)).ToString();
+
+
+        }
+        else if(ItemsPricing.itemType1 == ItemType.Crop) {
+            ItemSellPrice.text = ((int)gameManager.GetCropGoldAmount(ItemsPricing.minSellPrice)).ToString() + " - " + ((int)gameManager.GetCropGoldAmount(ItemsPricing.maxSellPrice)).ToString();
+            ItemCurrentSellPrice.text = ((int)gameManager.GetCropGoldAmount(ItemsPricing.sellPrice)).ToString();
+        }
+        else
+        {
+            ItemSellPrice.text = ((int)gameManager.GetCropGoldAmount(ItemsPricing.minSellPrice)).ToString() + " - " + ((int)gameManager.GetCropGoldAmount(ItemsPricing.maxSellPrice)).ToString();
+            ItemCurrentSellPrice.text = ((int)gameManager.GetCropGoldAmount(ItemsPricing.sellPrice)).ToString();
+
+        }
         ItemName.text = ItemsPricing.displayName;
-        ItemCurrentSellPrice.text = ((int)gameManager.GetCropGoldAmount(ItemsPricing.sellPrice)).ToString();
     }
 }

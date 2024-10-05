@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a98e28881e2f88f469dfb284f3d5a50b, type: 3}
+  m_Name: Island 1
+  m_EditorClassIdentifier: 
+  craftingMaterials:
+  - InventoryItemData: {fileID: 11400000, guid: ab030544d61892d478aaab99051b4c85, type: 2}
+    Quantity: 200
+  ItemName: Island Expand
+  ItemDescription: Increase size of your island.
+  Price: 2500
+  Icon: {fileID: 1504852046, guid: 3a53928bc0c89f74aafbfa73d65cacba, type: 3}
+  lockItem:
+  - {fileID: 0}
+  triggerIndex: 2
+  lockItemDatas: []

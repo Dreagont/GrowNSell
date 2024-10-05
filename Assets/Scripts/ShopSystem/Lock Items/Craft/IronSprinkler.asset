@@ -20,7 +20,7 @@ MonoBehaviour:
   ItemName: Iron Sprinkler
   ItemDescription: Water crops in 5x5 radius.
   Price: 0
-  Icon: {fileID: 1263140006, guid: 53f7be045b0d43548afef308a3820851, type: 3}
+  Icon: {fileID: 216027090, guid: 53f7be045b0d43548afef308a3820851, type: 3}
   lockItem:
   - {fileID: 11400000, guid: e5eca7cd9a8f7a148a5bb7f08f95f857, type: 2}
   triggerIndex: -1

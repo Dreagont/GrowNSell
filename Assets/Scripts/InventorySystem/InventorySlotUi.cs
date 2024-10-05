@@ -143,8 +143,20 @@ public class InventorySlotUi : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         if (assignedInventorySlot.ItemData != null)
         {
-            //TooltipManager.instance.SetAndShowToolTip(assignedInventorySlot.ItemData.displayName, assignedInventorySlot.ItemData.description,(int)(assignedInventorySlot.ItemData.sellPrice));
-            TooltipManager.instance.SetAndShowToolTip(assignedInventorySlot.ItemData.displayName, assignedInventorySlot.ItemData.description,(int)(gameManager.GetCropGoldAmount(assignedInventorySlot.ItemData.sellPrice)));
+
+            if (assignedInventorySlot.ItemData.itemType1 == ItemType.Crop)
+            {
+                TooltipManager.instance.SetAndShowToolTip(assignedInventorySlot.ItemData.displayName, assignedInventorySlot.ItemData.description, (int)(gameManager.GetCropGoldAmount(assignedInventorySlot.ItemData.sellPrice)));
+
+            }
+            else if (assignedInventorySlot.ItemData.itemType1 == ItemType.Material)
+            {
+                TooltipManager.instance.SetAndShowToolTip(assignedInventorySlot.ItemData.displayName, assignedInventorySlot.ItemData.description, (int)(gameManager.GetMaterialGoldAmount(assignedInventorySlot.ItemData.sellPrice)));
+
+            } else
+            {
+                TooltipManager.instance.SetAndShowToolTip(assignedInventorySlot.ItemData.displayName, assignedInventorySlot.ItemData.description, (int)(gameManager.GetCropGoldAmount(assignedInventorySlot.ItemData.sellPrice)));
+            }
 
         }
     }

@@ -38,7 +38,7 @@ public class DayManager : MonoBehaviour
         UpdateTime();
         HandleSpeedUpInput();
         UpdateUIText();
-        if (Input.GetKeyDown(KeyCode.K))
+        if (Input.GetKeyDown(KeyCode.K) && GlobalVariables.CanInput)
         {
             SkipDay();
         }
@@ -71,6 +71,7 @@ public class DayManager : MonoBehaviour
         shopUIController.RollNewItemsFree();
         priceManager.RollAllSellPrices();
         placeAbleObjects = FindObjectsOfType<PlaceAbleObject>();
+        BaseTreePerDay = gameManager.BuffManager.TreeRegrow;
         ActiveSprinkler();
         ActiveMine();
         ReGrowTree();

@@ -441,8 +441,6 @@ MonoBehaviour:
   ItemPrice: {fileID: 3830366908302147168}
   sellQuantityText: {fileID: 3663380151339952772}
   sellQuanity: 0
-  goldAddText: {fileID: 3910975182150953683, guid: a77e9ff8504e13f42a1dbc0c5d3e1fd0, type: 3}
-  canvas: {fileID: 0}
 --- !u!50 &4213707742581888157
 Rigidbody2D:
   serializedVersion: 4

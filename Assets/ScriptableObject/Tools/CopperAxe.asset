@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: CopperAxe
   m_EditorClassIdentifier: 
   ToolEnergy: 6
+  ToolRadius: 1
   ToolTier: 1
   ToolAnimation: {fileID: 7203914667555258737, guid: f5e1a0ab13e80694eb29709f0ee53925, type: 3}

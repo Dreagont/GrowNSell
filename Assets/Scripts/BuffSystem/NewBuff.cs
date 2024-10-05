@@ -16,5 +16,8 @@ public class NewBuff : ScriptableObject
     public float PlowDropChance = 0;
     public float DoubleDropChance = 0f;
     public float NotDestroyFarmland = 0f;
+    public int MaterialBonus = 0;
+    public int MineRange = 0;
+    public int TreeRegrow = 0;
 
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class ToolData : ScriptableObject
 {
     public int ToolEnergy;
+    public int ToolRadius;
     public int ToolTier;
     public GameObject ToolAnimation;
 }

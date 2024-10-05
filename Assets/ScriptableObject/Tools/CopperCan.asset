@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: CopperCan
   m_EditorClassIdentifier: 
   ToolEnergy: 8
+  ToolRadius: 1
   ToolTier: 1
   ToolAnimation: {fileID: 46978957740309842, guid: 79a10e4864b7cc640a4801c95a4b0942, type: 3}

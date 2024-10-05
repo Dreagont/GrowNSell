@@ -12,20 +12,12 @@ public class ActionManager : MonoBehaviour
     public InventoryItemData Shovel;
     public InventoryItemData Mine;
 
+    public ThanksWindow ThanksWindow;
+
     void Start()
     {
-        Pickup();
+        ThanksWindow.setLimmit();
     }
-
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            
-
-        }
-    }
-
     public void Pickup()
     {
         InventoryHolder.AddToHotBar(Hoe, 1);
@@ -33,9 +25,6 @@ public class ActionManager : MonoBehaviour
         InventoryHolder.AddToHotBar(Pickaxe, 1);
         InventoryHolder.AddToHotBar(WateringCan, 1);
         InventoryHolder.AddToHotBar(Shovel, 1);
-        InventoryHolder.AddToHotBar(Mine, 1);
+        //InventoryHolder.AddToHotBar(Mine, 1);
     }
-
-
-
 }

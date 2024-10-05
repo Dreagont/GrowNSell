@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   craftingMaterials:
   - InventoryItemData: {fileID: 11400000, guid: 77a3b31e98d2fcf408203bdb6c59b9e4, type: 2}
-    Quantity: 100
+    Quantity: 50
   ItemName: Advance Furnate
   ItemDescription: You can craft Iron Ingot and Gold Ingot.
   Price: 0

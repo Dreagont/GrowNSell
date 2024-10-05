@@ -14,9 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BuffIcon: {fileID: -1145935061, guid: 20bfaafcb1d25c04f800abedc529a692, type: 3}
   buffName: Duriation
-  description: Increase 20 max Energy.
-  MaxEnergyBuff: 20
+  description: Increase 100 max Energy.
+  MaxEnergyBuff: 100
   EnergyReductionBuff: 0
   ExperientBuff: 0
-  GoldBuff: 0
+  CropGoldBuff: 0
+  MaterialGoldBuff: 0
   ToolDamageBuff: 0
+  PlowDropChance: 0
+  DoubleDropChance: 0
+  NotDestroyFarmland: 0
+  MaterialBonus: 0
+  MineRange: 0
+  TreeRegrow: 0

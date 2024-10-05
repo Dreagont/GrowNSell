@@ -16,7 +16,7 @@ MonoBehaviour:
   - InventoryItemData: {fileID: 11400000, guid: 77a3b31e98d2fcf408203bdb6c59b9e4, type: 2}
     Quantity: 200
   ItemName: Tier 3 Mine
-  ItemDescription: Generate minerals in 5x5 radius.
+  ItemDescription: Generate minerals in 3x3 radius.
   Price: 0
   Icon: {fileID: -1955841644, guid: 09f1f6c5c612b554daa9062d98a73215, type: 3}
   lockItem:
